@@ -223,19 +223,22 @@ public final class CatalogedValueParameters {
             Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "IP");
 
     /**
-     * Expect an argument to represent a {@link ServerLocation}.
-     *
-     * <p>Listens to:</p>
-     *
-     * <ul>
-     *     <li>#spawn:&lt;world&gt;</li>
-     *     <li>#me: Location of the current source</li>
-     * </ul>
+     * Expect an argument to represent a {@link ServerLocation} which can
+     * point to a location to any known world, loaded or unloaded.
      *
      * <p>Returns a {@link ServerLocation}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<ServerLocation>> LOCATION =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "LOCATION");
+    public static final Supplier<CatalogedValueParameter<ServerLocation>> LOCATION_ALL =
+            Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "LOCATION_ALL");
+
+    /**
+     * Expect an argument to represent a {@link ServerLocation} that can only
+     * target a currently loaded world.
+     *
+     * <p>Returns a {@link ServerLocation}.</p>
+     */
+    public static final Supplier<CatalogedValueParameter<ServerLocation>> LOCATION_ONLINE_ONLY =
+            Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "LOCATION_ONLINE_ONLY");
 
     /**
      * Require an argument to be a long (base 10).
@@ -453,12 +456,22 @@ public final class CatalogedValueParameters {
             Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class,"VECTOR3D");
 
     /**
-     * Expect an argument to represent the name of a {@link WorldProperties}.
+     * Expect an argument to represent the name of any {@link WorldProperties}
+     * known to the game.
      *
      * <p>Returns a {@link WorldProperties}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<WorldProperties>> WORLD_PROPERTIES =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "WORLD_PROPERTIES");
+    public static final Supplier<CatalogedValueParameter<WorldProperties>> WORLD_PROPERTIES_ALL =
+            Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "WORLD_PROPERTIES_ALL");
+
+    /**
+     * Expect an argument to represent the name of a {@link WorldProperties}
+     * that represents a currently online world.
+     *
+     * <p>Returns a {@link WorldProperties}.</p>
+     */
+    public static final Supplier<CatalogedValueParameter<WorldProperties>> WORLD_PROPERTIES_ONLINE_ONLY =
+            Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "WORLD_PROPERTIES_ONLINE_ONLY");
 
     // SORTFIELDS:OFF
 
