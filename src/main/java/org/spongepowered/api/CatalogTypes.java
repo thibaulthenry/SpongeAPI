@@ -31,6 +31,7 @@ import org.spongepowered.api.advancement.AdvancementType;
 import org.spongepowered.api.advancement.criteria.trigger.Trigger;
 import org.spongepowered.api.block.BlockType;
 import org.spongepowered.api.block.entity.BlockEntityType;
+import org.spongepowered.api.block.transaction.Operation;
 import org.spongepowered.api.command.selector.SelectorType;
 import org.spongepowered.api.data.persistence.DataFormat;
 import org.spongepowered.api.data.persistence.DataTranslator;
@@ -205,6 +206,8 @@ public final class CatalogTypes {
     public static final Class<NotePitch> NOTE_PITCH = NotePitch.class;
 
     public static final Class<ObjectiveDisplayMode> OBJECTIVE_DISPLAY_MODE = ObjectiveDisplayMode.class;
+
+    public static final Class<Operation> BLOCK_TRANSACTION_OPERATION = Operation.class;
 
     public static final Class<PandaGene> PANDA_GENE = PandaGene.class;
 
