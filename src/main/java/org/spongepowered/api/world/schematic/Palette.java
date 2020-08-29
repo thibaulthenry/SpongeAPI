@@ -39,7 +39,7 @@ import java.util.Optional;
  * @param <T> The type this palette will maintain
  */
 @CatalogedBy(PaletteTypes.class)
-public interface Palette<T extends CatalogType> {
+public interface Palette<T> {
 
     /**
      * Gets the type of this palette.
@@ -98,4 +98,6 @@ public interface Palette<T extends CatalogType> {
      * @return All contained types
      */
     Collection<T> getEntries();
+    
+    
 }

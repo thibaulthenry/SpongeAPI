@@ -25,11 +25,18 @@
 package org.spongepowered.api.world.schematic;
 
 import org.spongepowered.api.CatalogType;
+import org.spongepowered.api.util.CatalogBuilder;
 import org.spongepowered.api.util.annotation.CatalogedBy;
 
 @CatalogedBy(PaletteTypes.class)
-public interface PaletteType<T extends CatalogType> extends CatalogType {
+public interface PaletteType<T> extends CatalogType {
 
     Palette<T> create();
+
+    interface Builder<T> extends CatalogBuilder<PaletteType<T>, Builder<T>> {
+
+
+
+    }
 
 }
