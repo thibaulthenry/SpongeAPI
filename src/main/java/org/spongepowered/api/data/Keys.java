@@ -216,7 +216,7 @@ import org.spongepowered.api.util.Color;
 import org.spongepowered.api.util.Direction;
 import org.spongepowered.api.util.RespawnLocation;
 import org.spongepowered.api.util.Ticks;
-import org.spongepowered.api.util.rotation.Rotation;
+import org.spongepowered.api.util.orientation.Orientation;
 import org.spongepowered.api.util.weighted.WeightedSerializableObject;
 import org.spongepowered.api.world.ServerLocation;
 import org.spongepowered.api.world.explosion.Explosion;
@@ -2107,9 +2107,9 @@ public final class Keys {
     public static final Supplier<Key<Value<Ticks>>> ROARING_TIME = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Key.class, "roaring_time");
 
     /**
-     * The {@link Rotation} of an {@link ItemFrame}.
+     * The {@link Orientation} of an {@link ItemFrame}.
      */
-    public static final Supplier<Key<Value<Rotation>>> ROTATION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Key.class, "rotation");
+    public static final Supplier<Key<Value<Orientation>>> ORIENTATION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Key.class, "rotation");
 
     /**
      * The current saturation of a {@link Player}.
