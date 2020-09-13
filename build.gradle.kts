@@ -59,6 +59,10 @@ dependencies {
         exclude(group = "org.checkerframework", module = "checker-qual")
         exclude(group = "net.kyori", module = "adventure-api")
     }
+    api("net.kyori:adventure-text-minimessage:4.0.0-SNAPSHOT") {
+        exclude(group = "org.checkerframework", module = "checker-qual")
+        exclude(group = "net.kyori", module = "adventure-api")
+    }
 
     // Dependency injection
     api("com.google.inject:guice:4.1.0") {
