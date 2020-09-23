@@ -48,15 +48,15 @@ import java.util.function.Function;
 public interface SpecialCraftingRecipe extends CraftingRecipe {
 
     /**
-     * Creates a new {@link SpecialCraftingRecipe.Builder} to build a {@link SpecialCraftingRecipe}.
+     * Creates a new {@link Builder} to build a {@link SpecialCraftingRecipe}.
      *
      * @return The new builder
      */
-    static SpecialCraftingRecipe.Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(SpecialCraftingRecipe.Builder.class);
+    static Builder builder() {
+        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
     }
 
-    interface Builder extends ResettableBuilder<SpecialCraftingRecipe, SpecialCraftingRecipe.Builder> {
+    interface Builder extends ResettableBuilder<SpecialCraftingRecipe, Builder> {
 
         /**
          * Sets the recipe matcher.
@@ -65,7 +65,7 @@ public interface SpecialCraftingRecipe extends CraftingRecipe {
          *
          * @return This builder, for chaining
          */
-        SpecialCraftingRecipe.Builder.ResultStep matching(BiPredicate<CraftingInventory, ServerWorld> biPredicate);
+        Builder.ResultStep matching(BiPredicate<CraftingInventory, ServerWorld> biPredicate);
 
         /**
          * Sets the recipe matcher and an exemplary shape from another CraftingRecipe.
@@ -76,7 +76,7 @@ public interface SpecialCraftingRecipe extends CraftingRecipe {
          *
          * @return This builder, for chaining
          */
-        SpecialCraftingRecipe.Builder.ResultStep matching(BiPredicate<CraftingInventory, ServerWorld> biPredicate, CraftingRecipe exemplaryShape);
+        Builder.ResultStep matching(BiPredicate<CraftingInventory, ServerWorld> biPredicate, CraftingRecipe exemplaryShape);
 
         /**
          * Sets the recipe matcher from another CraftingRecipe
@@ -85,13 +85,13 @@ public interface SpecialCraftingRecipe extends CraftingRecipe {
          *
          * @return This builder, for chaining
          */
-        SpecialCraftingRecipe.Builder.ResultStep matching(CraftingRecipe shape);
+        Builder.ResultStep matching(CraftingRecipe shape);
 
         /**
          * In this Step set the result of the Recipe.
          * <p>Optionally configure the remaining items.</p>
          */
-        interface ResultStep extends SpecialCraftingRecipe.Builder {
+        interface ResultStep extends Builder {
 
             /**
              * Sets the remainingItems function. The function must return a list of the same size as the input CraftingInventory.
@@ -132,7 +132,7 @@ public interface SpecialCraftingRecipe extends CraftingRecipe {
             EndStep result(ItemStack result);
         }
 
-        interface EndStep extends SpecialCraftingRecipe.Builder, CatalogBuilder<SpecialCraftingRecipe, SpecialCraftingRecipe.Builder> {
+        interface EndStep extends Builder, CatalogBuilder<SpecialCraftingRecipe, Builder> {
 
             @Override
             EndStep key(ResourceKey key);

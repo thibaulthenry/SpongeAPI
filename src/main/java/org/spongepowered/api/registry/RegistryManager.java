@@ -24,15 +24,13 @@
  */
 package org.spongepowered.api.registry;
 
-public interface FactoryRegistry {
+import org.checkerframework.checker.nullness.qual.NonNull;
 
-    /**
-     * Provides a factory used to create instances of the specified type
-     *
-     * @param clazz The factory class
-     * @param <T> The type of factory
-     * @throws UnknownTypeException If the type provided has not been registered
-     * @return The factory
-     */
-    <T> T provideFactory(Class<T> clazz) throws UnknownTypeException;
+import java.util.Optional;
+
+public interface RegistryManager {
+
+    <V> Optional<Registry<V>> find(Class<V> clazz);
+
+    @NonNull <V> Registry<V> get(Class<V> clazz);
 }

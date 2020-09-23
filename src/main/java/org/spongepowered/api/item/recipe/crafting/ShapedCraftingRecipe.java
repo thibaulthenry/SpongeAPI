@@ -43,7 +43,7 @@ import java.util.Map;
 public interface ShapedCraftingRecipe extends CraftingRecipe {
 
     /**
-     * Creates a new {@link ShapedCraftingRecipe.Builder} to build a {@link ShapedCraftingRecipe}.
+     * Creates a new {@link Builder} to build a {@link ShapedCraftingRecipe}.
      *
      * @return The new builder
      */

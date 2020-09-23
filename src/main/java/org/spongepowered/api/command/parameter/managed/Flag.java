@@ -66,8 +66,8 @@ public interface Flag {
      *
      * @return A {@link Builder}
      */
-    static Flag.Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Flag.Builder.class);
+    static Builder builder() {
+        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
     }
 
     /**

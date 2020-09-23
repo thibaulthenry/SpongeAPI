@@ -22,20 +22,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.lifecycle;
+package org.spongepowered.api;
 
-import org.spongepowered.api.CatalogType;
-import org.spongepowered.api.event.GenericEvent;
-import org.spongepowered.api.registry.DuplicateRegistrationException;
+import org.spongepowered.api.util.ResettableBuilder;
 
-public interface RegisterCatalogEvent<T extends CatalogType> extends GenericEvent<T>, LifecycleEvent {
+public interface BuilderProvider {
 
     /**
-     * Registers a new {@link CatalogType}.
+     * Gets a builder of the desired class type.
      *
-     * @param catalog The catalog type
-     * @return The provided catalog type
-     * @throws DuplicateRegistrationException If the type is already registered
+     * @param type The class of the builder
+     * @param <T> The type of builder
+     * @throws UnknownTypeException If the type provided has not been registered
+     * @return The builder, if available
      */
-    T register(T catalog) throws DuplicateRegistrationException;
+    <T extends ResettableBuilder<?, ? super T>> T provide(Class<T> type) throws UnknownTypeException;
 }

@@ -41,8 +41,8 @@ import java.util.function.Predicate;
  */
 public interface StoneCutterRecipe extends Recipe {
 
-    static StoneCutterRecipe.Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(StoneCutterRecipe.Builder.class);
+    static Builder builder() {
+        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
     }
 
     @Override
@@ -51,7 +51,7 @@ public interface StoneCutterRecipe extends Recipe {
     /**
      * Builds a simple furnace recipe.
      */
-    interface Builder extends ResettableBuilder<StoneCutterRecipe, StoneCutterRecipe.Builder> {
+    interface Builder extends ResettableBuilder<StoneCutterRecipe, Builder> {
 
         /**
          * Sets the ingredient and returns this builder.
@@ -72,7 +72,7 @@ public interface StoneCutterRecipe extends Recipe {
          */
         ResultStep ingredient(Predicate<ItemStackSnapshot> predicate, ItemType exemplaryIngredient);
 
-        interface ResultStep extends StoneCutterRecipe.Builder {
+        interface ResultStep extends Builder {
 
             /**
              * Changes the result and returns this builder. The result is the
@@ -96,7 +96,7 @@ public interface StoneCutterRecipe extends Recipe {
 
         }
 
-        interface EndStep extends StoneCutterRecipe.Builder, CatalogBuilder<StoneCutterRecipe, Builder> {
+        interface EndStep extends Builder, CatalogBuilder<StoneCutterRecipe, Builder> {
 
             @Override
             EndStep key(ResourceKey key);

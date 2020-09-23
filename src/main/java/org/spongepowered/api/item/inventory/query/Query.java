@@ -38,8 +38,8 @@ public interface Query {
      *
      * @return The query builder
      */
-    static Query.Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Query.Builder.class);
+    static Builder builder() {
+        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
     }
 
     /**
@@ -73,7 +73,7 @@ public interface Query {
      */
     Inventory execute(Inventory inventory);
 
-    interface Builder extends ResettableBuilder<Query, Query.Builder> {
+    interface Builder extends ResettableBuilder<Query, Builder> {
 
         /**
          * Builds a new query matching any of the queries.

@@ -50,14 +50,14 @@ import java.util.function.Supplier;
 public interface Inventory extends ValueContainer {
 
     /**
-     * Creates a new {@link Inventory.Builder} to build a basic {@link Inventory}.
+     * Creates a new {@link Builder} to build a basic {@link Inventory}.
      * <p>Inventories created by this builder cannot be opened.</p>
      * <p>If you want to show the inventory to a {@link Player} use {@link ViewableInventory#builder()}</p>
      *
      * @return The builder
      */
-    static Inventory.Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Inventory.Builder.class);
+    static Builder builder() {
+        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
     }
 
     /**
@@ -451,7 +451,7 @@ public interface Inventory extends ValueContainer {
      * A builder for free-form Inventories.
      * <p>To build inventories that can be viewed by a player use {@link ViewableInventory.Builder}</p>
      */
-    interface Builder extends ResettableBuilder<Inventory, Inventory.Builder> {
+    interface Builder extends ResettableBuilder<Inventory, Builder> {
 
         /**
          * Adds one or more slots.

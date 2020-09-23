@@ -69,7 +69,7 @@ public interface Selector {
      *
      * @return The builder
      */
-    static Selector.Builder builder() {
+    static Builder builder() {
         return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
     }
 

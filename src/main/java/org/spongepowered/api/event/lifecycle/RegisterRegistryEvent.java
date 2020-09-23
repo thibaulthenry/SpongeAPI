@@ -22,20 +22,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.registry;
+package org.spongepowered.api.event.lifecycle;
 
-import org.spongepowered.api.util.ResettableBuilder;
+import org.checkerframework.checker.nullness.qual.Nullable;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.DuplicateRegistrationException;
 
-public interface BuilderRegistry {
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Supplier;
+
+public interface RegisterRegistryEvent extends LifecycleEvent {
 
     /**
-     * Gets a builder of the desired class type, examples may include:
-     * {@link org.spongepowered.api.item.inventory.ItemStack.Builder}, etc.
+     * Registers a new registry.
      *
-     * @param builderClass The class of the builder
-     * @param <T> The type of builder
-     * @throws UnknownTypeException If the type provided has not been registered
-     * @return The builder, if available
+     * @param type The type
+     * @param key The key for the registry
+     * @throws DuplicateRegistrationException If the type is already registered
      */
-    <T extends ResettableBuilder<?, ? super T>> T provideBuilder(Class<T> builderClass) throws UnknownTypeException;
+    <T> void register(Class<T> type, ResourceKey key) throws DuplicateRegistrationException;
+
+    /**
+     * Registers a new registry.
+     *
+     * @param type The type
+     * @param key The key for the registry
+     * @param defaults The default added types, added for convenience
+     * @throws DuplicateRegistrationException If the type is already registered
+     */
+    <T> void register(Class<T> type, ResourceKey key, @Nullable Supplier<Map<ResourceKey, T>> defaults) throws DuplicateRegistrationException;
 }

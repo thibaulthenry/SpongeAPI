@@ -25,7 +25,6 @@
 package org.spongepowered.api.registry;
 
 import org.spongepowered.api.Game;
-import org.spongepowered.api.adventure.AdventureRegistry;
 import org.spongepowered.api.data.type.ProfessionType;
 import org.spongepowered.api.item.merchant.TradeOfferGenerator;
 import org.spongepowered.api.item.merchant.VillagerRegistry;
@@ -35,34 +34,6 @@ import org.spongepowered.api.item.recipe.RecipeRegistry;
  * Provides an easy way to query various registries composed in a {@link Game}.
  */
 public interface GameRegistry {
-
-    /**
-     * Retrieves the {@link CatalogRegistry}.
-     *
-     * @return The catalog registry
-     */
-    CatalogRegistry getCatalogRegistry();
-
-    /**
-     * Retrieves the {@link AdventureRegistry}.
-     *
-     * @return The catalog registry
-     */
-    AdventureRegistry getAdventureRegistry();
-
-    /**
-     * Retrieves the {@link BuilderRegistry}.
-     *
-     * @return The builder registry
-     */
-    BuilderRegistry getBuilderRegistry();
-
-    /**
-     * Retrieves the {@link FactoryRegistry}.
-     *
-     * @return The factory registry
-     */
-    FactoryRegistry getFactoryRegistry();
 
     /**
      * Retrieves the {@link RecipeRegistry}.

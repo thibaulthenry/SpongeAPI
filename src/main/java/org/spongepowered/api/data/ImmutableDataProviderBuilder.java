@@ -31,7 +31,8 @@ import org.spongepowered.api.util.ResettableBuilder;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public interface ImmutableDataProviderBuilder<H extends DataHolder, V extends Value<E>, E> extends ResettableBuilder<DataProvider<Value<E>, E>, ImmutableDataProviderBuilder<H, V, E>> {
+public interface ImmutableDataProviderBuilder<H extends DataHolder, V extends Value<E>, E> extends
+        ResettableBuilder<DataProvider<Value<E>, E>, ImmutableDataProviderBuilder<H, V, E>> {
 
     <NV extends Value<NE>, NE> ImmutableDataProviderBuilder<H, NV, NE> key(Key<NV> key);
     <NH extends H> ImmutableDataProviderBuilder<NH, V, E> dataHolder(TypeToken<NH> holder);

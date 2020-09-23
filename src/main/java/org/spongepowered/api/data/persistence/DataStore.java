@@ -133,7 +133,7 @@ public interface DataStore {
      *
      * @return The dataStore builder.
      */
-    static DataStore.Builder builder() {
+    static Builder builder() {
         return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
     }
 

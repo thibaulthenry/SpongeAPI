@@ -22,21 +22,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.registry;
+package org.spongepowered.api;
 
-public final class UnknownTypeException extends RuntimeException {
+public interface FactoryProvider {
 
-    private static final long serialVersionUID = 5985899461691485164L;
-
-    public UnknownTypeException(String message) {
-        super(message);
-    }
-
-    public UnknownTypeException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public UnknownTypeException(Throwable cause) {
-        super(cause);
-    }
+    /**
+     * Provides a factory used to create instances of the specified type
+     *
+     * @param type The factory class
+     * @param <T> The type of factory
+     * @throws UnknownTypeException If the type provided has not been registered
+     * @return The factory
+     */
+    <T> T provide(Class<T> type) throws UnknownTypeException;
 }

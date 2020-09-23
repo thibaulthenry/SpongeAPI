@@ -55,7 +55,7 @@ import java.util.function.Predicate;
  *
  * <p><strong>Most</strong> plugins are highly recommended (but not obligated)
  * to use {@link Command#builder()} to create commands. The
- * {@link Command.Builder} allows plugins to take advantage of a higher level
+ * {@link Builder} allows plugins to take advantage of a higher level
  * of abstraction, such as argument parsers and simple child command handling,
  * removing the need for boilerplate code. Such {@link Parameterized} commands
  * should register themselves during the {@link RegisterCommandEvent
@@ -239,11 +239,11 @@ public interface Command {
          * <p>A direct subcommand is one that is specified directly after the
          * literal the invokes this command, e.g. on the command {@code /foo},
          * {@code bar} is a direct subcommand if it was specified in
-         * {@link Command.Parameterized.Builder#child(Parameterized, String...)}
-         * or {@link Command.Parameterized.Builder#children(Map)} with the alias
+         * {@link Builder#child(Parameterized, String...)}
+         * or {@link Builder#children(Map)} with the alias
          * {@code bar}. This will not contain any subcommands that were
          * registered via
-         * {@link Command.Parameterized.Builder#parameter(Parameter)}</p>
+         * {@link Builder#parameter(Parameter)}</p>
          *
          * @return A copy of the collection of subcommands.
          */

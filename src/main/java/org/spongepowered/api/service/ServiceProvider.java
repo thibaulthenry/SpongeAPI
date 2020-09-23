@@ -105,6 +105,4 @@ public interface ServiceProvider {
         WhitelistService whitelistService();
 
     }
-
-
 }

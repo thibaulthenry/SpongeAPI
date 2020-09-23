@@ -31,7 +31,6 @@ import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.util.ResettableBuilder;
 import org.spongepowered.api.util.annotation.CatalogedBy;
-import org.spongepowered.plugin.PluginContainer;
 
 import java.util.function.Function;
 
@@ -74,7 +73,7 @@ public interface PlaceholderParser extends CatalogType {
          * @param resourceKey The {@link ResourceKey}
          * @return This builder, for chaining
          */
-        PlaceholderParser.Builder key(ResourceKey resourceKey);
+        Builder key(ResourceKey resourceKey);
 
         /**
          * The function that converts a {@link PlaceholderContext} to {@link Component}
@@ -82,7 +81,7 @@ public interface PlaceholderParser extends CatalogType {
          * @param parser The function
          * @return This builder, for chaining
          */
-        PlaceholderParser.Builder parser(Function<PlaceholderContext, Component> parser);
+        Builder parser(Function<PlaceholderContext, Component> parser);
 
         /**
          * Builds a {@link PlaceholderParser}

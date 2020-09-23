@@ -33,7 +33,7 @@ import org.spongepowered.api.data.persistence.DataSerializable;
 import org.spongepowered.api.event.EventManager;
 import org.spongepowered.api.network.channel.ChannelRegistry;
 import org.spongepowered.api.plugin.PluginManager;
-import org.spongepowered.api.registry.GameRegistry;
+import org.spongepowered.api.registry.RegistryManager;
 import org.spongepowered.api.scheduler.Scheduler;
 import org.spongepowered.api.sql.SqlManager;
 import org.spongepowered.api.util.metric.MetricsConfigManager;
@@ -123,40 +123,18 @@ public interface Game {
     Platform getPlatform();
 
     /**
-     * Gets the {@link GameRegistry}.
-     *
-     * @return The game registry
-     */
-    GameRegistry getRegistry();
-
-    /**
-     * Gets the {@link DataManager} instance to register
-     * {@link DataSerializable}s, and get the related {@link DataBuilder}s.
-     *
-     * @return The serialization service
-     */
-    DataManager getDataManager();
-
-    /**
-     * Gets the {@link PluginManager}.
-     *
-     * @return The plugin manager
-     */
-    PluginManager getPluginManager();
-
-    /**
-     * Gets the {@link EventManager}.
-     *
-     * @return The event manager
-     */
-    EventManager getEventManager();
-
-    /**
      * Gets the {@link AssetManager}.
      *
      * @return The asset manager
      */
     AssetManager getAssetManager();
+
+    /**
+     * Gets the {@link CommandManager} for registering and executing commands.
+     *
+     * @return The {@link CommandManager} instance.
+     */
+    CommandManager getCommandManager();
 
     /**
      * Gets the {@link ConfigManager} used to load and manage configuration files
@@ -167,11 +145,19 @@ public interface Game {
     ConfigManager getConfigManager();
 
     /**
-     * Gets the {@link ChannelRegistry} for creating network channels.
+     * Gets the {@link DataManager} instance to register
+     * {@link DataSerializable}s, and get the related {@link DataBuilder}s.
      *
-     * @return The channel registry
+     * @return The serialization service
      */
-    ChannelRegistry getChannelRegistry();
+    DataManager getDataManager();
+
+    /**
+     * Gets the {@link EventManager}.
+     *
+     * @return The event manager
+     */
+    EventManager getEventManager();
 
     /**
      * Gets the {@link MetricsConfigManager} instance, allowing data/metric gathering
@@ -183,11 +169,18 @@ public interface Game {
     MetricsConfigManager getMetricsConfigManager();
 
     /**
-     * Gets the {@link CommandManager} for registering and executing commands.
+     * Gets the {@link PluginManager}.
      *
-     * @return The {@link CommandManager} instance.
+     * @return The plugin manager
      */
-    CommandManager getCommandManager();
+    PluginManager getPluginManager();
+
+    /**
+     * Gets the {@link RegistryManager}.
+     *
+     * @return The registry manager
+     */
+    RegistryManager getRegistryManager();
 
     /**
      * Gets the {@link SqlManager} for grabbing sql data sources.
@@ -195,6 +188,27 @@ public interface Game {
      * @return The {@link SqlManager} instance.
      */
     SqlManager getSqlManager();
+
+    /**
+     * Gets the {@link ChannelRegistry} for creating network channels.
+     *
+     * @return The channel registry
+     */
+    ChannelRegistry getChannelRegistry();
+
+    /**
+     * Retrieves the {@link BuilderProvider}.
+     *
+     * @return The builder provider
+     */
+    BuilderProvider getBuilderProvider();
+
+    /**
+     * Retrieves the {@link FactoryProvider}.
+     *
+     * @return The factory provider
+     */
+    FactoryProvider getFactoryProvider();
 
     /**
      * Gets the {@link ServiceProvider.GameScoped}, used to provide Sponge
