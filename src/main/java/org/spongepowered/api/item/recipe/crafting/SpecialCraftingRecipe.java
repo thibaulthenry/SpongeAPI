@@ -53,7 +53,7 @@ public interface SpecialCraftingRecipe extends CraftingRecipe {
      * @return The new builder
      */
     static Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+        return Sponge.getBuilderProvider().provide(Builder.class);
     }
 
     interface Builder extends ResettableBuilder<SpecialCraftingRecipe, Builder> {

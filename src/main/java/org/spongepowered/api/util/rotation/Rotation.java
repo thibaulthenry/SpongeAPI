@@ -44,7 +44,7 @@ public interface Rotation extends CatalogType {
      *      <tt>Optional.empty()</tt> if not found
      */
     static Optional<Rotation> fromDegrees(int degrees) {
-        return Sponge.getRegistry().getFactoryRegistry().provideFactory(Factory.class).fromDegrees(degrees);
+        return Sponge.getFactoryProvider().provide(Factory.class).fromDegrees(degrees);
     }
 
     /**

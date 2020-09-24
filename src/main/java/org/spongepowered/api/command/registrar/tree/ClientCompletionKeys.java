@@ -24,85 +24,90 @@
  */
 package org.spongepowered.api.command.registrar.tree;
 
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.Sponge;
+import org.spongepowered.api.registry.Registry;
 
 import java.util.function.Supplier;
 
-public class ClientCompletionKeys {
+public final class ClientCompletionKeys {
 
+    @SuppressWarnings("rawtypes")
+    public static Registry<ClientCompletionKey> REGISTRY = Sponge.getRegistryManager().get(ClientCompletionKey.class);
+    
     // SORTFIELDS: ON
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> BLOCK_STATE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "block_state");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> BLOCK_STATE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("block_state"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> BLOCK_PREDICATE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "block_predicate");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> BLOCK_PREDICATE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("block_predicate"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> BOOL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "bool");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> BOOL = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("bool"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> COLOR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "color");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> COLOR = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("color"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> COMPONENT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "component");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> COMPONENT = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("component"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> DIMENSION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "dimension");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> DIMENSION = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("dimension"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> DOUBLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "double");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> DOUBLE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("double"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.EntitySelection>> ENTITY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "entity");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.EntitySelection>> ENTITY = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("entity"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ENTITY_ANCHOR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "entity_anchor");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ENTITY_ANCHOR = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("entity_anchor"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ENTITY_SUMMON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "entity_summon");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ENTITY_SUMMON = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("entity_summon"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> FLOAT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "float");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> FLOAT = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("float"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> FUNCTION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "function");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> FUNCTION = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("function"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> GAME_PROFILE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "game_profile");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> GAME_PROFILE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("game_profile"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> INTEGER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "integer");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> INTEGER = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("integer"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ITEM_ENCHANTMENT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "item_enchantment");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ITEM_ENCHANTMENT = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("item_enchantment"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ITEM_SLOT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "item_slot");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ITEM_SLOT = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("item_slot"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> LONG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "long");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> LONG = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("long"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> MESSAGE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "message");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> MESSAGE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("message"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> MOB_EFFECT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "mob_effect");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> MOB_EFFECT = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("mob_effect"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> NBT_COMPOUND_TAG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "nbt_compound_tag");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> NBT_COMPOUND_TAG = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("nbt_compound_tag"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> NBT_PATH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "nbt_path");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> NBT_PATH = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("nbt_path"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> NBT_TAG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "nbt_tag");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> NBT_TAG = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("nbt_tag"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> OBJECTIVE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "objective");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> OBJECTIVE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("objective"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> OBJECTIVE_CRITERIA = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "objective_criteria");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> OBJECTIVE_CRITERIA = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("objective_criteria"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> OPERATION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "operation");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> OPERATION = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("operation"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> PARTICLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "particle");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> PARTICLE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("particle"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> RESOURCE_LOCATION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "resource_location");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> RESOURCE_LOCATION = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("resource_location"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ROTATION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "rotation");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> ROTATION = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("rotation"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Amount>> SCORE_HOLDER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "score_holder");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Amount>> SCORE_HOLDER = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("score_holder"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> SCOREBOARD_SLOT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "scoreboard_slot");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> SCOREBOARD_SLOT = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("scoreboard_slot"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.StringParser>> STRING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "string");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.StringParser>> STRING = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("string"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> SWIZZLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "swizzle");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> SWIZZLE = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("swizzle"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> TEAM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "team");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> TEAM = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("team"));
 
-    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> TIME = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "time");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> TIME = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("time"));
 
-    public static Supplier<ClientCompletionKey<CommandTreeNode.Basic>> VEC2 = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "VEC2");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> VEC2 = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("vec2"));
 
-    public static Supplier<ClientCompletionKey<CommandTreeNode.Basic>> VEC3 = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionKey.class, "VEC3");
+    public static final Supplier<ClientCompletionKey<CommandTreeNode.Basic>> VEC3 = ClientCompletionKeys.REGISTRY.getSupplier(ResourceKey.minecraft("vec3"));
 
     // SORTFIELDS: OFF
 

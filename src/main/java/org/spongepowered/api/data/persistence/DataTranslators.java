@@ -26,7 +26,8 @@ package org.spongepowered.api.data.persistence;
 
 import net.kyori.adventure.text.Component;
 import ninja.leaping.configurate.ConfigurationNode;
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 import org.spongepowered.api.world.schematic.Schematic;
 import org.spongepowered.math.imaginary.Complexd;
 import org.spongepowered.math.imaginary.Complexf;
@@ -57,62 +58,64 @@ public final class DataTranslators {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<DataTranslator<Complexd>> COMPLEXD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "complexd");
+    public static final Supplier<DataTranslator<Complexd>> COMPLEXD = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("complexd"));
 
-    public static final Supplier<DataTranslator<Complexf>> COMPLEXF = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "complexf");
+    public static final Supplier<DataTranslator<Complexf>> COMPLEXF = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("complexf"));
 
-    public static final Supplier<DataTranslator<Component>> COMPONENT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "component");
+    public static final Supplier<DataTranslator<Component>> COMPONENT = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("component"));
 
-    public static final Supplier<DataTranslator<ConfigurationNode>> CONFIGURATION_NODE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "configuration_node");
+    public static final Supplier<DataTranslator<ConfigurationNode>> CONFIGURATION_NODE = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("configuration_node"));
 
-    public static final Supplier<DataTranslator<Instant>> INSTANT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "instant");
+    public static final Supplier<DataTranslator<Instant>> INSTANT = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("instant"));
 
-    public static final Supplier<DataTranslator<Schematic>> LEGACY_SCHEMATIC = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "legacy_schematic");
+    public static final Supplier<DataTranslator<Schematic>> LEGACY_SCHEMATIC = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("legacy_schematic"));
 
-    public static final Supplier<DataTranslator<LocalDate>> LOCAL_DATE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "local_date");
+    public static final Supplier<DataTranslator<LocalDate>> LOCAL_DATE = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("local_date"));
 
-    public static final Supplier<DataTranslator<LocalDateTime>> LOCAL_DATE_TIME = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "local_date_time");
+    public static final Supplier<DataTranslator<LocalDateTime>> LOCAL_DATE_TIME = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("local_date_time"));
 
-    public static final Supplier<DataTranslator<LocalTime>> LOCAL_TIME = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "local_time");
+    public static final Supplier<DataTranslator<LocalTime>> LOCAL_TIME = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("local_time"));
 
-    public static final Supplier<DataTranslator<Schematic>> MOJANG_TEMPLATE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "mojang_template");
+    public static final Supplier<DataTranslator<Schematic>> MOJANG_TEMPLATE = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("mojang_template"));
 
-    public static final Supplier<DataTranslator<Quaterniond>> QUATERNIOND = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "quaterniond");
+    public static final Supplier<DataTranslator<Quaterniond>> QUATERNIOND = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("quaterniond"));
 
-    public static final Supplier<DataTranslator<Quaternionf>> QUATERNIONF = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "quaternionf");
+    public static final Supplier<DataTranslator<Quaternionf>> QUATERNIONF = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("quaternionf"));
 
-    public static final Supplier<DataTranslator<Schematic>> SCHEMATIC = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "schematic");
+    public static final Supplier<DataTranslator<Schematic>> SCHEMATIC = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("schematic"));
 
-    public static final Supplier<DataTranslator<UUID>> UUID = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "uuid");
+    public static final Supplier<DataTranslator<UUID>> UUID = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("uuid"));
 
-    public static final Supplier<DataTranslator<Vector2d>> VECTOR_2_D = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_2_D");
+    public static final Supplier<DataTranslator<Vector2d>> VECTOR_2_D = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_2_D"));
 
-    public static final Supplier<DataTranslator<Vector2f>> VECTOR_2_F = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_2_F");
+    public static final Supplier<DataTranslator<Vector2f>> VECTOR_2_F = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_2_F"));
 
-    public static final Supplier<DataTranslator<Vector2i>> VECTOR_2_I = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_2_I");
+    public static final Supplier<DataTranslator<Vector2i>> VECTOR_2_I = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_2_I"));
 
-    public static final Supplier<DataTranslator<Vector2l>> VECTOR_2_L = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_2_L");
+    public static final Supplier<DataTranslator<Vector2l>> VECTOR_2_L = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_2_L"));
 
-    public static final Supplier<DataTranslator<Vector3d>> VECTOR_3_D = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_3_D");
+    public static final Supplier<DataTranslator<Vector3d>> VECTOR_3_D = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_3_D"));
 
-    public static final Supplier<DataTranslator<Vector3f>> VECTOR_3_F = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_3_F");
+    public static final Supplier<DataTranslator<Vector3f>> VECTOR_3_F = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_3_F"));
 
-    public static final Supplier<DataTranslator<Vector3i>> VECTOR_3_I = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_3_I");
+    public static final Supplier<DataTranslator<Vector3i>> VECTOR_3_I = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_3_I"));
 
-    public static final Supplier<DataTranslator<Vector3l>> VECTOR_3_L = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_3_L");
+    public static final Supplier<DataTranslator<Vector3l>> VECTOR_3_L = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_3_L"));
 
-    public static final Supplier<DataTranslator<Vector4d>> VECTOR_4_D = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_4_D");
+    public static final Supplier<DataTranslator<Vector4d>> VECTOR_4_D = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_4_D"));
 
-    public static final Supplier<DataTranslator<Vector4f>> VECTOR_4_F = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_4_F");
+    public static final Supplier<DataTranslator<Vector4f>> VECTOR_4_F = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_4_F"));
 
-    public static final Supplier<DataTranslator<Vector4i>> VECTOR_4_I = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_4_I");
+    public static final Supplier<DataTranslator<Vector4i>> VECTOR_4_I = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_4_I"));
 
-    public static final Supplier<DataTranslator<Vector4l>> VECTOR_4_L = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "VECTOR_4_L");
+    public static final Supplier<DataTranslator<Vector4l>> VECTOR_4_L = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("VECTOR_4_L"));
 
-    public static final Supplier<DataTranslator<ZonedDateTime>> ZONED_DATE_TIME = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataTranslator.class, "zoned_date_time");
+    public static final Supplier<DataTranslator<ZonedDateTime>> ZONED_DATE_TIME = Registries.DATA_TRANSLATOR.getSupplier(ResourceKey.minecraft("zoned_date_time"));
 
     // SORTFIELDS:OFF
 
     private DataTranslators() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

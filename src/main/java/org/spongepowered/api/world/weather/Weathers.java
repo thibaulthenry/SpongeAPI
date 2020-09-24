@@ -24,22 +24,20 @@
  */
 package org.spongepowered.api.world.weather;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * All possible {@link Weather}s in vanilla minecraft.
- */
 public final class Weathers {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<Weather> CLEAR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Weather.class, "clear");
+    public static final Supplier<Weather> CLEAR = Registries.WEATHER.getSupplier(ResourceKey.minecraft("clear"));
 
-    public static final Supplier<Weather> RAIN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Weather.class, "rain");
+    public static final Supplier<Weather> RAIN = Registries.WEATHER.getSupplier(ResourceKey.minecraft("rain"));
 
-    public static final Supplier<Weather> THUNDER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Weather.class, "thunder");
+    public static final Supplier<Weather> THUNDER = Registries.WEATHER.getSupplier(ResourceKey.minecraft("thunder"));
 
     // SORTFIELDS:OFF
 

@@ -31,13 +31,13 @@ import java.util.function.Supplier;
 public final class TaskPriorities {
 
     //sortfields:ON
-    public static final Supplier<TaskPriority> EXTREMELY_HIGH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TaskPriority.class, "extremely_high");
-    public static final Supplier<TaskPriority> VERY_HIGH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TaskPriority.class, "very_high");
-    public static final Supplier<TaskPriority> HIGH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TaskPriority.class, "high");
-    public static final Supplier<TaskPriority> NORMAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TaskPriority.class, "normal");
-    public static final Supplier<TaskPriority> LOW = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TaskPriority.class, "low");
-    public static final Supplier<TaskPriority> VERY_LOW = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TaskPriority.class, "very_low");
-    public static final Supplier<TaskPriority> EXTREMELY_LOW = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TaskPriority.class, "extremely_low");
+    public static final Supplier<TaskPriority> EXTREMELY_HIGH = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "extremely_high");
+    public static final Supplier<TaskPriority> VERY_HIGH = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "very_high");
+    public static final Supplier<TaskPriority> HIGH = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "high");
+    public static final Supplier<TaskPriority> NORMAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "normal");
+    public static final Supplier<TaskPriority> LOW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "low");
+    public static final Supplier<TaskPriority> VERY_LOW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "very_low");
+    public static final Supplier<TaskPriority> EXTREMELY_LOW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "extremely_low");
     //sortfields:OFF
 
     private TaskPriorities() {

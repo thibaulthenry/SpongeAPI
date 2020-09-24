@@ -24,20 +24,18 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link ComparatorMode}s.
- */
 public final class ComparatorModes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<ComparatorMode> COMPARE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ComparatorMode.class, "compare");
+    public static final Supplier<ComparatorMode> COMPARE = Registries.COMPARATOR_MODE.getSupplier(ResourceKey.minecraft("compare"));
 
-    public static final Supplier<ComparatorMode> SUBTRACT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ComparatorMode.class, "subtract");
+    public static final Supplier<ComparatorMode> SUBTRACT = Registries.COMPARATOR_MODE.getSupplier(ResourceKey.minecraft("subtract"));
 
     // SORTFIELDS:OFF
 

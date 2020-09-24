@@ -24,46 +24,44 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link ProfessionType}s.
- */
 public final class ProfessionTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<ProfessionType> ARMORER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "armorer");
+    public static final Supplier<ProfessionType> ARMORER = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("armorer"));
 
-    public static final Supplier<ProfessionType> BUTCHER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "butcher");
+    public static final Supplier<ProfessionType> BUTCHER = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("butcher"));
 
-    public static final Supplier<ProfessionType> CARTOGRAPHER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "cartographer");
+    public static final Supplier<ProfessionType> CARTOGRAPHER = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("cartographer"));
 
-    public static final Supplier<ProfessionType> CLERIC = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "cleric");
+    public static final Supplier<ProfessionType> CLERIC = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("cleric"));
 
-    public static final Supplier<ProfessionType> FARMER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "farmer");
+    public static final Supplier<ProfessionType> FARMER = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("farmer"));
 
-    public static final Supplier<ProfessionType> FISHERMAN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "fisherman");
+    public static final Supplier<ProfessionType> FISHERMAN = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("fisherman"));
 
-    public static final Supplier<ProfessionType> FLETCHER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "fletcher");
+    public static final Supplier<ProfessionType> FLETCHER = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("fletcher"));
 
-    public static final Supplier<ProfessionType> LEATHERWORKER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "leatherworker");
+    public static final Supplier<ProfessionType> LEATHERWORKER = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("leatherworker"));
 
-    public static final Supplier<ProfessionType> LIBRARIAN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "librarian");
+    public static final Supplier<ProfessionType> LIBRARIAN = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("librarian"));
 
-    public static final Supplier<ProfessionType> MASON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "mason");
+    public static final Supplier<ProfessionType> MASON = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("mason"));
 
-    public static final Supplier<ProfessionType> NITWIT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "nitwit");
+    public static final Supplier<ProfessionType> NITWIT = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("nitwit"));
 
-    public static final Supplier<ProfessionType> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "none");
+    public static final Supplier<ProfessionType> NONE = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("none"));
 
-    public static final Supplier<ProfessionType> SHEPHERD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "shepherd");
+    public static final Supplier<ProfessionType> SHEPHERD = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("shepherd"));
 
-    public static final Supplier<ProfessionType> TOOLSMITH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "toolsmith");
+    public static final Supplier<ProfessionType> TOOLSMITH = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("toolsmith"));
 
-    public static final Supplier<ProfessionType> WEAPONSMITH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ProfessionType.class, "weaponsmith");
+    public static final Supplier<ProfessionType> WEAPONSMITH = Registries.PROFESSION_TYPE.getSupplier(ResourceKey.minecraft("weaponsmith"));
 
     // SORTFIELDS:OFF
 

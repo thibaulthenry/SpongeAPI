@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.event.cause.entity;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,25 +33,24 @@ public final class MovementTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<MovementType> CHORUS_FRUIT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "chorus_fruit");
+    public static final Supplier<MovementType> CHORUS_FRUIT = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("chorus_fruit"));
 
-    public static final Supplier<MovementType> COMMAND = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "command");
+    public static final Supplier<MovementType> COMMAND = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("command"));
 
-    public static final Supplier<MovementType> END_GATEWAY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "end_gateway");
+    public static final Supplier<MovementType> END_GATEWAY = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("end_gateway"));
 
-    public static final Supplier<MovementType> ENDER_PEARL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "ender_pearl");
+    public static final Supplier<MovementType> ENDER_PEARL = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("ender_pearl"));
 
-    public static final Supplier<MovementType> ENTITY_TELEPORT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "entity_teleport");
+    public static final Supplier<MovementType> ENTITY_TELEPORT = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("entity_teleport"));
 
-    public static final Supplier<MovementType> NATURAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "natural");
+    public static final Supplier<MovementType> NATURAL = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("natural"));
 
-    public static final Supplier<MovementType> PLUGIN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "plugin");
+    public static final Supplier<MovementType> PLUGIN = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("plugin"));
 
-    public static final Supplier<MovementType> PORTAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MovementType.class, "portal");
+    public static final Supplier<MovementType> PORTAL = Registries.MOVEMENT_TYPE.getSupplier(ResourceKey.minecraft("portal"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private MovementTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

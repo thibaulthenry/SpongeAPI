@@ -24,13 +24,11 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link StructureMode}s.
- */
 public final class StructureModes {
 
     // SORTFIELDS:ON
@@ -39,7 +37,7 @@ public final class StructureModes {
      * Corner mode allows for an easier and automatic size calculation while
      * saving or loading structures.
      */
-    public static final Supplier<StructureMode> CORNER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StructureMode.class, "corner");
+    public static final Supplier<StructureMode> CORNER = Registries.STRUCTURE_MODE.getSupplier(ResourceKey.minecraft("corner"));
 
     /**
      * Data mode can only be used during natural generation.
@@ -52,18 +50,18 @@ public final class StructureModes {
      * <p>This mode is the default mode when a structure block is first
      * placed.</p>
      */
-    public static final Supplier<StructureMode> DATA = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StructureMode.class, "data");
+    public static final Supplier<StructureMode> DATA = Registries.STRUCTURE_MODE.getSupplier(ResourceKey.minecraft("data"));
 
     /**
      * Load mode allows a player to load and rotate saved structure files.
      */
-    public static final Supplier<StructureMode> LOAD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StructureMode.class, "load");
+    public static final Supplier<StructureMode> LOAD = Registries.STRUCTURE_MODE.getSupplier(ResourceKey.minecraft("load"));
 
     /**
      * Save mode allows a player to highlight a structure in the world and
      * save it to a file.
      */
-    public static final Supplier<StructureMode> SAVE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StructureMode.class, "save");
+    public static final Supplier<StructureMode> SAVE = Registries.STRUCTURE_MODE.getSupplier(ResourceKey.minecraft("save"));
 
     // SORTFIELDS:OFF
 

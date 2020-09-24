@@ -24,26 +24,25 @@
  */
 package org.spongepowered.api.data.persistence;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * A pseudo-enum of supported {@link DataFormat}s.
- */
 public final class DataFormats {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<StringDataFormat> HOCON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StringDataFormat.class, "hocon");
+    public static final Supplier<StringDataFormat> HOCON = Registries.DATA_FORMAT.getSupplier(ResourceKey.minecraft("hocon"));
 
-    public static final Supplier<StringDataFormat> JSON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StringDataFormat.class, "json");
+    public static final Supplier<StringDataFormat> JSON = Registries.DATA_FORMAT.getSupplier(ResourceKey.minecraft("json"));
 
-    public static final Supplier<DataFormat> NBT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DataFormat.class, "nbt");
+    public static final Supplier<DataFormat> NBT = Registries.DATA_FORMAT.getSupplier(ResourceKey.minecraft("nbt"));
 
     // SORTFIELDS:OFF
 
     private DataFormats() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
 
 }

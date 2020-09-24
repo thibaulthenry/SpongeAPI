@@ -24,36 +24,35 @@
  */
 package org.spongepowered.api.data.type;
 
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.Sponge;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link RailDirection}s.
- */
 public final class RailDirections {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<RailDirection> ASCENDING_EAST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "ascending_east");
+    public static final Supplier<RailDirection> ASCENDING_EAST = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("ascending_east"));
 
-    public static final Supplier<RailDirection> ASCENDING_NORTH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "ascending_north");
+    public static final Supplier<RailDirection> ASCENDING_NORTH = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("ascending_north"));
 
-    public static final Supplier<RailDirection> ASCENDING_SOUTH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "ascending_south");
+    public static final Supplier<RailDirection> ASCENDING_SOUTH = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("ascending_south"));
 
-    public static final Supplier<RailDirection> ASCENDING_WEST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "ascending_west");
+    public static final Supplier<RailDirection> ASCENDING_WEST = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("ascending_west"));
 
-    public static final Supplier<RailDirection> EAST_WEST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "east_west");
+    public static final Supplier<RailDirection> EAST_WEST = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("east_west"));
 
-    public static final Supplier<RailDirection> NORTH_EAST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "north_east");
+    public static final Supplier<RailDirection> NORTH_EAST = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("north_east"));
 
-    public static final Supplier<RailDirection> NORTH_SOUTH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "north_south");
+    public static final Supplier<RailDirection> NORTH_SOUTH = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("north_south"));
 
-    public static final Supplier<RailDirection> NORTH_WEST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "north_west");
+    public static final Supplier<RailDirection> NORTH_WEST = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("north_west"));
 
-    public static final Supplier<RailDirection> SOUTH_EAST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "south_east");
+    public static final Supplier<RailDirection> SOUTH_EAST = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("south_east"));
 
-    public static final Supplier<RailDirection> SOUTH_WEST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RailDirection.class, "south_west");
+    public static final Supplier<RailDirection> SOUTH_WEST = Registries.RAIL_DIRECTION.getSupplier(ResourceKey.minecraft("south_west"));
 
     // SORTFIELDS:OFF
 

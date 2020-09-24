@@ -24,29 +24,29 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
 public final class ArmorMaterials {
-
+    
     // SORTFIELDS:ON
 
-    public static final Supplier<ArmorMaterial> CHAINMAIL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArmorMaterial.class, "chainmail");
+    public static final Supplier<ArmorMaterial> CHAINMAIL = Registries.ARMOR_MATERIAL.getSupplier(ResourceKey.minecraft("chainmail"));
 
-    public static final Supplier<ArmorMaterial> DIAMOND = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArmorMaterial.class, "diamond");
+    public static final Supplier<ArmorMaterial> DIAMOND = Registries.ARMOR_MATERIAL.getSupplier(ResourceKey.minecraft("diamond"));
 
-    public static final Supplier<ArmorMaterial> GOLD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArmorMaterial.class, "gold");
+    public static final Supplier<ArmorMaterial> GOLD = Registries.ARMOR_MATERIAL.getSupplier(ResourceKey.minecraft("gold"));
 
-    public static final Supplier<ArmorMaterial> IRON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArmorMaterial.class, "iron");
+    public static final Supplier<ArmorMaterial> IRON = Registries.ARMOR_MATERIAL.getSupplier(ResourceKey.minecraft("iron"));
 
-    public static final Supplier<ArmorMaterial> LEATHER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArmorMaterial.class, "leather");
+    public static final Supplier<ArmorMaterial> LEATHER = Registries.ARMOR_MATERIAL.getSupplier(ResourceKey.minecraft("leather"));
 
-    public static final Supplier<ArmorMaterial> TURTLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArmorMaterial.class, "turtle");
+    public static final Supplier<ArmorMaterial> TURTLE = Registries.ARMOR_MATERIAL.getSupplier(ResourceKey.minecraft("turtle"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private ArmorMaterials() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

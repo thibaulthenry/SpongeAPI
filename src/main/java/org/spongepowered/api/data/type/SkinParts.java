@@ -24,30 +24,28 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link SkinPart}s.
- */
 public final class SkinParts {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<SkinPart> CAPE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SkinPart.class, "cape");
+    public static final Supplier<SkinPart> CAPE = Registries.SKIN_PART.getSupplier(ResourceKey.minecraft("cape"));
 
-    public static final Supplier<SkinPart> HAT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SkinPart.class, "hat");
+    public static final Supplier<SkinPart> HAT = Registries.SKIN_PART.getSupplier(ResourceKey.minecraft("hat"));
 
-    public static final Supplier<SkinPart> JACKET = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SkinPart.class, "jacket");
+    public static final Supplier<SkinPart> JACKET = Registries.SKIN_PART.getSupplier(ResourceKey.minecraft("jacket"));
 
-    public static final Supplier<SkinPart> LEFT_PANTS_LEG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SkinPart.class, "left_pants_leg");
+    public static final Supplier<SkinPart> LEFT_PANTS_LEG = Registries.SKIN_PART.getSupplier(ResourceKey.minecraft("left_pants_leg"));
 
-    public static final Supplier<SkinPart> LEFT_SLEEVE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SkinPart.class, "left_sleeve");
+    public static final Supplier<SkinPart> LEFT_SLEEVE = Registries.SKIN_PART.getSupplier(ResourceKey.minecraft("left_sleeve"));
 
-    public static final Supplier<SkinPart> RIGHT_PANTS_LEG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SkinPart.class, "right_pants_leg");
+    public static final Supplier<SkinPart> RIGHT_PANTS_LEG = Registries.SKIN_PART.getSupplier(ResourceKey.minecraft("right_pants_leg"));
 
-    public static final Supplier<SkinPart> RIGHT_SLEEVE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SkinPart.class, "right_sleeve");
+    public static final Supplier<SkinPart> RIGHT_SLEEVE = Registries.SKIN_PART.getSupplier(ResourceKey.minecraft("right_sleeve"));
 
     // SORTFIELDS:OFF
 

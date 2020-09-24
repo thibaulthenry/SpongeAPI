@@ -54,7 +54,7 @@ public interface BlockSnapshot extends LocatableSnapshot<BlockSnapshot> {
     Supplier<BlockSnapshot> NONE = BlockSnapshot::empty;
 
     static BlockSnapshot empty() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class).empty();
+        return Sponge.getBuilderProvider().provide(Builder.class).empty();
     }
 
     /**
@@ -63,7 +63,7 @@ public interface BlockSnapshot extends LocatableSnapshot<BlockSnapshot> {
      * @return The new builder
      */
     static Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+        return Sponge.getBuilderProvider().provide(Builder.class);
     }
 
     /**

@@ -24,20 +24,18 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link DoorHinge}s.
- */
 public final class DoorHinges {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<DoorHinge> LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DoorHinge.class, "left");
+    public static final Supplier<DoorHinge> LEFT = Registries.DOOR_HINGE.getSupplier(ResourceKey.minecraft("left"));
 
-    public static final Supplier<DoorHinge> RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DoorHinge.class, "right");
+    public static final Supplier<DoorHinge> RIGHT = Registries.DOOR_HINGE.getSupplier(ResourceKey.minecraft("right"));
 
     // SORTFIELDS:OFF
 

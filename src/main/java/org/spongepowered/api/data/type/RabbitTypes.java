@@ -24,30 +24,28 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link RabbitType}s.
- */
 public final class RabbitTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<RabbitType> BLACK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RabbitType.class, "black");
+    public static final Supplier<RabbitType> BLACK = Registries.RABBIT_TYPE.getSupplier(ResourceKey.minecraft("black"));
 
-    public static final Supplier<RabbitType> BLACK_AND_WHITE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RabbitType.class, "black_and_white");
+    public static final Supplier<RabbitType> BLACK_AND_WHITE = Registries.RABBIT_TYPE.getSupplier(ResourceKey.minecraft("black_and_white"));
 
-    public static final Supplier<RabbitType> BROWN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RabbitType.class, "brown");
+    public static final Supplier<RabbitType> BROWN = Registries.RABBIT_TYPE.getSupplier(ResourceKey.minecraft("brown"));
 
-    public static final Supplier<RabbitType> GOLD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RabbitType.class, "gold");
+    public static final Supplier<RabbitType> GOLD = Registries.RABBIT_TYPE.getSupplier(ResourceKey.minecraft("gold"));
 
-    public static final Supplier<RabbitType> KILLER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RabbitType.class, "killer");
+    public static final Supplier<RabbitType> KILLER = Registries.RABBIT_TYPE.getSupplier(ResourceKey.minecraft("killer"));
 
-    public static final Supplier<RabbitType> SALT_AND_PEPPER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RabbitType.class, "salt_and_pepper");
+    public static final Supplier<RabbitType> SALT_AND_PEPPER = Registries.RABBIT_TYPE.getSupplier(ResourceKey.minecraft("salt_and_pepper"));
 
-    public static final Supplier<RabbitType> WHITE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RabbitType.class, "white");
+    public static final Supplier<RabbitType> WHITE = Registries.RABBIT_TYPE.getSupplier(ResourceKey.minecraft("white"));
 
     // SORTFIELDS:OFF
 

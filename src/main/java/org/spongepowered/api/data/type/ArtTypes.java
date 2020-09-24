@@ -24,68 +24,66 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link ArtType}s.
- */
 public final class ArtTypes {
-
+    
     // SORTFIELDS:ON
 
-    public static final Supplier<ArtType> ALBAN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "alban");
+    public static final Supplier<ArtType> ALBAN = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("alban"));
 
-    public static final Supplier<ArtType> AZTEC = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "aztec");
+    public static final Supplier<ArtType> AZTEC = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("aztec"));
 
-    public static final Supplier<ArtType> AZTEC2 = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "aztec2");
+    public static final Supplier<ArtType> AZTEC2 = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("aztec2"));
 
-    public static final Supplier<ArtType> BOMB = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "bomb");
+    public static final Supplier<ArtType> BOMB = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("bomb"));
 
-    public static final Supplier<ArtType> BURNING_SKULL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "burning_skull");
+    public static final Supplier<ArtType> BURNING_SKULL = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("burning_skull"));
 
-    public static final Supplier<ArtType> BUST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "bust");
+    public static final Supplier<ArtType> BUST = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("bust"));
 
-    public static final Supplier<ArtType> COURBET = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "courbet");
+    public static final Supplier<ArtType> COURBET = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("courbet"));
 
-    public static final Supplier<ArtType> CREEBET = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "creebet");
+    public static final Supplier<ArtType> CREEBET = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("creebet"));
 
-    public static final Supplier<ArtType> DONKEY_KONG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "donkey_kong");
+    public static final Supplier<ArtType> DONKEY_KONG = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("donkey_kong"));
 
-    public static final Supplier<ArtType> FIGHTERS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "fighters");
+    public static final Supplier<ArtType> FIGHTERS = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("fighters"));
 
-    public static final Supplier<ArtType> GRAHAM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "graham");
+    public static final Supplier<ArtType> GRAHAM = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("graham"));
 
-    public static final Supplier<ArtType> KEBAB = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "kebab");
+    public static final Supplier<ArtType> KEBAB = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("kebab"));
 
-    public static final Supplier<ArtType> MATCH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "match");
+    public static final Supplier<ArtType> MATCH = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("match"));
 
-    public static final Supplier<ArtType> PIGSCENE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "pigscene");
+    public static final Supplier<ArtType> PIGSCENE = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("pigscene"));
 
-    public static final Supplier<ArtType> PLANT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "plant");
+    public static final Supplier<ArtType> PLANT = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("plant"));
 
-    public static final Supplier<ArtType> POINTER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "pointer");
+    public static final Supplier<ArtType> POINTER = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("pointer"));
 
-    public static final Supplier<ArtType> POOL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "pool");
+    public static final Supplier<ArtType> POOL = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("pool"));
 
-    public static final Supplier<ArtType> SEA = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "sea");
+    public static final Supplier<ArtType> SEA = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("sea"));
 
-    public static final Supplier<ArtType> SKELETON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "skeleton");
+    public static final Supplier<ArtType> SKELETON = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("skeleton"));
 
-    public static final Supplier<ArtType> SKULL_AND_ROSES = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "skull_and_roses");
+    public static final Supplier<ArtType> SKULL_AND_ROSES = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("skull_and_roses"));
 
-    public static final Supplier<ArtType> STAGE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "stage");
+    public static final Supplier<ArtType> STAGE = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("stage"));
 
-    public static final Supplier<ArtType> SUNSET = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "sunset");
+    public static final Supplier<ArtType> SUNSET = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("sunset"));
 
-    public static final Supplier<ArtType> VOID = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "void");
+    public static final Supplier<ArtType> VOID = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("void"));
 
-    public static final Supplier<ArtType> WANDERER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "wanderer");
+    public static final Supplier<ArtType> WANDERER = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("wanderer"));
 
-    public static final Supplier<ArtType> WASTELAND = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "wasteland");
+    public static final Supplier<ArtType> WASTELAND = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("wasteland"));
 
-    public static final Supplier<ArtType> WITHER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ArtType.class, "wither");
+    public static final Supplier<ArtType> WITHER = Registries.ART_TYPE.getSupplier(ResourceKey.minecraft("wither"));
 
     // SORTFIELDS:OFF
 

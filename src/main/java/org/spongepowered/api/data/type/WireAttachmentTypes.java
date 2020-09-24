@@ -24,22 +24,20 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link WireAttachmentType}s.
- */
 public final class WireAttachmentTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<WireAttachmentType> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WireAttachmentType.class, "none");
+    public static final Supplier<WireAttachmentType> NONE = Registries.WIRE_ATTACHMENT_TYPE.getSupplier(ResourceKey.minecraft("none"));
 
-    public static final Supplier<WireAttachmentType> SIDE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WireAttachmentType.class, "side");
+    public static final Supplier<WireAttachmentType> SIDE = Registries.WIRE_ATTACHMENT_TYPE.getSupplier(ResourceKey.minecraft("side"));
 
-    public static final Supplier<WireAttachmentType> UP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WireAttachmentType.class, "up");
+    public static final Supplier<WireAttachmentType> UP = Registries.WIRE_ATTACHMENT_TYPE.getSupplier(ResourceKey.minecraft("up"));
 
     // SORTFIELDS:OFF
 

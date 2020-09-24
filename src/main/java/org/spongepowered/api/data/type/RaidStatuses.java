@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,13 +33,13 @@ public final class RaidStatuses {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<RaidStatus> LOSS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RaidStatus.class, "loss");
+    public static final Supplier<RaidStatus> LOSS = Registries.RAID_STATUS.getSupplier(ResourceKey.minecraft("loss"));
 
-    public static final Supplier<RaidStatus> ONGOING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RaidStatus.class, "ongoing");
+    public static final Supplier<RaidStatus> ONGOING = Registries.RAID_STATUS.getSupplier(ResourceKey.minecraft("ongoing"));
 
-    public static final Supplier<RaidStatus> STOPPED = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RaidStatus.class, "stopped");
+    public static final Supplier<RaidStatus> STOPPED = Registries.RAID_STATUS.getSupplier(ResourceKey.minecraft("stopped"));
 
-    public static final Supplier<RaidStatus> VICTORY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(RaidStatus.class, "victory");
+    public static final Supplier<RaidStatus> VICTORY = Registries.RAID_STATUS.getSupplier(ResourceKey.minecraft("victory"));
 
     // SORTFIELDS:OFF
 

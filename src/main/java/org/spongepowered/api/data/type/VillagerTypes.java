@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,19 +33,19 @@ public final class VillagerTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<VillagerType> DESERT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(VillagerType.class, "desert");
+    public static final Supplier<VillagerType> DESERT = Registries.VILLAGER_TYPE.getSupplier(ResourceKey.minecraft("desert"));
 
-    public static final Supplier<VillagerType> JUNGLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(VillagerType.class, "jungle");
+    public static final Supplier<VillagerType> JUNGLE = Registries.VILLAGER_TYPE.getSupplier(ResourceKey.minecraft("jungle"));
 
-    public static final Supplier<VillagerType> PLAINS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(VillagerType.class, "plains");
+    public static final Supplier<VillagerType> PLAINS = Registries.VILLAGER_TYPE.getSupplier(ResourceKey.minecraft("plains"));
 
-    public static final Supplier<VillagerType> SAVANNA = Sponge.getRegistry().getCatalogRegistry().provideSupplier(VillagerType.class, "savanna");
+    public static final Supplier<VillagerType> SAVANNA = Registries.VILLAGER_TYPE.getSupplier(ResourceKey.minecraft("savanna"));
 
-    public static final Supplier<VillagerType> SNOW = Sponge.getRegistry().getCatalogRegistry().provideSupplier(VillagerType.class, "snow");
+    public static final Supplier<VillagerType> SNOW = Registries.VILLAGER_TYPE.getSupplier(ResourceKey.minecraft("snow"));
 
-    public static final Supplier<VillagerType> SWAMP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(VillagerType.class, "swamp");
+    public static final Supplier<VillagerType> SWAMP = Registries.VILLAGER_TYPE.getSupplier(ResourceKey.minecraft("swamp"));
 
-    public static final Supplier<VillagerType> TAIGA = Sponge.getRegistry().getCatalogRegistry().provideSupplier(VillagerType.class, "taiga");
+    public static final Supplier<VillagerType> TAIGA = Registries.VILLAGER_TYPE.getSupplier(ResourceKey.minecraft("taiga"));
 
     // SORTFIELDS:OFF
 

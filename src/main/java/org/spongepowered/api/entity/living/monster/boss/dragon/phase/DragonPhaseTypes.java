@@ -41,67 +41,67 @@ public final class DragonPhaseTypes {
     /**
      * The {@link EnderDragon} is charging towards a {@link Player}.
      */
-    public static final Supplier<DragonPhaseType> CHARGING_PLAYER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "charging_player");
+    public static final Supplier<DragonPhaseType> CHARGING_PLAYER = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "charging_player");
 
     /**
      * The {@link EnderDragon} is flying to the End Portal to die.
      */
-    public static final Supplier<DragonPhaseType> DYING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "dying");
+    public static final Supplier<DragonPhaseType> DYING = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "dying");
 
     /**
      * The {@link EnderDragon} is circling around.
      */
-    public static final Supplier<DragonPhaseType> HOLDING_PATTERN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "holding_pattern");
+    public static final Supplier<DragonPhaseType> HOLDING_PATTERN = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "holding_pattern");
 
     /**
      * The {@link EnderDragon} is hovering.
      *
      * <p>This is the default state when summoned using the {@code /summon} command.</p>
      */
-    public static final Supplier<DragonPhaseType> HOVER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "hover");
+    public static final Supplier<DragonPhaseType> HOVER = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "hover");
 
     /**
      * The {@link EnderDragon} is landing on the End Portal.
      *
      * <p>This is part of the transition to a landed state.</p>
      */
-    public static final Supplier<DragonPhaseType> LANDING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "landing");
+    public static final Supplier<DragonPhaseType> LANDING = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "landing");
 
     /**
      * The {@link EnderDragon} is flying to the End Portal to land.
      *
      * <p>This is part of the transition to a landed state.</p>
      */
-    public static final Supplier<DragonPhaseType> LANDING_APPROACH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "landing_approach");
+    public static final Supplier<DragonPhaseType> LANDING_APPROACH = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "landing_approach");
 
     /**
      * The {@link EnderDragon} is growling before performing a dragon breath attack.
      */
-    public static final Supplier<DragonPhaseType> SITTING_ATTACKING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "sitting_attacking");
+    public static final Supplier<DragonPhaseType> SITTING_ATTACKING = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "sitting_attacking");
 
     /**
      * The {@link EnderDragon} is performing a dragon breath attack.
      *
      * <p>This is part of the landed state.</p>
      */
-    public static final Supplier<DragonPhaseType> SITTING_FLAMING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "sitting_flaming");
+    public static final Supplier<DragonPhaseType> SITTING_FLAMING = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "sitting_flaming");
 
     /**
      * The {@link EnderDragon} is looking for a {@link Player} to peform a dragon breath attack.
      */
-    public static final Supplier<DragonPhaseType> SITTING_SCANNING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "sitting_scanning");
+    public static final Supplier<DragonPhaseType> SITTING_SCANNING = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "sitting_scanning");
 
     /**
      * The {@link EnderDragon} is preparing to shoot a {@link DragonFireball}.
      */
-    public static final Supplier<DragonPhaseType> STRAFE_PLAYER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "strafe_player");
+    public static final Supplier<DragonPhaseType> STRAFE_PLAYER = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "strafe_player");
 
     /**
      * The {@link EnderDragon} is taking off from the End Portal.
      *
      * <p>This is part of the transition out of a landed state.</p>
      */
-    public static final Supplier<DragonPhaseType> TAKEOFF = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DragonPhaseType.class, "takeoff");
+    public static final Supplier<DragonPhaseType> TAKEOFF = Sponge.getRegistry().getCatalogRegistry().getSupplier(DragonPhaseType.class, "takeoff");
 
     // SORTFIELDS:OFF
 

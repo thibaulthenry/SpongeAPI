@@ -64,22 +64,22 @@ public final class CollisionRules {
      *
      * <p>This is the default value.</p>
      */
-    public static final Supplier<CollisionRule> ALWAYS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CollisionRule.class, "always");
+    public static final Supplier<CollisionRule> ALWAYS = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "always");
 
     /**
      * Members will never collide.
      */
-    public static final Supplier<CollisionRule> NEVER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CollisionRule.class, "never");
+    public static final Supplier<CollisionRule> NEVER = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "never");
 
     /**
      * Members will only push members on opposing teams.
      */
-    public static final Supplier<CollisionRule> PUSH_OTHER_TEAMS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CollisionRule.class, "push_other_teams");
+    public static final Supplier<CollisionRule> PUSH_OTHER_TEAMS = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "push_other_teams");
 
     /**
      * Members will only push other members on their team and mobs.
      */
-    public static final Supplier<CollisionRule> PUSH_OWN_TEAM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CollisionRule.class, "push_own_team");
+    public static final Supplier<CollisionRule> PUSH_OWN_TEAM = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "push_own_team");
 
     // SORTFIELDS:OFF
 

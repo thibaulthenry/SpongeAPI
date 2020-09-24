@@ -24,22 +24,20 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link PickupRule}s.
- */
 public final class PickupRules {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<PickupRule> ALLOWED = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PickupRule.class, "allowed");
+    public static final Supplier<PickupRule> ALLOWED = Registries.PICKUP_RULE.getSupplier(ResourceKey.minecraft("allowed"));
 
-    public static final Supplier<PickupRule> CREATIVE_ONLY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PickupRule.class, "creative_only");
+    public static final Supplier<PickupRule> CREATIVE_ONLY = Registries.PICKUP_RULE.getSupplier(ResourceKey.minecraft("creative_only"));
 
-    public static final Supplier<PickupRule> DISALLOWED = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PickupRule.class, "disallowed");
+    public static final Supplier<PickupRule> DISALLOWED = Registries.PICKUP_RULE.getSupplier(ResourceKey.minecraft("disallowed"));
 
     // SORTFIELDS:OFF
 

@@ -24,22 +24,22 @@
  */
 package org.spongepowered.api.data.type;
 
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.Sponge;
+import org.spongepowered.api.registry.Registries;
+import org.spongepowered.api.registry.Registry;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link ChestAttachmentType}s.
- */
 public final class ChestAttachmentTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<ChestAttachmentType> LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ChestAttachmentType.class, "left");
+    public static final Supplier<ChestAttachmentType> LEFT = Registries.CHEST_ATTACHMENT_TYPE.getSupplier(ResourceKey.minecraft( "left"));
 
-    public static final Supplier<ChestAttachmentType> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ChestAttachmentType.class, "none");
+    public static final Supplier<ChestAttachmentType> NONE = Registries.CHEST_ATTACHMENT_TYPE.getSupplier(ResourceKey.minecraft( "none"));
 
-    public static final Supplier<ChestAttachmentType> RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ChestAttachmentType.class, "right");
+    public static final Supplier<ChestAttachmentType> RIGHT = Registries.CHEST_ATTACHMENT_TYPE.getSupplier(ResourceKey.minecraft( "right"));
 
     // SORTFIELDS:OFF
 

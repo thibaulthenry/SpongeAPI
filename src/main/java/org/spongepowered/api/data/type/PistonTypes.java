@@ -24,24 +24,21 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla known {@link PistonType}s.
- */
 public final class PistonTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<PistonType> NORMAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PistonType.class, "normal");
+    public static final Supplier<PistonType> NORMAL = Registries.PISTON_TYPE.getSupplier(ResourceKey.minecraft("normal"));
 
-    public static final Supplier<PistonType> STICKY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PistonType.class, "sticky");
+    public static final Supplier<PistonType> STICKY = Registries.PISTON_TYPE.getSupplier(ResourceKey.minecraft("sticky"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private PistonTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

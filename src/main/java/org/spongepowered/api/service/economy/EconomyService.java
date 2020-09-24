@@ -26,14 +26,12 @@ package org.spongepowered.api.service.economy;
 
 import org.spongepowered.api.service.context.ContextualService;
 import org.spongepowered.api.service.economy.account.Account;
-import org.spongepowered.api.service.economy.account.AccountDeletionResultType;
-import org.spongepowered.api.service.economy.account.AccountDeletionResultTypes;
+import org.spongepowered.api.service.economy.account.AccountDeletionResult;
 import org.spongepowered.api.service.economy.account.UniqueAccount;
 import org.spongepowered.api.service.economy.account.VirtualAccount;
 
 import java.util.Collection;
 import java.util.Optional;
-import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Stream;
 
@@ -147,7 +145,7 @@ public interface EconomyService extends ContextualService<Account> {
      * @param uuid The {@link UUID} of the account to delete.
      * @return The result of the deletion.
      */
-    AccountDeletionResultType deleteAccount(UUID uuid);
+    AccountDeletionResult deleteAccount(UUID uuid);
 
     /**
      * Deletes the account with the specified identifier.
@@ -160,5 +158,5 @@ public interface EconomyService extends ContextualService<Account> {
      * @param identifier The identifier of the account to delete.
      * @return The result of the deletion.
      */
-    AccountDeletionResultType deleteAccount(String identifier);
+    AccountDeletionResult deleteAccount(String identifier);
 }

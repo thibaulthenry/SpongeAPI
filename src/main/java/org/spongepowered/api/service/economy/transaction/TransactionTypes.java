@@ -36,17 +36,17 @@ public final class TransactionTypes {
     /**
      * Represents a transaction where an {@link Account} received some amount of a {@link Currency}.
      */
-    public static final Supplier<TransactionType> DEPOSIT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TransactionType.class, "deposit");
+    public static final Supplier<TransactionType> DEPOSIT = Sponge.getRegistry().getCatalogRegistry().getSupplier(TransactionType.class, "deposit");
 
     /**
      * Represents a transaction where an {@link Account} transferred some amount of a currency to another {@link Account}.
      */
-    public static final Supplier<TransactionType> TRANSFER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TransactionType.class, "transfer");
+    public static final Supplier<TransactionType> TRANSFER = Sponge.getRegistry().getCatalogRegistry().getSupplier(TransactionType.class, "transfer");
 
     /**
      * Represents a transaction where an {@link Account} lost some amount of a {@link Currency}.
      */
-    public static final Supplier<TransactionType> WITHDRAW = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TransactionType.class, "withdraw");
+    public static final Supplier<TransactionType> WITHDRAW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TransactionType.class, "withdraw");
 
     // SORTFIELDS:OFF
 

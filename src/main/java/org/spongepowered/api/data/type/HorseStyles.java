@@ -24,26 +24,24 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link HorseStyle}s.
- */
 public final class HorseStyles {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<HorseStyle> BLACK_DOTS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseStyle.class, "black_dots");
+    public static final Supplier<HorseStyle> BLACK_DOTS = Registries.HORSE_STYLE.getSupplier(ResourceKey.minecraft("black_dots"));
 
-    public static final Supplier<HorseStyle> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseStyle.class, "none");
+    public static final Supplier<HorseStyle> NONE = Registries.HORSE_STYLE.getSupplier(ResourceKey.minecraft("none"));
 
-    public static final Supplier<HorseStyle> WHITE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseStyle.class, "white");
+    public static final Supplier<HorseStyle> WHITE = Registries.HORSE_STYLE.getSupplier(ResourceKey.minecraft("white"));
 
-    public static final Supplier<HorseStyle> WHITEFIELD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseStyle.class, "whitefield");
+    public static final Supplier<HorseStyle> WHITEFIELD = Registries.HORSE_STYLE.getSupplier(ResourceKey.minecraft("whitefield"));
 
-    public static final Supplier<HorseStyle> WHITE_DOTS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseStyle.class, "white_dots");
+    public static final Supplier<HorseStyle> WHITE_DOTS = Registries.HORSE_STYLE.getSupplier(ResourceKey.minecraft("white_dots"));
 
     // SORTFIELDS:OFF
 

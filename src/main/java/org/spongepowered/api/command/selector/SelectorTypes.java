@@ -24,13 +24,11 @@
  */
 package org.spongepowered.api.command.selector;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * All {@link SelectorType}s available in Minecraft.
- */
 public final class SelectorTypes {
 
     // SORTFIELDS:ON
@@ -40,35 +38,35 @@ public final class SelectorTypes {
      *
      * <p>Equivalent to {@code @e}.</p>
      */
-    public static final Supplier<SelectorType> ALL_ENTITIES = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorType.class, "all_entities");
+    public static final Supplier<SelectorType> ALL_ENTITIES = Registries.SELECTOR_TYPE.getSupplier(ResourceKey.minecraft("all_entities"));
 
     /**
      * Selects all players.
      *
      * <p>Equivalent to {@code @a}.</p>
      */
-    public static final Supplier<SelectorType> ALL_PLAYERS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorType.class, "all_players");
+    public static final Supplier<SelectorType> ALL_PLAYERS = Registries.SELECTOR_TYPE.getSupplier(ResourceKey.minecraft("all_players"));
 
     /**
      * Selects the nearest player.
      *
      * <p>Equivalent to {@code @p}.</p>
      */
-    public static final Supplier<SelectorType> NEAREST_PLAYER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorType.class, "nearest_player");
+    public static final Supplier<SelectorType> NEAREST_PLAYER = Registries.SELECTOR_TYPE.getSupplier(ResourceKey.minecraft("nearest_player"));
 
     /**
      * Selects the nearest player.
      *
      * <p>Equivalent to {@code @r}.</p>
      */
-    public static final Supplier<SelectorType> RANDOM_PLAYER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorType.class, "random_player");
+    public static final Supplier<SelectorType> RANDOM_PLAYER = Registries.SELECTOR_TYPE.getSupplier(ResourceKey.minecraft("random_player"));
 
     /**
      * Selects the context of the selector, if the context is an entity.
      *
      * <p>Equivalent to {@code @s}.</p>
      */
-    public static final Supplier<SelectorType> SOURCE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorType.class, "source");
+    public static final Supplier<SelectorType> SOURCE = Registries.SELECTOR_TYPE.getSupplier(ResourceKey.minecraft("source"));
 
     // SORTFIELDS:OFF
 

@@ -24,26 +24,24 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link StairShape}s.
- */
 public final class StairShapes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<StairShape> INNER_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StairShape.class, "inner_left");
+    public static final Supplier<StairShape> INNER_LEFT = Registries.STAIR_SHAPE.getSupplier(ResourceKey.minecraft("inner_left"));
 
-    public static final Supplier<StairShape> INNER_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StairShape.class, "inner_right");
+    public static final Supplier<StairShape> INNER_RIGHT = Registries.STAIR_SHAPE.getSupplier(ResourceKey.minecraft("inner_right"));
 
-    public static final Supplier<StairShape> OUTER_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StairShape.class, "outer_left");
+    public static final Supplier<StairShape> OUTER_LEFT = Registries.STAIR_SHAPE.getSupplier(ResourceKey.minecraft("outer_left"));
 
-    public static final Supplier<StairShape> OUTER_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StairShape.class, "outer_right");
+    public static final Supplier<StairShape> OUTER_RIGHT = Registries.STAIR_SHAPE.getSupplier(ResourceKey.minecraft("outer_right"));
 
-    public static final Supplier<StairShape> STRAIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(StairShape.class, "straight");
+    public static final Supplier<StairShape> STRAIGHT = Registries.STAIR_SHAPE.getSupplier(ResourceKey.minecraft("straight"));
 
     // SORTFIELDS:OFF
 

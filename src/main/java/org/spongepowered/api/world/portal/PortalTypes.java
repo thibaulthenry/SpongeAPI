@@ -30,9 +30,9 @@ import java.util.function.Supplier;
 
 public final class PortalTypes {
 
-    public static final Supplier<PortalType> NETHER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PortalType.class, "nether");
+    public static final Supplier<PortalType> NETHER = Sponge.getRegistry().getCatalogRegistry().getSupplier(PortalType.class, "nether");
 
-    public static final Supplier<PortalType> END = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PortalType.class, "end");
+    public static final Supplier<PortalType> END = Sponge.getRegistry().getCatalogRegistry().getSupplier(PortalType.class, "end");
 
     // Suppress default constructor to ensure non-instantiability.
     private PortalTypes() {

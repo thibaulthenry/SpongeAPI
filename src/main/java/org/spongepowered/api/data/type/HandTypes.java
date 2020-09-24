@@ -24,27 +24,18 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link HandType}s.
- */
 public final class HandTypes {
 
     // SORTFIELDS:ON
 
-    /**
-     * The hand used for main interactions such as using tools, and placing
-     * blocks.
-     */
-    public static final Supplier<HandType> MAIN_HAND = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HandType.class, "main_hand");
+    public static final Supplier<HandType> MAIN_HAND = Registries.HAND_TYPE.getSupplier(ResourceKey.minecraft("main_hand"));
 
-    /**
-     * The hand used for secondary actions, such as a shield.
-     */
-    public static final Supplier<HandType> OFF_HAND = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HandType.class, "off_hand");
+    public static final Supplier<HandType> OFF_HAND = Registries.HAND_TYPE.getSupplier(ResourceKey.minecraft("off_hand"));
 
     // SORTFIELDS:OFF
 

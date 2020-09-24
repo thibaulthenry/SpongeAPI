@@ -24,20 +24,18 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link HandPreference}s.
- */
 public final class HandPreferences {
 
     // SORTFIELDS: ON
 
-    public static final Supplier<HandPreference> LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HandPreference.class, "left");
+    public static final Supplier<HandPreference> LEFT = Registries.HAND_PREFERENCE.getSupplier(ResourceKey.minecraft("left"));
 
-    public static final Supplier<HandPreference> RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HandPreference.class, "right");
+    public static final Supplier<HandPreference> RIGHT = Registries.HAND_PREFERENCE.getSupplier(ResourceKey.minecraft("right"));
 
     // SORTFIELDS: OFF
 

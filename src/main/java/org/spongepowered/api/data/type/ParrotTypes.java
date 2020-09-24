@@ -35,15 +35,15 @@ public final class ParrotTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<ParrotType> BLUE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParrotType.class, "blue");
+    public static final Supplier<ParrotType> BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "blue");
 
-    public static final Supplier<ParrotType> GREY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParrotType.class, "grey");
+    public static final Supplier<ParrotType> GREY = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "grey");
 
-    public static final Supplier<ParrotType> GREEN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParrotType.class, "green");
+    public static final Supplier<ParrotType> GREEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "green");
 
-    public static final Supplier<ParrotType> RED_AND_BLUE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParrotType.class, "red_and_blue");
+    public static final Supplier<ParrotType> RED_AND_BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "red_and_blue");
 
-    public static final Supplier<ParrotType> YELLOW_AND_BLUE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParrotType.class, "yellow_and_blue");
+    public static final Supplier<ParrotType> YELLOW_AND_BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "yellow_and_blue");
 
     // SORTFIELDS:OFF
 

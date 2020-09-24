@@ -24,26 +24,24 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link ToolType}s.
- */
 public final class ToolTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<ToolType> DIAMOND = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ToolType.class, "diamond");
+    public static final Supplier<ToolType> DIAMOND = Registries.TOOL_TYPE.getSupplier(ResourceKey.minecraft("diamond"));
 
-    public static final Supplier<ToolType> GOLD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ToolType.class, "gold");
+    public static final Supplier<ToolType> GOLD = Registries.TOOL_TYPE.getSupplier(ResourceKey.minecraft("gold"));
 
-    public static final Supplier<ToolType> IRON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ToolType.class, "iron");
+    public static final Supplier<ToolType> IRON = Registries.TOOL_TYPE.getSupplier(ResourceKey.minecraft("iron"));
 
-    public static final Supplier<ToolType> STONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ToolType.class, "stone");
+    public static final Supplier<ToolType> STONE = Registries.TOOL_TYPE.getSupplier(ResourceKey.minecraft("stone"));
 
-    public static final Supplier<ToolType> WOOD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ToolType.class, "wood");
+    public static final Supplier<ToolType> WOOD = Registries.TOOL_TYPE.getSupplier(ResourceKey.minecraft("wood"));
 
     // SORTFIELDS:OFF
 

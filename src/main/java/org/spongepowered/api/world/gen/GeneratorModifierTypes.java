@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.world.gen;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,15 +33,15 @@ public final class GeneratorModifierTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<GeneratorModifierType> AMPLIFIED = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GeneratorModifierType.class, "amplified");
+    public static final Supplier<GeneratorModifierType> AMPLIFIED = Registries.GENERATOR_MODIFIER_TYPE.getSupplier(ResourceKey.minecraft("amplified"));
 
-    public static final Supplier<GeneratorModifierType> DEBUG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GeneratorModifierType.class, "debug");
+    public static final Supplier<GeneratorModifierType> DEBUG = Registries.GENERATOR_MODIFIER_TYPE.getSupplier(ResourceKey.minecraft("debug"));
 
-    public static final Supplier<GeneratorModifierType> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GeneratorModifierType.class, "none");
+    public static final Supplier<GeneratorModifierType> NONE = Registries.GENERATOR_MODIFIER_TYPE.getSupplier(ResourceKey.minecraft("none"));
 
-    public static final Supplier<GeneratorModifierType> FLAT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GeneratorModifierType.class, "flat");
+    public static final Supplier<GeneratorModifierType> FLAT = Registries.GENERATOR_MODIFIER_TYPE.getSupplier(ResourceKey.minecraft("flat"));
 
-    public static final Supplier<GeneratorModifierType> LARGE_BIOMES = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GeneratorModifierType.class, "large_biomes");
+    public static final Supplier<GeneratorModifierType> LARGE_BIOMES = Registries.GENERATOR_MODIFIER_TYPE.getSupplier(ResourceKey.minecraft("large_biomes"));
 
     // SORTFIELDS:OFF
 

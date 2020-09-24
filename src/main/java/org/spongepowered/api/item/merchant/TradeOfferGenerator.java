@@ -59,7 +59,7 @@ public interface TradeOfferGenerator extends BiFunction<Random, Merchant, TradeO
      * @return The new builder
      */
     static Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+        return Sponge.getBuilderProvider().provide(Builder.class);
     }
 
     @Override

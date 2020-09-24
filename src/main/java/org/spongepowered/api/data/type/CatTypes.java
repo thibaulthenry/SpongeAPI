@@ -24,36 +24,34 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link CatType}s.
- */
 public final class CatTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<CatType> ALL_BLACK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "all_black");
+    public static final Supplier<CatType> ALL_BLACK = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "all_black"));
 
-    public static final Supplier<CatType> BLACK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "black");
+    public static final Supplier<CatType> BLACK = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "black"));
 
-    public static final Supplier<CatType> BRITISH_SHORTHAIR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "british_shorthair");
+    public static final Supplier<CatType> BRITISH_SHORTHAIR = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "british_shorthair"));
 
-    public static final Supplier<CatType> CALICO = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "calico");
+    public static final Supplier<CatType> CALICO = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "calico"));
 
-    public static final Supplier<CatType> JELLIE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "jellie");
+    public static final Supplier<CatType> JELLIE = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "jellie"));
 
-    public static final Supplier<CatType> PERSIAN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "persian");
+    public static final Supplier<CatType> PERSIAN = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "persian"));
 
-    public static final Supplier<CatType> RAGDOLL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "ragdoll");
+    public static final Supplier<CatType> RAGDOLL = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "ragdoll"));
 
-    public static final Supplier<CatType> RED = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "red");
+    public static final Supplier<CatType> RED = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "red"));
 
-    public static final Supplier<CatType> SIAMESE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "siamese");
+    public static final Supplier<CatType> SIAMESE = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "siamese"));
 
-    public static final Supplier<CatType> WHITE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatType.class, "white");
+    public static final Supplier<CatType> WHITE = Registries.CAT_TYPE.getSupplier(ResourceKey.minecraft( "white"));
 
     // SORTFIELDS:OFF
 

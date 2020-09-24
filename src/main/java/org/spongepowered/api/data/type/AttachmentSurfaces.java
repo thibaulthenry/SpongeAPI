@@ -24,22 +24,20 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link AttachmentSurface}s.
- */
 public final class AttachmentSurfaces {
-
+    
     // SORTFIELDS:ON
 
-    public static final Supplier<AttachmentSurface> CEILING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(AttachmentSurface.class, "ceiling");
+    public static final Supplier<AttachmentSurface> CEILING = Registries.ATTACHMENT_SURFACE.getSupplier(ResourceKey.minecraft("ceiling"));
 
-    public static final Supplier<AttachmentSurface> FLOOR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(AttachmentSurface.class, "floor");
+    public static final Supplier<AttachmentSurface> FLOOR = Registries.ATTACHMENT_SURFACE.getSupplier(ResourceKey.minecraft("floor"));
 
-    public static final Supplier<AttachmentSurface> WALL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(AttachmentSurface.class, "wall");
+    public static final Supplier<AttachmentSurface> WALL = Registries.ATTACHMENT_SURFACE.getSupplier(ResourceKey.minecraft("wall"));
 
     // SORTFIELDS:OFF
 

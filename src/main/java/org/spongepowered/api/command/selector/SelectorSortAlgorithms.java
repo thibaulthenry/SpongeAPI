@@ -24,47 +24,41 @@
  */
 package org.spongepowered.api.command.selector;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.entity.Entity;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * Sort algorithms for selectors
- */
 public final class SelectorSortAlgorithms {
-
-    private SelectorSortAlgorithms() {
-        throw new AssertionError("You should not attempt to instantiate this");
-    }
 
     // SORTFIELDS:ON
 
     /**
      * An undefined sorting algorithm
      */
-    public static final Supplier<SelectorSortAlgorithm> ARBITRARY =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorSortAlgorithm.class, "arbitrary");
+    public static final Supplier<SelectorSortAlgorithm> ARBITRARY = Registries.SELECTOR_SORT_ALGORITHM.getSupplier(ResourceKey.minecraft("arbitrary"));
 
     /**
      * Selects the {@link Entity entities} furthest away from the target
      * location first.
      */
-    public static final Supplier<SelectorSortAlgorithm> FURTHEST =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorSortAlgorithm.class, "furthest");
+    public static final Supplier<SelectorSortAlgorithm> FURTHEST = Registries.SELECTOR_SORT_ALGORITHM.getSupplier(ResourceKey.minecraft("furthest"));
 
     /**
      * Selects the {@link Entity entities} nearest to the target location first.
      */
-    public static final Supplier<SelectorSortAlgorithm> NEAREST =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorSortAlgorithm.class, "nearest");
+    public static final Supplier<SelectorSortAlgorithm> NEAREST = Registries.SELECTOR_SORT_ALGORITHM.getSupplier(ResourceKey.minecraft("nearest"));
 
     /**
      * Returns {@link Entity entities} in a random order
      */
-    public static final Supplier<SelectorSortAlgorithm> RANDOM =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(SelectorSortAlgorithm.class, "random");
+    public static final Supplier<SelectorSortAlgorithm> RANDOM = Registries.SELECTOR_SORT_ALGORITHM.getSupplier(ResourceKey.minecraft("random"));
 
     // SORTFIELDS:OFF
+
+    private SelectorSortAlgorithms() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
+    }
 
 }

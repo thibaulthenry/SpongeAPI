@@ -24,12 +24,13 @@
  */
 package org.spongepowered.api.effect.particle;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.block.BlockState;
 import org.spongepowered.api.data.type.NotePitch;
 import org.spongepowered.api.effect.potion.PotionEffectType;
 import org.spongepowered.api.item.FireworkEffect;
 import org.spongepowered.api.item.inventory.ItemStackSnapshot;
+import org.spongepowered.api.registry.Registries;
 import org.spongepowered.api.util.Color;
 import org.spongepowered.api.util.Direction;
 import org.spongepowered.math.vector.Vector3d;
@@ -37,9 +38,6 @@ import org.spongepowered.math.vector.Vector3d;
 import java.util.List;
 import java.util.function.Supplier;
 
-/**
- * An enumeration of all possible {@link ParticleOption}s in vanilla minecraft.
- */
 public final class ParticleOptions {
 
     // SORTFIELDS:ON
@@ -55,7 +53,7 @@ public final class ParticleOptions {
      *   <li>{@link ParticleTypes#ITEM}</li>
      * </ul>
      */
-    public static final Supplier<ParticleOption<BlockState>> BLOCK_STATE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "block_state");
+    public static final Supplier<ParticleOption<BlockState>> BLOCK_STATE = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("block_state"));
 
     /**
      * This option will modify the color of a particle. The only vanilla
@@ -67,12 +65,12 @@ public final class ParticleOptions {
      *   <li>{@link ParticleTypes#DUST}</li>
      * </ul>
      */
-    public static final Supplier<ParticleOption<Color>> COLOR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "color");
+    public static final Supplier<ParticleOption<Color>> COLOR = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("color"));
 
     /**
      * This option will change the direction of a particle.
      */
-    public static final Supplier<ParticleOption<Direction>> DIRECTION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "direction");
+    public static final Supplier<ParticleOption<Direction>> DIRECTION = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("direction"));
 
     /**
      * This option will modify the color of a particle. The only vanilla
@@ -82,7 +80,7 @@ public final class ParticleOptions {
      * <p>The {@link List} may never be empty. Or a {@link IllegalArgumentException}
      * will be thrown when applying.</p>
      */
-    public static final Supplier<ParticleOption<List<FireworkEffect>>> FIREWORK_EFFECTS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "firework_effects");
+    public static final Supplier<ParticleOption<List<FireworkEffect>>> FIREWORK_EFFECTS = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("firework_effects"));
 
     /**
      * This option will affect the appearance of a particle. The only vanilla
@@ -95,26 +93,26 @@ public final class ParticleOptions {
      *   <li>{@link ParticleTypes#ITEM}</li>
      * </ul>
      */
-    public static final Supplier<ParticleOption<ItemStackSnapshot>> ITEM_STACK_SNAPSHOT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "item_stack_snapshot");
+    public static final Supplier<ParticleOption<ItemStackSnapshot>> ITEM_STACK_SNAPSHOT = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("item_stack_snapshot"));
 
     /**
      * This option will affect the appearance of a particle. The only vanilla
      * {@link ParticleType} this option is applicable to is
      * {@link ParticleTypes#NOTE}.
      */
-    public static final Supplier<ParticleOption<NotePitch>> NOTE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "note");
+    public static final Supplier<ParticleOption<NotePitch>> NOTE = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("note"));
 
     /**
      * This option will affect how all the particles are spread.
      */
-    public static final Supplier<ParticleOption<Vector3d>> OFFSET = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "offset");
+    public static final Supplier<ParticleOption<Vector3d>> OFFSET = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("offset"));
 
     /**
      * This option will change the potion type of a particle. The only vanilla
      * {@link ParticleType}s this option is applicable to is
      * {@link ParticleTypes#BREAK_SPLASH_POTION}.
      */
-    public static final Supplier<ParticleOption<PotionEffectType>> POTION_EFFECT_TYPE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "potion_effect_type");
+    public static final Supplier<ParticleOption<PotionEffectType>> POTION_EFFECT_TYPE = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("potion_effect_type"));
 
     /**
      * This option will affect the amount of particles that are spawned. The
@@ -133,7 +131,7 @@ public final class ParticleOptions {
      * <p>The quantity must be at least 1, or a {@link IllegalArgumentException}
      * will be thrown when applying.</p>
      */
-    public static final Supplier<ParticleOption<Integer>> QUANTITY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "quantity");
+    public static final Supplier<ParticleOption<Integer>> QUANTITY = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("quantity"));
 
     /**
      * This option will change the scale of a particle. The only
@@ -148,7 +146,7 @@ public final class ParticleOptions {
      * <p>The scale may never be negative, or a {@link IllegalArgumentException}
      * will be thrown when applying.</p>
      */
-    public static final Supplier<ParticleOption<Double>> SCALE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "scale");
+    public static final Supplier<ParticleOption<Double>> SCALE = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("scale"));
 
     /**
      * This option will affect whether a particle type will have a lower
@@ -164,16 +162,15 @@ public final class ParticleOptions {
      * <p>These particle types don't have a configurable velocity (through
      * {@link #VELOCITY}) in the horizontal plane.</p>
      */
-    public static final Supplier<ParticleOption<Boolean>> SLOW_HORIZONTAL_VELOCITY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "slow_horizontal_velocity");
+    public static final Supplier<ParticleOption<Boolean>> SLOW_HORIZONTAL_VELOCITY = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("slow_horizontal_velocity"));
 
     /**
      * This option will affect how all the particles are moving.
      */
-    public static final Supplier<ParticleOption<Vector3d>> VELOCITY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(ParticleOption.class, "velocity");
+    public static final Supplier<ParticleOption<Vector3d>> VELOCITY = Registries.PARTICLE_OPTION.getSupplier(ResourceKey.minecraft("velocity"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private ParticleOptions() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

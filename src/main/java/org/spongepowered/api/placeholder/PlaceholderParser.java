@@ -47,7 +47,7 @@ public interface PlaceholderParser extends CatalogType {
      * @return The {@link Builder}
      */
     static Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+        return Sponge.getBuilderProvider().provide(Builder.class);
     }
 
     /**

@@ -29,9 +29,6 @@ import org.spongepowered.api.Sponge;
 
 import java.util.Objects;
 
-/**
- * {@link Audience}s.
- */
 public final class Audiences {
     /**
      * Gets an {@link Audience} that targets the entire server, including players
@@ -49,7 +46,7 @@ public final class Audiences {
      * @return An audience
      */
     public static Audience onlinePlayers() {
-        return Sponge.getRegistry().getFactoryRegistry().provideFactory(Factory.class).onlinePlayers();
+        return Sponge.getFactoryProvider().provide(Factory.class).onlinePlayers();
     }
 
     /**
@@ -61,7 +58,7 @@ public final class Audiences {
      */
     public static Audience withPermission(final String permission) {
         Objects.requireNonNull(permission);
-        return Sponge.getRegistry().getFactoryRegistry().provideFactory(Factory.class).withPermission(permission);
+        return Sponge.getFactoryProvider().provide(Factory.class).withPermission(permission);
     }
 
     /**
@@ -71,10 +68,6 @@ public final class Audiences {
      */
     public static Audience system() {
         return Sponge.getGame().getSystemSubject();
-    }
-
-    private static Factory factory() {
-        return Sponge.getRegistry().getFactoryRegistry().provideFactory(Factory.class);
     }
 
     public interface Factory {

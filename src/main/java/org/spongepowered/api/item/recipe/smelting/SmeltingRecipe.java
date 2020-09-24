@@ -48,7 +48,7 @@ public interface SmeltingRecipe extends Recipe {
      * @return A {@link SmeltingRecipe} builder
      */
     static Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+        return Sponge.getBuilderProvider().provide(Builder.class);
     }
 
     /**

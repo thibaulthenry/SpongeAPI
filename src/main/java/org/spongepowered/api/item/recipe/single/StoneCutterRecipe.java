@@ -42,7 +42,7 @@ import java.util.function.Predicate;
 public interface StoneCutterRecipe extends Recipe {
 
     static Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+        return Sponge.getBuilderProvider().provide(Builder.class);
     }
 
     @Override

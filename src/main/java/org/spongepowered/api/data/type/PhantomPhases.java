@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,9 +33,9 @@ public final class PhantomPhases {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<PhantomPhase> CIRCLING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PhantomPhase.class, "circling");
+    public static final Supplier<PhantomPhase> CIRCLING = Registries.PHANTOM_PHASE.getSupplier(ResourceKey.minecraft("circling"));
 
-    public static final Supplier<PhantomPhase> SWOOPING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PhantomPhase.class, "swooping");
+    public static final Supplier<PhantomPhase> SWOOPING = Registries.PHANTOM_PHASE.getSupplier(ResourceKey.minecraft("swooping"));
 
     // SORTFIELDS:OFF
 

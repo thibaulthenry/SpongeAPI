@@ -91,7 +91,7 @@ public interface ResourceKey extends Key {
      * @return The new builder instance
      */
     static Builder builder() {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+        return Sponge.getBuilderProvider().provide(Builder.class);
     }
 
     /**
@@ -102,7 +102,7 @@ public interface ResourceKey extends Key {
      * @return A new catalog key
      */
     static ResourceKey of(final String namespace, final String value) {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class).namespace(namespace).value(value).build();
+        return Sponge.getBuilderProvider().provide(Builder.class).namespace(namespace).value(value).build();
     }
 
     /**
@@ -113,7 +113,7 @@ public interface ResourceKey extends Key {
      * @return A new catalog key
      */
     static ResourceKey of(final PluginContainer container, final String value) {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class).namespace(container).value(value).build();
+        return Sponge.getBuilderProvider().provide(Builder.class).namespace(container).value(value).build();
     }
 
     /**
@@ -126,7 +126,7 @@ public interface ResourceKey extends Key {
      * @return A new catalog key
      */
     static ResourceKey resolve(final String value) {
-        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class).value(value).build();
+        return Sponge.getBuilderProvider().provide(Builder.class).value(value).build();
     }
 
     /**

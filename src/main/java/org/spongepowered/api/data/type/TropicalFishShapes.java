@@ -24,41 +24,38 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
-import org.spongepowered.api.entity.living.aquatic.fish.school.TropicalFish;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla shapes for {@link TropicalFish}.
- */
-public class TropicalFishShapes {
+public final class TropicalFishShapes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<TropicalFishShape> BETTY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "betty");
+    public static final Supplier<TropicalFishShape> BETTY = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("betty"));
 
-    public static final Supplier<TropicalFishShape> BLOCKFISH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "blockfish");
+    public static final Supplier<TropicalFishShape> BLOCKFISH = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("blockfish"));
 
-    public static final Supplier<TropicalFishShape> BRINELY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "brinely");
+    public static final Supplier<TropicalFishShape> BRINELY = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("brinely"));
 
-    public static final Supplier<TropicalFishShape> CLAYFISH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "clayfish");
+    public static final Supplier<TropicalFishShape> CLAYFISH = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("clayfish"));
 
-    public static final Supplier<TropicalFishShape> DASHER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "dasher");
+    public static final Supplier<TropicalFishShape> DASHER = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("dasher"));
 
-    public static final Supplier<TropicalFishShape> FLOPPER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "flopper");
+    public static final Supplier<TropicalFishShape> FLOPPER = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("flopper"));
 
-    public static final Supplier<TropicalFishShape> GLITTER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "glitter");
+    public static final Supplier<TropicalFishShape> GLITTER = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("glitter"));
 
-    public static final Supplier<TropicalFishShape> KOB = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "kob");
+    public static final Supplier<TropicalFishShape> KOB = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("kob"));
 
-    public static final Supplier<TropicalFishShape> SNOOPER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "snooper");
+    public static final Supplier<TropicalFishShape> SNOOPER = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("snooper"));
 
-    public static final Supplier<TropicalFishShape> SPOTTY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "spotty");
+    public static final Supplier<TropicalFishShape> SPOTTY = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("spotty"));
 
-    public static final Supplier<TropicalFishShape> STRIPEY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "stripey");
+    public static final Supplier<TropicalFishShape> STRIPEY = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("stripey"));
 
-    public static final Supplier<TropicalFishShape> SUNSTREAK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(TropicalFishShape.class, "sunstreak");
+    public static final Supplier<TropicalFishShape> SUNSTREAK = Registries.TROPICAL_FISH_SHAPE.getSupplier(ResourceKey.minecraft("sunstreak"));
 
     // SORTFIELDS:OFF
 

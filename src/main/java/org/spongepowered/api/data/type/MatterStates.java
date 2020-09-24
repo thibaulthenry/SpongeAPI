@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,15 +33,16 @@ public final class MatterStates {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<MatterState> GAS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MatterState.class, "gas");
+    public static final Supplier<MatterState> GAS = Registries.MATTER_STATE.getSupplier(ResourceKey.minecraft("gas"));
 
-    public static final Supplier<MatterState> LIQUID = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MatterState.class, "liquid");
+    public static final Supplier<MatterState> LIQUID = Registries.MATTER_STATE.getSupplier(ResourceKey.minecraft("liquid"));
 
-    public static final Supplier<MatterState> SOLID = Sponge.getRegistry().getCatalogRegistry().provideSupplier(MatterState.class, "solid");
+    public static final Supplier<MatterState> SOLID = Registries.MATTER_STATE.getSupplier(ResourceKey.minecraft("solid"));
 
     // SORTFIELDS:OFF
 
     private MatterStates() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

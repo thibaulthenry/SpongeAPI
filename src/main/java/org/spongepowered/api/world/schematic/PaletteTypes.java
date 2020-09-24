@@ -24,8 +24,9 @@
  */
 package org.spongepowered.api.world.schematic;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.block.BlockState;
+import org.spongepowered.api.registry.Registries;
 import org.spongepowered.api.world.biome.BiomeType;
 
 import java.util.function.Supplier;
@@ -34,13 +35,13 @@ public final class PaletteTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<PaletteType<BiomeType>> GLOBAL_BIOMES = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PaletteType.class, "global_biomes");
+    public static final Supplier<PaletteType<BiomeType>> GLOBAL_BIOMES = Registries.PALETTE_TYPE.getSupplier(ResourceKey.minecraft("global_biomes"));
 
-    public static final Supplier<PaletteType<BlockState>> GLOBAL_BLOCKS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PaletteType.class, "global_blocks");
+    public static final Supplier<PaletteType<BlockState>> GLOBAL_BLOCKS = Registries.PALETTE_TYPE.getSupplier(ResourceKey.minecraft("global_blocks"));
 
-    public static final Supplier<PaletteType<BiomeType>> LOCAL_BIOMES = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PaletteType.class, "local_biomnes");
+    public static final Supplier<PaletteType<BiomeType>> LOCAL_BIOMES = Registries.PALETTE_TYPE.getSupplier(ResourceKey.minecraft("local_biomnes"));
 
-    public static final Supplier<PaletteType<BlockState>> LOCAL_BLOCKS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PaletteType.class, "local_blocks");
+    public static final Supplier<PaletteType<BlockState>> LOCAL_BLOCKS = Registries.PALETTE_TYPE.getSupplier(ResourceKey.minecraft("local_blocks"));
 
     // SORTFIELDS:OFF
 

@@ -24,28 +24,26 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link BoatType}s.
- */
 public final class BoatTypes {
-
+    
     // SORTFIELDS:ON
 
-    public static final Supplier<BoatType> ACACIA = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BoatType.class, "acacia");
+    public static final Supplier<BoatType> ACACIA = Registries.BOAT_TYPE.getSupplier(ResourceKey.minecraft("acacia"));
 
-    public static final Supplier<BoatType> BIRCH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BoatType.class, "birch");
+    public static final Supplier<BoatType> BIRCH = Registries.BOAT_TYPE.getSupplier(ResourceKey.minecraft("birch"));
 
-    public static final Supplier<BoatType> DARK_OAK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BoatType.class, "dark_oak");
+    public static final Supplier<BoatType> DARK_OAK = Registries.BOAT_TYPE.getSupplier(ResourceKey.minecraft("dark_oak"));
 
-    public static final Supplier<BoatType> JUNGLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BoatType.class, "jungle");
+    public static final Supplier<BoatType> JUNGLE = Registries.BOAT_TYPE.getSupplier(ResourceKey.minecraft("jungle"));
 
-    public static final Supplier<BoatType> OAK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BoatType.class, "oak");
+    public static final Supplier<BoatType> OAK = Registries.BOAT_TYPE.getSupplier(ResourceKey.minecraft("oak"));
 
-    public static final Supplier<BoatType> SPRUCE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BoatType.class, "spruce");
+    public static final Supplier<BoatType> SPRUCE = Registries.BOAT_TYPE.getSupplier(ResourceKey.minecraft("spruce"));
 
     // SORTFIELDS:OFF
 

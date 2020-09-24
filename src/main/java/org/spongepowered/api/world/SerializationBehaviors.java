@@ -35,22 +35,22 @@ public final class SerializationBehaviors {
     /**
      * A {@link SerializationBehavior} where data is saved automatically. This is considered the default across the game.
      */
-    public static final Supplier<SerializationBehavior> AUTOMATIC = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SerializationBehavior.class, "automatic");
+    public static final Supplier<SerializationBehavior> AUTOMATIC = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "automatic");
 
     /**
      * A {@link SerializationBehavior} where data is only saved when requested.
      */
-    public static final Supplier<SerializationBehavior> MANUAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SerializationBehavior.class, "manual");
+    public static final Supplier<SerializationBehavior> MANUAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "manual");
 
     /**
      * A {@link SerializationBehavior} where metadata is saved, but chunks are not saved.
      */
-    public static final Supplier<SerializationBehavior> METADATA_ONLY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SerializationBehavior.class, "metadata_only");
+    public static final Supplier<SerializationBehavior> METADATA_ONLY = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "metadata_only");
 
     /**
      * A {@link SerializationBehavior} where data is not saved to disk.
      */
-    public static final Supplier<SerializationBehavior> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SerializationBehavior.class, "none");
+    public static final Supplier<SerializationBehavior> NONE = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "none");
 
     // SORTFIELDS:OFF
 

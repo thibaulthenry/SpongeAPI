@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,13 +33,12 @@ public final class PortionTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<PortionType> BOTTOM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PortionType.class, "bottom");
+    public static final Supplier<PortionType> BOTTOM = Registries.PORTION_TYPE.getSupplier(ResourceKey.minecraft("bottom"));
 
-    public static final Supplier<PortionType> TOP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PortionType.class, "top");
+    public static final Supplier<PortionType> TOP = Registries.PORTION_TYPE.getSupplier(ResourceKey.minecraft("top"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private PortionTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

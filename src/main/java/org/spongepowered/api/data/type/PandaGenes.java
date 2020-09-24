@@ -35,19 +35,19 @@ public final class PandaGenes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<PandaGene> AGGRESSIVE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PandaGene.class, "aggressive");
+    public static final Supplier<PandaGene> AGGRESSIVE = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "aggressive");
 
-    public static final Supplier<PandaGene> BROWN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PandaGene.class, "brown");
+    public static final Supplier<PandaGene> BROWN = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "brown");
 
-    public static final Supplier<PandaGene> LAZY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PandaGene.class, "lazy");
+    public static final Supplier<PandaGene> LAZY = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "lazy");
 
-    public static final Supplier<PandaGene> NORMAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PandaGene.class, "normal");
+    public static final Supplier<PandaGene> NORMAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "normal");
 
-    public static final Supplier<PandaGene> PLAYFUL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PandaGene.class, "playful");
+    public static final Supplier<PandaGene> PLAYFUL = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "playful");
 
-    public static final Supplier<PandaGene> WEAK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PandaGene.class, "weak");
+    public static final Supplier<PandaGene> WEAK = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "weak");
 
-    public static final Supplier<PandaGene> WORRIED = Sponge.getRegistry().getCatalogRegistry().provideSupplier(PandaGene.class, "worried");
+    public static final Supplier<PandaGene> WORRIED = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "worried");
 
     // SORTFIELDS:OFF
 

@@ -24,28 +24,26 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link BodyPart}s.
- */
 public final class BodyParts {
-
+    
     // SORTFIELDS:ON
 
-    public static final Supplier<BodyPart> CHEST = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BodyPart.class, "chest");
+    public static final Supplier<BodyPart> CHEST = Registries.BODY_PART.getSupplier(ResourceKey.minecraft( "chest"));
 
-    public static final Supplier<BodyPart> HEAD = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BodyPart.class, "head");
+    public static final Supplier<BodyPart> HEAD = Registries.BODY_PART.getSupplier(ResourceKey.minecraft( "head"));
 
-    public static final Supplier<BodyPart> LEFT_ARM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BodyPart.class, "left_arm");
+    public static final Supplier<BodyPart> LEFT_ARM = Registries.BODY_PART.getSupplier(ResourceKey.minecraft( "left_arm"));
 
-    public static final Supplier<BodyPart> LEFT_LEG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BodyPart.class, "left_leg");
+    public static final Supplier<BodyPart> LEFT_LEG = Registries.BODY_PART.getSupplier(ResourceKey.minecraft( "left_leg"));
 
-    public static final Supplier<BodyPart> RIGHT_ARM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BodyPart.class, "right_arm");
+    public static final Supplier<BodyPart> RIGHT_ARM = Registries.BODY_PART.getSupplier(ResourceKey.minecraft( "right_arm"));
 
-    public static final Supplier<BodyPart> RIGHT_LEG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BodyPart.class, "right_leg");
+    public static final Supplier<BodyPart> RIGHT_LEG = Registries.BODY_PART.getSupplier(ResourceKey.minecraft( "right_leg"));
 
     // SORTFIELDS:OFF
 

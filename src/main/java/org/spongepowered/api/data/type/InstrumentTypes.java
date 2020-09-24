@@ -24,52 +24,51 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link InstrumentType}s.
- */
 public final class InstrumentTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<InstrumentType> BANJO = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "banjo");
+    public static final Supplier<InstrumentType> BANJO = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("banjo"));
 
-    public static final Supplier<InstrumentType> BASS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "bass");
+    public static final Supplier<InstrumentType> BASS = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("bass"));
 
-    public static final Supplier<InstrumentType> BASE_DRUM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "basedrum");
+    public static final Supplier<InstrumentType> BASE_DRUM = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("basedrum"));
 
-    public static final Supplier<InstrumentType> BELL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "bell");
+    public static final Supplier<InstrumentType> BELL = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("bell"));
 
-    public static final Supplier<InstrumentType> BIT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "bit");
+    public static final Supplier<InstrumentType> BIT = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("bit"));
 
-    public static final Supplier<InstrumentType> CHIME = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "chime");
+    public static final Supplier<InstrumentType> CHIME = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("chime"));
 
-    public static final Supplier<InstrumentType> COW_BELL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "cow_bell");
+    public static final Supplier<InstrumentType> COW_BELL = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("cow_bell"));
 
-    public static final Supplier<InstrumentType> DIDGERIDOO = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "didgeridoo");
+    public static final Supplier<InstrumentType> DIDGERIDOO = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("didgeridoo"));
 
-    public static final Supplier<InstrumentType> FLUTE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "flute");
+    public static final Supplier<InstrumentType> FLUTE = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("flute"));
 
-    public static final Supplier<InstrumentType> GUITAR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "guitar");
+    public static final Supplier<InstrumentType> GUITAR = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("guitar"));
 
-    public static final Supplier<InstrumentType> HARP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "harp");
+    public static final Supplier<InstrumentType> HARP = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("harp"));
 
-    public static final Supplier<InstrumentType> HAT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "hat");
+    public static final Supplier<InstrumentType> HAT = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("hat"));
 
-    public static final Supplier<InstrumentType> IRON_XYLOPHONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "iron_xylophone");
+    public static final Supplier<InstrumentType> IRON_XYLOPHONE = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("iron_xylophone"));
 
-    public static final Supplier<InstrumentType> PLING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "pling");
+    public static final Supplier<InstrumentType> PLING = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("pling"));
 
-    public static final Supplier<InstrumentType> SNARE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "snare");
+    public static final Supplier<InstrumentType> SNARE = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("snare"));
 
-    public static final Supplier<InstrumentType> XYLOPHONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(InstrumentType.class, "xylophone");
+    public static final Supplier<InstrumentType> XYLOPHONE = Registries.INSTRUMENT_TYPE.getSupplier(ResourceKey.minecraft("xylophone"));
 
     // SORTFIELDS:OFF
 
     private InstrumentTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

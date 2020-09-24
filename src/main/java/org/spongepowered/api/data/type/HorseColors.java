@@ -24,30 +24,28 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link HorseColor}s.
- */
 public final class HorseColors {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<HorseColor> BLACK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseColor.class, "black");
+    public static final Supplier<HorseColor> BLACK = Registries.HORSE_COLOR.getSupplier(ResourceKey.minecraft("black"));
 
-    public static final Supplier<HorseColor> BROWN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseColor.class, "brown");
+    public static final Supplier<HorseColor> BROWN = Registries.HORSE_COLOR.getSupplier(ResourceKey.minecraft("brown"));
 
-    public static final Supplier<HorseColor> CHESTNUT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseColor.class, "chestnut");
+    public static final Supplier<HorseColor> CHESTNUT = Registries.HORSE_COLOR.getSupplier(ResourceKey.minecraft("chestnut"));
 
-    public static final Supplier<HorseColor> CREAMY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseColor.class, "creamy");
+    public static final Supplier<HorseColor> CREAMY = Registries.HORSE_COLOR.getSupplier(ResourceKey.minecraft("creamy"));
 
-    public static final Supplier<HorseColor> DARK_BROWN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseColor.class, "dark_brown");
+    public static final Supplier<HorseColor> DARK_BROWN = Registries.HORSE_COLOR.getSupplier(ResourceKey.minecraft("dark_brown"));
 
-    public static final Supplier<HorseColor> GRAY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseColor.class, "gray");
+    public static final Supplier<HorseColor> GRAY = Registries.HORSE_COLOR.getSupplier(ResourceKey.minecraft("gray"));
 
-    public static final Supplier<HorseColor> WHITE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(HorseColor.class, "white");
+    public static final Supplier<HorseColor> WHITE = Registries.HORSE_COLOR.getSupplier(ResourceKey.minecraft("white"));
 
     // SORTFIELDS:OFF
 

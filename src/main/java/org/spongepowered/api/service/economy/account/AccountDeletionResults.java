@@ -24,19 +24,39 @@
  */
 package org.spongepowered.api.service.economy.account;
 
-import org.spongepowered.api.CatalogType;
-import org.spongepowered.api.util.annotation.CatalogedBy;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
-/**
- * Indicates whether the deletion of an {@link Account} succeeded.
- */
-@CatalogedBy(AccountDeletionResultTypes.class)
-public interface AccountDeletionResultType extends CatalogType {
+import java.util.function.Supplier;
+
+public final class AccountDeletionResults {
+    
+    // SORTFIELDS:ON
 
     /**
-     * Returns whether this result type represents a successful deletion.
-     *
-     * @return Whether the result represents a successful deletion.
+     * Represents an account deletion where the account does not exist.
      */
-    boolean isSuccess();
+    public static final Supplier<AccountDeletionResult> ABSENT = Registries.ACCOUNT_DELETION_RESULT.getSupplier(ResourceKey.minecraft("absent"));
+
+    /**
+     * Represents an account deletion where the deletion failed.
+     */
+    public static final Supplier<AccountDeletionResult> FAILED = Registries.ACCOUNT_DELETION_RESULT.getSupplier(ResourceKey.minecraft("failed"));
+
+    /**
+     * Represents an account deletion where the deletion was successful.
+     */
+    public static final Supplier<AccountDeletionResult> SUCCESS = Registries.ACCOUNT_DELETION_RESULT.getSupplier(ResourceKey.minecraft("success"));
+
+    /**
+     * Represents an account deletion where the account could not be deleted.
+     */
+    public static final Supplier<AccountDeletionResult> UNDELETABLE = Registries.ACCOUNT_DELETION_RESULT.getSupplier(ResourceKey.minecraft("undeletable"));
+
+    // SORTFIELDS:OFF
+
+    private AccountDeletionResults() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
+    }
+
 }

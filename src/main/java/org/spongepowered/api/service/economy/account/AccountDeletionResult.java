@@ -22,39 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.world;
+package org.spongepowered.api.service.economy.account;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.CatalogType;
+import org.spongepowered.api.util.annotation.CatalogedBy;
 
-import java.util.function.Supplier;
-
-public final class WorldArchetypes {
-
-    // SORTFIELDS:ON
-
-    /**
-     * Represents a typical default {@link World}.
-     */
-    public static final Supplier<WorldArchetype> OVERWORLD = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "overworld");
+/**
+ * Indicates whether the deletion of an {@link Account} succeeded.
+ */
+@CatalogedBy(AccountDeletionResults.class)
+public interface AccountDeletionResult extends CatalogType {
 
     /**
-     * Represents a typical the end-style {@link World}.
+     * Returns whether this result type represents a successful deletion.
+     *
+     * @return Whether the result represents a successful deletion.
      */
-    public static final Supplier<WorldArchetype> THE_END = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "the_end");
-
-    /**
-     * Represents a typical nether-style {@link World}.
-     */
-    public static final Supplier<WorldArchetype> THE_NETHER = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "the_nether");
-
-    /**
-     * Represents a typical Sponge void-style {@link World}.
-     */
-    public static final Supplier<WorldArchetype> THE_VOID = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "the_void");
-
-    // SORTFIELDS:OFF
-
-    private WorldArchetypes() {
-        throw new AssertionError("You should not be attempting to instantiate this class.");
-    }
+    boolean isSuccess();
 }

@@ -24,13 +24,11 @@
  */
 package org.spongepowered.api.registry;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-
 import java.util.Optional;
 
 public interface RegistryManager {
 
     <V> Optional<Registry<V>> find(Class<V> clazz);
 
-    @NonNull <V> Registry<V> get(Class<V> clazz);
+    <V> Registry<V> get(Class<V> clazz);
 }

@@ -25,14 +25,11 @@
 package org.spongepowered.api.command.parameter.managed.clientcompletion;
 
 import org.spongepowered.api.ResourceKey;
-import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.parameter.managed.ValueParser;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * Supported {@link ClientCompletionTypes}.
- */
 public final class ClientCompletionTypes {
 
     // SORTFIELDS: ON
@@ -41,28 +38,24 @@ public final class ClientCompletionTypes {
      * Indicates to the client that the {@link ValueParser} will parse a
      * decimal number.
      */
-    public static final Supplier<ClientCompletionType> DECIMAL_NUMBER =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionType.class, "decimal_number");
+    public static final Supplier<ClientCompletionType> DECIMAL_NUMBER = Registries.CLIENT_COMPLETION_TYPE.getSupplier(ResourceKey.minecraft("decimal_number"));
 
     /**
      * Indicates to the client that the {@link ValueParser} will parse Json.
      */
-    public static final Supplier<ClientCompletionType> JSON =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionType.class, "json");
+    public static final Supplier<ClientCompletionType> JSON = Registries.CLIENT_COMPLETION_TYPE.getSupplier(ResourceKey.minecraft("json"));
 
     /**
      * Hides this element from the client - useful for if the
      * {@link ValueParser} does not parse any part of the string.
      */
-    public static final Supplier<ClientCompletionType> NONE =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionType.class, "none");
+    public static final Supplier<ClientCompletionType> NONE = Registries.CLIENT_COMPLETION_TYPE.getSupplier(ResourceKey.minecraft("none"));
 
     /**
      * Indicates to the client that the {@link ValueParser} is a
      * {@link ResourceKey}.
      */
-    public static final Supplier<ClientCompletionType> RESOURCE_KEY =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionType.class, "resource_key");
+    public static final Supplier<ClientCompletionType> RESOURCE_KEY = Registries.CLIENT_COMPLETION_TYPE.getSupplier(ResourceKey.minecraft("resource_key"));
 
     /**
      * Indicates to the client that the {@link ValueParser} is a standard
@@ -70,20 +63,18 @@ public final class ClientCompletionTypes {
      *
      * <p>This is the default behaviour for any custom {@link ValueParser}.</p>
      */
-    public static final Supplier<ClientCompletionType> STRING =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionType.class, "string");
+    public static final Supplier<ClientCompletionType> STRING = Registries.CLIENT_COMPLETION_TYPE.getSupplier(ResourceKey.minecraft("string"));
 
     /**
      * Indicates to the client that the {@link ValueParser} accepts a whole
      * number.
      */
-    public static final Supplier<ClientCompletionType> WHOLE_NUMBER =
-            Sponge.getRegistry().getCatalogRegistry().provideSupplier(ClientCompletionType.class, "whole_number");
+    public static final Supplier<ClientCompletionType> WHOLE_NUMBER = Registries.CLIENT_COMPLETION_TYPE.getSupplier(ResourceKey.minecraft("whole_number"));
 
     // SORTFIELDS: OFF
 
     private ClientCompletionTypes() {
-        throw new IllegalStateException("This should not be callable");
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
 
 }

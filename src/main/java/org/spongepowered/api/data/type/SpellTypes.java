@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,17 +33,17 @@ public final class SpellTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<SpellType> BLINDNESS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SpellType.class, "blindness");
+    public static final Supplier<SpellType> BLINDNESS = Registries.SPELL_TYPE.getSupplier(ResourceKey.minecraft("blindness"));
 
-    public static final Supplier<SpellType> DISAPPEAR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SpellType.class, "disappear");
+    public static final Supplier<SpellType> DISAPPEAR = Registries.SPELL_TYPE.getSupplier(ResourceKey.minecraft("disappear"));
 
-    public static final Supplier<SpellType> FANGS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SpellType.class, "fangs");
+    public static final Supplier<SpellType> FANGS = Registries.SPELL_TYPE.getSupplier(ResourceKey.minecraft("fangs"));
 
-    public static final Supplier<SpellType> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SpellType.class, "none");
+    public static final Supplier<SpellType> NONE = Registries.SPELL_TYPE.getSupplier(ResourceKey.minecraft("none"));
 
-    public static final Supplier<SpellType> SUMMON_VEX = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SpellType.class, "summon_vex");
+    public static final Supplier<SpellType> SUMMON_VEX = Registries.SPELL_TYPE.getSupplier(ResourceKey.minecraft("summon_vex"));
 
-    public static final Supplier<SpellType> WOLOLO = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SpellType.class, "wololo");
+    public static final Supplier<SpellType> WOLOLO = Registries.SPELL_TYPE.getSupplier(ResourceKey.minecraft("wololo"));
 
     // SORTFIELDS:OFF
 

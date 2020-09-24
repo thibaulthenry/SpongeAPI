@@ -24,28 +24,26 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link WoodType}s.
- */
 public final class WoodTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<WoodType> ACACIA = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WoodType.class, "acacia");
+    public static final Supplier<WoodType> ACACIA = Registries.WOOD_TYPE.getSupplier(ResourceKey.minecraft("acacia"));
 
-    public static final Supplier<WoodType> BIRCH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WoodType.class, "birch");
+    public static final Supplier<WoodType> BIRCH = Registries.WOOD_TYPE.getSupplier(ResourceKey.minecraft("birch"));
 
-    public static final Supplier<WoodType> DARK_OAK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WoodType.class, "dark_oak");
+    public static final Supplier<WoodType> DARK_OAK = Registries.WOOD_TYPE.getSupplier(ResourceKey.minecraft("dark_oak"));
 
-    public static final Supplier<WoodType> JUNGLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WoodType.class, "jungle");
+    public static final Supplier<WoodType> JUNGLE = Registries.WOOD_TYPE.getSupplier(ResourceKey.minecraft("jungle"));
 
-    public static final Supplier<WoodType> OAK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WoodType.class, "oak");
+    public static final Supplier<WoodType> OAK = Registries.WOOD_TYPE.getSupplier(ResourceKey.minecraft("oak"));
 
-    public static final Supplier<WoodType> SPRUCE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(WoodType.class, "spruce");
+    public static final Supplier<WoodType> SPRUCE = Registries.WOOD_TYPE.getSupplier(ResourceKey.minecraft("spruce"));
 
     // SORTFIELDS:OFF
 

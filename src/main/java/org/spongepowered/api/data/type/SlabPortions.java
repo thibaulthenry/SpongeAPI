@@ -24,22 +24,20 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link SlabPortion}s.
- */
 public final class SlabPortions {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<SlabPortion> BOTTOM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SlabPortion.class, "bottom");
+    public static final Supplier<SlabPortion> BOTTOM = Registries.SLAB_PORTION.getSupplier(ResourceKey.minecraft("bottom"));
 
-    public static final Supplier<SlabPortion> DOUBLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SlabPortion.class, "double");
+    public static final Supplier<SlabPortion> DOUBLE = Registries.SLAB_PORTION.getSupplier(ResourceKey.minecraft("double"));
 
-    public static final Supplier<SlabPortion> TOP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(SlabPortion.class, "top");
+    public static final Supplier<SlabPortion> TOP = Registries.SLAB_PORTION.getSupplier(ResourceKey.minecraft("top"));
 
     // SORTFIELDS:OFF
 

@@ -39,21 +39,21 @@ public final class Rotations {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<Rotation> BOTTOM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "bottom");
+    public static final Supplier<Rotation> BOTTOM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "bottom");
 
-    public static final Supplier<Rotation> BOTTOM_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "bottom_left");
+    public static final Supplier<Rotation> BOTTOM_LEFT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "bottom_left");
 
-    public static final Supplier<Rotation> BOTTOM_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "bottom_right");
+    public static final Supplier<Rotation> BOTTOM_RIGHT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "bottom_right");
 
-    public static final Supplier<Rotation> LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "left");
+    public static final Supplier<Rotation> LEFT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "left");
 
-    public static final Supplier<Rotation> RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "right");
+    public static final Supplier<Rotation> RIGHT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "right");
 
-    public static final Supplier<Rotation> TOP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "top");
+    public static final Supplier<Rotation> TOP = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "top");
 
-    public static final Supplier<Rotation> TOP_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "top_left");
+    public static final Supplier<Rotation> TOP_LEFT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "top_left");
 
-    public static final Supplier<Rotation> TOP_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Rotation.class, "top_right");
+    public static final Supplier<Rotation> TOP_RIGHT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "top_right");
 
     // SORTFIELDS:OFF
 

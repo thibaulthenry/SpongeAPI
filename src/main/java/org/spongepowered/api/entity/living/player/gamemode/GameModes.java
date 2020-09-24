@@ -35,15 +35,15 @@ public final class GameModes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<GameMode> ADVENTURE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GameMode.class, "adventure");
+    public static final Supplier<GameMode> ADVENTURE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "adventure");
 
-    public static final Supplier<GameMode> CREATIVE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GameMode.class, "creative");
+    public static final Supplier<GameMode> CREATIVE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "creative");
 
-    public static final Supplier<GameMode> NOT_SET = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GameMode.class, "not_set");
+    public static final Supplier<GameMode> NOT_SET = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "not_set");
 
-    public static final Supplier<GameMode> SPECTATOR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GameMode.class, "spectator");
+    public static final Supplier<GameMode> SPECTATOR = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "spectator");
 
-    public static final Supplier<GameMode> SURVIVAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(GameMode.class, "survival");
+    public static final Supplier<GameMode> SURVIVAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "survival");
 
     // SORTFIELDS:OFF
 

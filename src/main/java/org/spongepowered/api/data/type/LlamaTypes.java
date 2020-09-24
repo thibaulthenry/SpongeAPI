@@ -24,24 +24,22 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link LlamaType}s.
- */
 public final class LlamaTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<LlamaType> BROWN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(LlamaType.class, "brown");
+    public static final Supplier<LlamaType> BROWN = Registries.LLAMA_TYPE.getSupplier(ResourceKey.minecraft("brown"));
 
-    public static final Supplier<LlamaType> CREAMY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(LlamaType.class, "creamy");
+    public static final Supplier<LlamaType> CREAMY = Registries.LLAMA_TYPE.getSupplier(ResourceKey.minecraft("creamy"));
 
-    public static final Supplier<LlamaType> GRAY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(LlamaType.class, "gray");
+    public static final Supplier<LlamaType> GRAY = Registries.LLAMA_TYPE.getSupplier(ResourceKey.minecraft("gray"));
 
-    public static final Supplier<LlamaType> WHITE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(LlamaType.class, "white");
+    public static final Supplier<LlamaType> WHITE = Registries.LLAMA_TYPE.getSupplier(ResourceKey.minecraft("white"));
 
     // SORTFIELDS:OFF
 

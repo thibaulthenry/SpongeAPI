@@ -24,14 +24,11 @@
  */
 package org.spongepowered.api.advancement;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of all the available {@link AdvancementType}s in Minecraft.
- */
-@SuppressWarnings("unused")
 public final class AdvancementTypes {
 
     // SORTFIELDS:ON
@@ -42,7 +39,7 @@ public final class AdvancementTypes {
      * @see <a href="https://minecraft.gamepedia.com/File:ChallengeComplete.png">
      *     the Minecraft Wiki for an example of this advancement type</a>
      */
-    public static final Supplier<AdvancementType> CHALLENGE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(AdvancementType.class, "challenge");
+    public static final Supplier<AdvancementType> CHALLENGE = Registries.ADVANCEMENT_TYPE.getSupplier(ResourceKey.minecraft("challenge"));
 
     /**
      * Represents the goal reached advancement type.
@@ -50,7 +47,7 @@ public final class AdvancementTypes {
      * @see <a href="https://minecraft.gamepedia.com/File:GoalReached.png">
      *     the Minecraft Wiki for an example of this advancement type</a>
      */
-    public static final Supplier<AdvancementType> GOAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(AdvancementType.class, "goal");
+    public static final Supplier<AdvancementType> GOAL = Registries.ADVANCEMENT_TYPE.getSupplier(ResourceKey.minecraft("goal"));
 
     /**
      * Represents the advancement made advancement type.
@@ -58,11 +55,10 @@ public final class AdvancementTypes {
      * @see <a href="https://minecraft.gamepedia.com/File:AdvancementMade.png">
      *     the Minecraft Wiki for an example of this advancement type</a>
      */
-    public static final Supplier<AdvancementType> TASK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(AdvancementType.class, "task");
+    public static final Supplier<AdvancementType> TASK = Registries.ADVANCEMENT_TYPE.getSupplier(ResourceKey.minecraft("task"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private AdvancementTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

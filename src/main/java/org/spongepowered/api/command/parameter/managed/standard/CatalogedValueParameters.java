@@ -26,7 +26,6 @@ package org.spongepowered.api.command.parameter.managed.standard;
 
 import net.kyori.adventure.text.Component;
 import org.spongepowered.api.ResourceKey;
-import org.spongepowered.api.Sponge;
 import org.spongepowered.api.block.BlockState;
 import org.spongepowered.api.data.persistence.DataContainer;
 import org.spongepowered.api.entity.Entity;
@@ -35,6 +34,7 @@ import org.spongepowered.api.entity.living.player.User;
 import org.spongepowered.api.entity.living.player.server.ServerPlayer;
 import org.spongepowered.api.event.Cause;
 import org.spongepowered.api.profile.GameProfile;
+import org.spongepowered.api.registry.Registries;
 import org.spongepowered.api.util.Color;
 import org.spongepowered.api.world.Locatable;
 import org.spongepowered.api.world.ServerLocation;
@@ -56,12 +56,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Supplier;
 
-/**
- * Class containing common {@link CatalogedValueParameter parameters}.
- */
 public final class CatalogedValueParameters {
-
-    private CatalogedValueParameters() {}
 
     // SORTFIELDS:ON
 
@@ -70,21 +65,21 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link BigDecimal}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<BigDecimal>> BIG_DECIMAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "big_decimal");
+    public static final Supplier<CatalogedValueParameter<BigDecimal>> BIG_DECIMAL = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("big_decimal"));
 
     /**
      * Require an argument to be a {@link BigInteger}.
      *
      * <p>Returns a {@link BigInteger}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<BigInteger>> BIG_INTEGER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "big_integer");
+    public static final Supplier<CatalogedValueParameter<BigInteger>> BIG_INTEGER = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("big_integer"));
 
     /**
      * Requires an argument to represent a {@link BlockState}
      *
      * <p>Returns a {@link BlockState}</p>
      */
-    public static final Supplier<CatalogedValueParameter<BlockState>> BLOCK_STATE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "block_state");
+    public static final Supplier<CatalogedValueParameter<BlockState>> BLOCK_STATE = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("block_state"));
 
     /**
      * Require an argument to be a boolean.
@@ -111,7 +106,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Boolean}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Boolean>> BOOLEAN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "boolean");
+    public static final Supplier<CatalogedValueParameter<Boolean>> BOOLEAN = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("boolean"));
 
     /**
      * Require an argument to be a {@link Color}
@@ -128,7 +123,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Color}</p>
      */
-    public static final Supplier<CatalogedValueParameter<Color>> COLOR = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "color");
+    public static final Supplier<CatalogedValueParameter<Color>> COLOR = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("color"));
 
     /**
      * Requires an argument to be a HOCON or JSON representation of a {@link DataContainer}.
@@ -138,7 +133,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link DataContainer}</p>
      */
-    public static final Supplier<CatalogedValueParameter<DataContainer>> DATA_CONTAINER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "data_container");
+    public static final Supplier<CatalogedValueParameter<DataContainer>> DATA_CONTAINER = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("data_container"));
 
     /**
      * Expect an argument to be a date-time, in the form of a
@@ -149,14 +144,14 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link LocalDateTime}</p>
      */
-    public static final Supplier<CatalogedValueParameter<LocalDateTime>> DATE_TIME = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "date_time");
+    public static final Supplier<CatalogedValueParameter<LocalDateTime>> DATE_TIME = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("date_time"));
 
     /**
      * Require an argument to be an double-precision floating point number.
      *
      * <p>Returns a {@link Double}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Double>> DOUBLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "double");
+    public static final Supplier<CatalogedValueParameter<Double>> DOUBLE = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("double"));
 
     /**
      * Require an argument to be a duration.
@@ -174,7 +169,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Duration}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Duration>> DURATION = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "duration");
+    public static final Supplier<CatalogedValueParameter<Duration>> DURATION = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("duration"));
 
     /**
      * Require an argument to select one {@link Entity}.
@@ -183,7 +178,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns an {@link Entity}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Entity>> ENTITY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "entity");
+    public static final Supplier<CatalogedValueParameter<Entity>> ENTITY = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("entity"));
 
     /**
      * Expect an argument to represent a {@link GameProfile} of a user.
@@ -193,21 +188,21 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link GameProfile}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Collection<GameProfile>>> GAME_PROFILE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "game_profile");
+    public static final Supplier<CatalogedValueParameter<Collection<GameProfile>>> GAME_PROFILE = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("game_profile"));
 
     /**
      * Require an argument to be an integer (base 10) number.
      *
      * <p>Returns an {@link Integer}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Integer>> INTEGER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "integer");
+    public static final Supplier<CatalogedValueParameter<Integer>> INTEGER = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("integer"));
 
     /**
      * Require an argument to be an IP address.
      *
      * <p>Returns an {@link InetAddress}</p>
      */
-    public static final Supplier<CatalogedValueParameter<InetAddress>> IP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "ip");
+    public static final Supplier<CatalogedValueParameter<InetAddress>> IP = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("ip"));
 
     /**
      * Expect an argument to represent a {@link ServerLocation} which can
@@ -215,7 +210,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link ServerLocation}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<ServerLocation>> LOCATION_ALL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "location_all");
+    public static final Supplier<CatalogedValueParameter<ServerLocation>> LOCATION_ALL = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("location_all"));
 
     /**
      * Expect an argument to represent a {@link ServerLocation} that can only
@@ -223,14 +218,14 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link ServerLocation}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<ServerLocation>> LOCATION_ONLINE_ONLY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "location_online_only");
+    public static final Supplier<CatalogedValueParameter<ServerLocation>> LOCATION_ONLINE_ONLY = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("location_online_only"));
 
     /**
      * Require an argument to be a long (base 10).
      *
      * <p>Returns a {@link Long}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Long>> LONG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "long");
+    public static final Supplier<CatalogedValueParameter<Long>> LONG = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("long"));
 
     /**
      * Require an argument to select many {@link Entity entities}.
@@ -241,7 +236,7 @@ public final class CatalogedValueParameters {
      *
      * @see #ENTITY
      */
-    public static final Supplier<CatalogedValueParameter<List<Entity>>> MANY_ENTITIES = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "many_entities");
+    public static final Supplier<CatalogedValueParameter<List<Entity>>> MANY_ENTITIES = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("many_entities"));
 
     /**
      * Require an argument to select many {@link ServerPlayer players}.
@@ -252,14 +247,14 @@ public final class CatalogedValueParameters {
      *
      * @see #PLAYER
      */
-    public static final Supplier<CatalogedValueParameter<List<ServerPlayer>>> MANY_PLAYERS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "many_players");
+    public static final Supplier<CatalogedValueParameter<List<ServerPlayer>>> MANY_PLAYERS = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("many_players"));
 
     /**
      * Does not parse any arguments, returning nothing.
      *
      * <p>Returns nothing - no entry will be placed into any provided key.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Void>> NONE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "none");
+    public static final Supplier<CatalogedValueParameter<Void>> NONE = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("none"));
 
     /**
      * Expect an argument to represent an online player.
@@ -268,14 +263,14 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link ServerPlayer}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<ServerPlayer>> PLAYER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "player");
+    public static final Supplier<CatalogedValueParameter<ServerPlayer>> PLAYER = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("player"));
 
     /**
      * Expect an argument to represent a {@link PluginContainer}'s id.
      *
      * <p>Returns a {@link PluginContainer}</p>
      */
-    public static final Supplier<CatalogedValueParameter<PluginContainer>> PLUGIN = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "plugin");
+    public static final Supplier<CatalogedValueParameter<PluginContainer>> PLUGIN = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("plugin"));
 
     /**
      * Require one or more strings, without any processing, which are combined
@@ -283,21 +278,21 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link String}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<String>> REMAINING_JOINED_STRINGS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "remaining_joined_strings");
+    public static final Supplier<CatalogedValueParameter<String>> REMAINING_JOINED_STRINGS = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("remaining_joined_strings"));
 
     /**
      * Require an argument to be a namespaced {@link ResourceKey}.
      *
      * <p>Returns a {@link ResourceKey}</p>
      */
-    public static final Supplier<CatalogedValueParameter<ResourceKey>> RESOURCE_KEY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "resource_key");
+    public static final Supplier<CatalogedValueParameter<ResourceKey>> RESOURCE_KEY = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("resource_key"));
 
     /**
      * Require an argument to be a string.
      *
      * <p>Returns a {@link String}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<String>> STRING = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "string");
+    public static final Supplier<CatalogedValueParameter<String>> STRING = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("string"));
 
     /**
      * Does not parse any arguments, but instead returns a
@@ -308,7 +303,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link ServerLocation}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<ServerLocation>> TARGET_BLOCK = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "target_block");
+    public static final Supplier<CatalogedValueParameter<ServerLocation>> TARGET_BLOCK = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("target_block"));
 
     /**
      * Does not parse any arguments, but instead returns a {@link Entity} if the
@@ -319,7 +314,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Entity}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Entity>> TARGET_ENTITY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "target_entity");
+    public static final Supplier<CatalogedValueParameter<Entity>> TARGET_ENTITY = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("target_entity"));
 
     /**
      * Does not parse any arguments, but instead returns a {@link ServerPlayer}
@@ -330,7 +325,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link ServerPlayer}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<ServerPlayer>> TARGET_PLAYER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "target_player");
+    public static final Supplier<CatalogedValueParameter<ServerPlayer>> TARGET_PLAYER = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("target_player"));
 
     /**
      * Expects an argument to represent some {@link Component} serialised using formatting codes.
@@ -339,7 +334,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Component}</p>
      */
-    public static final Supplier<CatalogedValueParameter<Component>> TEXT_FORMATTING_CODE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "text_formatting_code");
+    public static final Supplier<CatalogedValueParameter<Component>> TEXT_FORMATTING_CODE = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("text_formatting_code"));
 
     /**
      * Expects an argument to represent some {@link Component} serialised using formatting codes.
@@ -348,7 +343,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Component}</p>
      */
-    public static final Supplier<CatalogedValueParameter<Component>> TEXT_FORMATTING_CODE_ALL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "text_formatting_code_all");
+    public static final Supplier<CatalogedValueParameter<Component>> TEXT_FORMATTING_CODE_ALL = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("text_formatting_code_all"));
 
     /**
      * Expects an argument to represent some {@link Component} serialised using Json.
@@ -357,7 +352,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Component}</p>
      */
-    public static final Supplier<CatalogedValueParameter<Component>> TEXT_JSON = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "text_json");
+    public static final Supplier<CatalogedValueParameter<Component>> TEXT_JSON = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("text_json"));
 
     /**
      * Expects an argument to represent some {@link Component} serialised using Json.
@@ -366,14 +361,14 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Component}</p>
      */
-    public static final Supplier<CatalogedValueParameter<Component>> TEXT_JSON_ALL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "text_json_all");
+    public static final Supplier<CatalogedValueParameter<Component>> TEXT_JSON_ALL = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("text_json_all"));
 
     /**
      * Require an argument to be a URL.
      *
      * <p>Returns a {@link URL}</p>
      */
-    public static final Supplier<CatalogedValueParameter<URL>> URL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "url");
+    public static final Supplier<CatalogedValueParameter<URL>> URL = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("url"));
 
     /**
      * Expect an argument to represent a player who has been online at some
@@ -383,14 +378,14 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link User}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<User>> USER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "user");
+    public static final Supplier<CatalogedValueParameter<User>> USER = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("user"));
 
     /**
      * Expect an argument to represent a {@link UUID}
      *
      * <p>Returns a {@link UUID}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<UUID>> UUID = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "uuid");
+    public static final Supplier<CatalogedValueParameter<UUID>> UUID = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("uuid"));
 
     /**
      * Expect an argument to represent a {@link Vector2d}.
@@ -404,7 +399,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Vector3d}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Vector2d>> VECTOR2D = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "vector2d");
+    public static final Supplier<CatalogedValueParameter<Vector2d>> VECTOR2D = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("vector2d"));
 
     /**
      * Expect an argument to represent a {@link Vector3d}.
@@ -417,7 +412,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link Vector3d}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<Vector3d>> VECTOR3D = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class,"vector3d");
+    public static final Supplier<CatalogedValueParameter<Vector3d>> VECTOR3D = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("vector3d"));
 
     /**
      * Expect an argument to represent the name of any {@link WorldProperties}
@@ -425,7 +420,7 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link WorldProperties}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<WorldProperties>> WORLD_PROPERTIES_ALL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "world_properties_all");
+    public static final Supplier<CatalogedValueParameter<WorldProperties>> WORLD_PROPERTIES_ALL = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("world_properties_all"));
 
     /**
      * Expect an argument to represent the name of a {@link WorldProperties}
@@ -433,8 +428,12 @@ public final class CatalogedValueParameters {
      *
      * <p>Returns a {@link WorldProperties}.</p>
      */
-    public static final Supplier<CatalogedValueParameter<WorldProperties>> WORLD_PROPERTIES_ONLINE_ONLY = Sponge.getRegistry().getCatalogRegistry().provideSupplier(CatalogedValueParameter.class, "world_properties_online_only");
+    public static final Supplier<CatalogedValueParameter<WorldProperties>> WORLD_PROPERTIES_ONLINE_ONLY = Registries.CATALOGED_VALUE_PARAMETER.getSupplier(ResourceKey.minecraft("world_properties_online_only"));
 
     // SORTFIELDS:OFF
+
+    private CatalogedValueParameters() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
+    }
 
 }

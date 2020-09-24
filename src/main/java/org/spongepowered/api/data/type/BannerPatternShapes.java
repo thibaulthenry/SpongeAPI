@@ -24,96 +24,94 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link BannerPatternShape}s.
- */
 public final class BannerPatternShapes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<BannerPatternShape> BASE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "base");
+    public static final Supplier<BannerPatternShape> BASE = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("base"));
 
-    public static final Supplier<BannerPatternShape> BORDER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "border");
+    public static final Supplier<BannerPatternShape> BORDER = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("border"));
 
-    public static final Supplier<BannerPatternShape> BRICKS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "bricks");
+    public static final Supplier<BannerPatternShape> BRICKS = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("bricks"));
 
-    public static final Supplier<BannerPatternShape> CIRCLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "circle");
+    public static final Supplier<BannerPatternShape> CIRCLE = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("circle"));
 
-    public static final Supplier<BannerPatternShape> CREEPER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "creeper");
+    public static final Supplier<BannerPatternShape> CREEPER = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("creeper"));
 
-    public static final Supplier<BannerPatternShape> CROSS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "cross");
+    public static final Supplier<BannerPatternShape> CROSS = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("cross"));
 
-    public static final Supplier<BannerPatternShape> CURLY_BORDER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "curly_border");
+    public static final Supplier<BannerPatternShape> CURLY_BORDER = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("curly_border"));
 
-    public static final Supplier<BannerPatternShape> DIAGONAL_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "diagonal_left");
+    public static final Supplier<BannerPatternShape> DIAGONAL_LEFT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("diagonal_left"));
 
-    public static final Supplier<BannerPatternShape> DIAGONAL_UP_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "diagonal_up_left");
+    public static final Supplier<BannerPatternShape> DIAGONAL_UP_LEFT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("diagonal_up_left"));
 
-    public static final Supplier<BannerPatternShape> DIAGONAL_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "diagonal_right");
+    public static final Supplier<BannerPatternShape> DIAGONAL_RIGHT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("diagonal_right"));
 
-    public static final Supplier<BannerPatternShape> DIAGONAL_UP_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "diagonal_up_right");
+    public static final Supplier<BannerPatternShape> DIAGONAL_UP_RIGHT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("diagonal_up_right"));
 
-    public static final Supplier<BannerPatternShape> FLOWER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "flower");
+    public static final Supplier<BannerPatternShape> FLOWER = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("flower"));
 
-    public static final Supplier<BannerPatternShape> GLOBE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "globe");
+    public static final Supplier<BannerPatternShape> GLOBE = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("globe"));
 
-    public static final Supplier<BannerPatternShape> GRADIENT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "gradient");
+    public static final Supplier<BannerPatternShape> GRADIENT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("gradient"));
 
-    public static final Supplier<BannerPatternShape> GRADIENT_UP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "gradient_up");
+    public static final Supplier<BannerPatternShape> GRADIENT_UP = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("gradient_up"));
 
-    public static final Supplier<BannerPatternShape> HALF_HORIZONTAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "half_horizontal");
+    public static final Supplier<BannerPatternShape> HALF_HORIZONTAL = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("half_horizontal"));
 
-    public static final Supplier<BannerPatternShape> HALF_HORIZONTAL_BOTTOM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "half_horizontal_bottom");
+    public static final Supplier<BannerPatternShape> HALF_HORIZONTAL_BOTTOM = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("half_horizontal_bottom"));
 
-    public static final Supplier<BannerPatternShape> HALF_VERTICAL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "half_vertical");
+    public static final Supplier<BannerPatternShape> HALF_VERTICAL = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("half_vertical"));
 
-    public static final Supplier<BannerPatternShape> HALF_VERTICAL_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "half_vertical_right");
+    public static final Supplier<BannerPatternShape> HALF_VERTICAL_RIGHT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("half_vertical_right"));
 
-    public static final Supplier<BannerPatternShape> MOJANG = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "mojang");
+    public static final Supplier<BannerPatternShape> MOJANG = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("mojang"));
 
-    public static final Supplier<BannerPatternShape> RHOMBUS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "rhombus");
+    public static final Supplier<BannerPatternShape> RHOMBUS = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("rhombus"));
 
-    public static final Supplier<BannerPatternShape> SKULL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "skull");
+    public static final Supplier<BannerPatternShape> SKULL = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("skull"));
 
-    public static final Supplier<BannerPatternShape> SQUARE_BOTTOM_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "square_bottom_left");
+    public static final Supplier<BannerPatternShape> SQUARE_BOTTOM_LEFT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("square_bottom_left"));
 
-    public static final Supplier<BannerPatternShape> SQUARE_BOTTOM_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "square_bottom_right");
+    public static final Supplier<BannerPatternShape> SQUARE_BOTTOM_RIGHT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("square_bottom_right"));
 
-    public static final Supplier<BannerPatternShape> SQUARE_TOP_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "square_top_left");
+    public static final Supplier<BannerPatternShape> SQUARE_TOP_LEFT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("square_top_left"));
 
-    public static final Supplier<BannerPatternShape> SQUARE_TOP_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "square_top_right");
+    public static final Supplier<BannerPatternShape> SQUARE_TOP_RIGHT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("square_top_right"));
 
-    public static final Supplier<BannerPatternShape> STRAIGHT_CROSS = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "straight_cross");
+    public static final Supplier<BannerPatternShape> STRAIGHT_CROSS = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("straight_cross"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_BOTTOM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_bottom");
+    public static final Supplier<BannerPatternShape> STRIPE_BOTTOM = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_bottom"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_CENTER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_center");
+    public static final Supplier<BannerPatternShape> STRIPE_CENTER = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_center"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_DOWNLEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_downleft");
+    public static final Supplier<BannerPatternShape> STRIPE_DOWNLEFT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_downleft"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_DOWNRIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_downright");
+    public static final Supplier<BannerPatternShape> STRIPE_DOWNRIGHT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_downright"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_LEFT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_left");
+    public static final Supplier<BannerPatternShape> STRIPE_LEFT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_left"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_MIDDLE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_middle");
+    public static final Supplier<BannerPatternShape> STRIPE_MIDDLE = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_middle"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_RIGHT = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_right");
+    public static final Supplier<BannerPatternShape> STRIPE_RIGHT = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_right"));
 
-    public static final Supplier<BannerPatternShape> SMALL_STRIPES = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "small_stripes");
+    public static final Supplier<BannerPatternShape> SMALL_STRIPES = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("small_stripes"));
 
-    public static final Supplier<BannerPatternShape> STRIPE_TOP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "stripe_top");
+    public static final Supplier<BannerPatternShape> STRIPE_TOP = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("stripe_top"));
 
-    public static final Supplier<BannerPatternShape> TRIANGLES_BOTTOM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "triangles_bottom");
+    public static final Supplier<BannerPatternShape> TRIANGLES_BOTTOM = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("triangles_bottom"));
 
-    public static final Supplier<BannerPatternShape> TRIANGLES_TOP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "triangles_top");
+    public static final Supplier<BannerPatternShape> TRIANGLES_TOP = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("triangles_top"));
 
-    public static final Supplier<BannerPatternShape> TRIANGLE_BOTTOM = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "triangle_bottom");
+    public static final Supplier<BannerPatternShape> TRIANGLE_BOTTOM = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("triangle_bottom"));
 
-    public static final Supplier<BannerPatternShape> TRIANGLE_TOP = Sponge.getRegistry().getCatalogRegistry().provideSupplier(BannerPatternShape.class, "triangle_top");
+    public static final Supplier<BannerPatternShape> TRIANGLE_TOP = Registries.BANNER_PATTERN_SHAPE.getSupplier(ResourceKey.minecraft("triangle_top"));
 
     // SORTFIELDS:OFF
 

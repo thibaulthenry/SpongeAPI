@@ -34,15 +34,15 @@ public interface Registry<V> {
 
     ResourceKey getKey();
 
-    Optional<V> get(ResourceKey key);
+    <T extends V> Optional<T> get(ResourceKey key);
 
-    Optional<ResourceKey> getKey(V value);
+    <T extends V> Optional<ResourceKey> getKey(T value);
 
-    Supplier<V> getSupplier(ResourceKey key);
+    <T extends V> Supplier<T> getSupplier(ResourceKey key);
 
     boolean isReadOnly();
 
-    boolean put(ResourceKey key, V value);
+    <T extends V> boolean put(ResourceKey key, T value);
 
     Collection<V> getAll();
 }

@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.event.cause.entity;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,15 +33,14 @@ public final class DismountTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<DismountType> DEATH = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DismountType.class, "death");
+    public static final Supplier<DismountType> DEATH = Registries.DISMOUNT_TYPE.getSupplier(ResourceKey.minecraft("death"));
 
-    public static final Supplier<DismountType> DERAIL = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DismountType.class, "derail");
+    public static final Supplier<DismountType> DERAIL = Registries.DISMOUNT_TYPE.getSupplier(ResourceKey.minecraft("derail"));
 
-    public static final Supplier<DismountType> PLAYER = Sponge.getRegistry().getCatalogRegistry().provideSupplier(DismountType.class, "player");
+    public static final Supplier<DismountType> PLAYER = Registries.DISMOUNT_TYPE.getSupplier(ResourceKey.minecraft("player"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private DismountTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

@@ -24,20 +24,18 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link FoxType}s.
- */
 public final class FoxTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<FoxType> RED = Sponge.getRegistry().getCatalogRegistry().provideSupplier(FoxType.class, "red");
+    public static final Supplier<FoxType> RED = Registries.FOX_TYPE.getSupplier(ResourceKey.minecraft("red"));
 
-    public static final Supplier<FoxType> SNOW = Sponge.getRegistry().getCatalogRegistry().provideSupplier(FoxType.class, "snow");
+    public static final Supplier<FoxType> SNOW = Registries.FOX_TYPE.getSupplier(ResourceKey.minecraft("snow"));
 
     // SORTFIELDS:OFF
 
