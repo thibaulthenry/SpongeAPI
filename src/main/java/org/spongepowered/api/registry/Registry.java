@@ -26,11 +26,11 @@ package org.spongepowered.api.registry;
 
 import org.spongepowered.api.ResourceKey;
 
-import java.util.Collection;
 import java.util.Optional;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
-public interface Registry<V> {
+public interface Registry<V> extends Iterable<V> {
 
     ResourceKey getKey();
 
@@ -44,5 +44,5 @@ public interface Registry<V> {
 
     <T extends V> boolean put(ResourceKey key, T value);
 
-    Collection<V> getAll();
+    Stream<V> stream();
 }

@@ -31,13 +31,13 @@ import java.util.function.Supplier;
 
 public final class HandPreferences {
 
-    // SORTFIELDS: ON
+    // SORTFIELDS:ON
 
     public static final Supplier<HandPreference> LEFT = Registries.HAND_PREFERENCE.getSupplier(ResourceKey.minecraft("left"));
 
     public static final Supplier<HandPreference> RIGHT = Registries.HAND_PREFERENCE.getSupplier(ResourceKey.minecraft("right"));
 
-    // SORTFIELDS: OFF
+    // SORTFIELDS:OFF
 
     private HandPreferences() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
