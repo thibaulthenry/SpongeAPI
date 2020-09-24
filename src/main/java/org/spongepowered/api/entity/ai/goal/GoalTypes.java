@@ -24,12 +24,13 @@
  */
 package org.spongepowered.api.entity.ai.goal;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.living.Agent;
 import org.spongepowered.api.entity.living.Creature;
 import org.spongepowered.api.entity.living.Humanoid;
 import org.spongepowered.api.entity.living.animal.horse.Horse;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -41,30 +42,32 @@ public final class GoalTypes {
     /**
      * {@link Goal} where {@link Creature}s avoid other {@link Agent}s based on a {@link Predicate}.
      */
-    public static final Supplier<GoalType> AVOID_ENTITY = Sponge.getRegistry().getCatalogRegistry().getSupplier(GoalType.class, "avoid_entity");
+    public static final Supplier<GoalType> AVOID_ENTITY = Registries.GOAL_TYPE.getSupplier(ResourceKey.minecraft("avoid_entity"));
 
     /**
      * {@link Goal} where {@link Horse}s run around while {@link Humanoid}s attempt to tame them.
      */
-    public static final Supplier<GoalType> RUN_AROUND_LIKE_CRAZY = Sponge.getRegistry().getCatalogRegistry().getSupplier(GoalType.class, "run_around_like_crazy");
+    public static final Supplier<GoalType> RUN_AROUND_LIKE_CRAZY = Registries.GOAL_TYPE.getSupplier(ResourceKey.minecraft("run_around_like_crazy"));
 
     /**
      * {@link Goal} where {@link Agent}s swim in liquids.
      */
-    public static final Supplier<GoalType> SWIMMING = Sponge.getRegistry().getCatalogRegistry().getSupplier(GoalType.class, "swimming");
+    public static final Supplier<GoalType> SWIMMING = Registries.GOAL_TYPE.getSupplier(ResourceKey.minecraft("swimming"));
 
     /**
      * {@link Goal} where {@link Creature}s walk around.
      */
-    public static final Supplier<GoalType> WANDER = Sponge.getRegistry().getCatalogRegistry().getSupplier(GoalType.class, "wander");
+    public static final Supplier<GoalType> WANDER = Registries.GOAL_TYPE.getSupplier(ResourceKey.minecraft("wander"));
 
     /**
      * {@link Goal} where {@link Agent}s will "watch" other {@link Entity}s.
      */
-    public static final Supplier<GoalType> WATCH_CLOSEST = Sponge.getRegistry().getCatalogRegistry().getSupplier(GoalType.class, "watch_closest");
+    public static final Supplier<GoalType> WATCH_CLOSEST = Registries.GOAL_TYPE.getSupplier(ResourceKey.minecraft("watch_closest"));
 
     // SORTFIELDS:OFF
 
     private GoalTypes() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

@@ -24,13 +24,12 @@
  */
 package org.spongepowered.api.scoreboard;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
 /**
- * An enumeration of vanilla {@link CollisionRule}s.
- *
  * <p>The behavior of these values can be somewhat counter-intuitive. Since {@link CollisionRule}s
  * are used on the client, this behavior cannot be changed by Sponge.</p>
  *
@@ -53,7 +52,6 @@ import java.util.function.Supplier;
  * Different teams - {@link #PUSH_OWN_TEAM} - {@link #PUSH_OTHER_TEAMS} - No
  * Different teams - {@link #PUSH_OWN_TEAM} - {@link #PUSH_OWN_TEAM} - No
  * Different teams - {@link #PUSH_OTHER_TEAMS} - {@link #PUSH_OTHER_TEAMS} - Yes</p>
- *
  */
 public final class CollisionRules {
 
@@ -64,26 +62,25 @@ public final class CollisionRules {
      *
      * <p>This is the default value.</p>
      */
-    public static final Supplier<CollisionRule> ALWAYS = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "always");
+    public static final Supplier<CollisionRule> ALWAYS = Registries.COLLISION_RULE.getSupplier(ResourceKey.minecraft("always"));
 
     /**
      * Members will never collide.
      */
-    public static final Supplier<CollisionRule> NEVER = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "never");
+    public static final Supplier<CollisionRule> NEVER = Registries.COLLISION_RULE.getSupplier(ResourceKey.minecraft("never"));
 
     /**
      * Members will only push members on opposing teams.
      */
-    public static final Supplier<CollisionRule> PUSH_OTHER_TEAMS = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "push_other_teams");
+    public static final Supplier<CollisionRule> PUSH_OTHER_TEAMS = Registries.COLLISION_RULE.getSupplier(ResourceKey.minecraft("push_other_teams"));
 
     /**
      * Members will only push other members on their team and mobs.
      */
-    public static final Supplier<CollisionRule> PUSH_OWN_TEAM = Sponge.getRegistry().getCatalogRegistry().getSupplier(CollisionRule.class, "push_own_team");
+    public static final Supplier<CollisionRule> PUSH_OWN_TEAM = Registries.COLLISION_RULE.getSupplier(ResourceKey.minecraft("push_own_team"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private CollisionRules() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

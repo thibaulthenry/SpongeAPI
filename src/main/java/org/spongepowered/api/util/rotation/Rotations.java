@@ -24,40 +24,33 @@
  */
 package org.spongepowered.api.util.rotation;
 
-import org.spongepowered.api.Sponge;
-import org.spongepowered.api.entity.hanging.ItemFrame;
-import org.spongepowered.api.item.inventory.ItemStack;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of possible rotations for something that can rotate,
- * such as an {@link ItemStack} within
- * an {@link ItemFrame}.
- */
 public final class Rotations {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<Rotation> BOTTOM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "bottom");
+    public static final Supplier<Rotation> BOTTOM = Registries.ROTATION.getSupplier(ResourceKey.minecraft("bottom"));
 
-    public static final Supplier<Rotation> BOTTOM_LEFT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "bottom_left");
+    public static final Supplier<Rotation> BOTTOM_LEFT = Registries.ROTATION.getSupplier(ResourceKey.minecraft("bottom_left"));
 
-    public static final Supplier<Rotation> BOTTOM_RIGHT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "bottom_right");
+    public static final Supplier<Rotation> BOTTOM_RIGHT = Registries.ROTATION.getSupplier(ResourceKey.minecraft("bottom_right"));
 
-    public static final Supplier<Rotation> LEFT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "left");
+    public static final Supplier<Rotation> LEFT = Registries.ROTATION.getSupplier(ResourceKey.minecraft("left"));
 
-    public static final Supplier<Rotation> RIGHT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "right");
+    public static final Supplier<Rotation> RIGHT = Registries.ROTATION.getSupplier(ResourceKey.minecraft("right"));
 
-    public static final Supplier<Rotation> TOP = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "top");
+    public static final Supplier<Rotation> TOP = Registries.ROTATION.getSupplier(ResourceKey.minecraft("top"));
 
-    public static final Supplier<Rotation> TOP_LEFT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "top_left");
+    public static final Supplier<Rotation> TOP_LEFT = Registries.ROTATION.getSupplier(ResourceKey.minecraft("top_left"));
 
-    public static final Supplier<Rotation> TOP_RIGHT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Rotation.class, "top_right");
+    public static final Supplier<Rotation> TOP_RIGHT = Registries.ROTATION.getSupplier(ResourceKey.minecraft("top_right"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private Rotations() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

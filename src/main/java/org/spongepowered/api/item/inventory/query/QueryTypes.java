@@ -24,7 +24,7 @@
  */
 package org.spongepowered.api.item.inventory.query;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.data.Key;
 import org.spongepowered.api.data.KeyValueMatcher;
 import org.spongepowered.api.item.ItemType;
@@ -35,12 +35,13 @@ import org.spongepowered.api.item.inventory.entity.PrimaryPlayerInventory;
 import org.spongepowered.api.item.inventory.query.QueryType.NoParam;
 import org.spongepowered.api.item.inventory.query.QueryType.OneParam;
 import org.spongepowered.api.item.inventory.query.QueryType.TwoParam;
+import org.spongepowered.api.registry.Registries;
 import org.spongepowered.math.vector.Vector2i;
 
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-@SuppressWarnings({"unused", "WeakerAccess"})
+@SuppressWarnings("WeakerAccess")
 public final class QueryTypes {
 
     // SORTFIELDS:ON
@@ -48,19 +49,19 @@ public final class QueryTypes {
     /**
      * Tests based on the class of the inventory.
      */
-    public static final Supplier<OneParam<Class<? extends Inventory>>> INVENTORY_TYPE = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "inventory_type");
+    public static final Supplier<OneParam<Class<? extends Inventory>>> INVENTORY_TYPE = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("inventory_type"));
 
     /**
      * Allows a custom condition for the items contained within an item stack.
      */
-    public static final Supplier<OneParam<Predicate<ItemStack>>> ITEM_STACK_CUSTOM = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "item_stack_custom");
+    public static final Supplier<OneParam<Predicate<ItemStack>>> ITEM_STACK_CUSTOM = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("item_stack_custom"));
 
     /**
      * Tests for an exact match of the item stack contained in each slot.
      *
      * <p>Generally uses {@link ItemStack}'s <code>#equals</code> method.</p>
      */
-    public static final Supplier<OneParam<ItemStack>> ITEM_STACK_EXACT = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "item_stack_exact");
+    public static final Supplier<OneParam<ItemStack>> ITEM_STACK_EXACT = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("item_stack_exact"));
 
     /**
      * Tests for an exact match of the item stack contained in each slot, with
@@ -69,46 +70,45 @@ public final class QueryTypes {
      *
      * @see ItemStack#equalTo(ItemStack)
      */
-    public static final Supplier<OneParam<ItemStack>> ITEM_STACK_IGNORE_QUANTITY = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "item_stack_ignore_quantity");
+    public static final Supplier<OneParam<ItemStack>> ITEM_STACK_IGNORE_QUANTITY = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("item_stack_ignore_quantity"));
 
     /**
      * Tests for a match of the type of item contained in each slot.
      *
      * @see ItemStack#getType()
      */
-    public static final Supplier<OneParam<ItemType>> ITEM_TYPE = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "item_type");
+    public static final Supplier<OneParam<ItemType>> ITEM_TYPE = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("item_type"));
 
     /**
      * Tests based on an inventory property present on the target inventory.
      *
      * @see Inventory#get(Inventory, Key)
      */
-    public static final Supplier<OneParam<KeyValueMatcher<?>>> KEY_VALUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "key_value");
+    public static final Supplier<OneParam<KeyValueMatcher<?>>> KEY_VALUE = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("key_value"));
 
     /**
      * Tests based on the class of the inventory.
      */
-    public static final Supplier<OneParam<Class<?>>> TYPE = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "type");
+    public static final Supplier<OneParam<Class<?>>> TYPE = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("type"));
 
     /**
      * Query for a modified order of slots in a player inventory.
      * Ordering the {@link Hotbar} before the {@link PrimaryPlayerInventory}
      */
-    public static final Supplier<NoParam> PLAYER_PRIMARY_HOTBAR_FIRST = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "player_primary_hotbar_first");
+    public static final Supplier<NoParam> PLAYER_PRIMARY_HOTBAR_FIRST = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("player_primary_hotbar_first"));
 
     /**
      * Query for a reverse order of slots.
      */
-    public static final Supplier<NoParam> REVERSE = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "reverse");
+    public static final Supplier<NoParam> REVERSE = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("reverse"));
 
     /**
      * A grid query. Only works on grids. The first value is the offset the second value is the grid size.
      */
-    public static final Supplier<TwoParam<Vector2i, Vector2i>> GRID = Sponge.getRegistry().getCatalogRegistry().getSupplier(QueryType.class, "grid");
+    public static final Supplier<TwoParam<Vector2i, Vector2i>> GRID = Registries.QUERY_TYPE.getSupplier(ResourceKey.minecraft("grid"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private QueryTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

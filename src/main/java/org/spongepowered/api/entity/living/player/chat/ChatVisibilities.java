@@ -25,34 +25,33 @@
 package org.spongepowered.api.entity.living.player.chat;
 
 import net.kyori.adventure.audience.MessageType;
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of the vanilla chat visibility modes for a client.
- */
 public final class ChatVisibilities {
-
-    private ChatVisibilities() {
-    }
 
     // SORTFIELDS:ON
 
     /**
      * All chat is visible.
      */
-    public static final Supplier<ChatVisibility> FULL = Sponge.getRegistry().getCatalogRegistry().getSupplier(ChatVisibility.class, "full");
+    public static final Supplier<ChatVisibility> FULL = Registries.CHAT_VISIBILITY.getSupplier(ResourceKey.minecraft("full"));
 
     /**
      * No chat is visible.
      */
-    public static final Supplier<ChatVisibility> HIDDEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(ChatVisibility.class, "hidden");
+    public static final Supplier<ChatVisibility> HIDDEN = Registries.CHAT_VISIBILITY.getSupplier(ResourceKey.minecraft("hidden"));
 
     /**
      * Only {@link MessageType#SYSTEM} is visible.
      */
-    public static final Supplier<ChatVisibility> SYSTEM = Sponge.getRegistry().getCatalogRegistry().getSupplier(ChatVisibility.class, "system");
+    public static final Supplier<ChatVisibility> SYSTEM = Registries.CHAT_VISIBILITY.getSupplier(ResourceKey.minecraft("system"));
 
     // SORTFIELDS:OFF
+
+    private ChatVisibilities() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
+    }
 }

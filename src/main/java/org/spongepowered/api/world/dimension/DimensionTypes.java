@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.world.dimension;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,11 +33,11 @@ public final class DimensionTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<DimensionType> OVERWORLD = Sponge.getRegistry().getCatalogRegistry().getSupplier(DimensionType.class, "overworld");
+    public static final Supplier<DimensionType> OVERWORLD = Registries.DIMENSION_TYPE.getSupplier(ResourceKey.minecraft("overworld"));
 
-    public static final Supplier<DimensionType> THE_END = Sponge.getRegistry().getCatalogRegistry().getSupplier(DimensionType.class, "the_end");
+    public static final Supplier<DimensionType> THE_END = Registries.DIMENSION_TYPE.getSupplier(ResourceKey.minecraft("the_end"));
 
-    public static final Supplier<DimensionType> THE_NETHER = Sponge.getRegistry().getCatalogRegistry().getSupplier(DimensionType.class, "the_nether");
+    public static final Supplier<DimensionType> THE_NETHER = Registries.DIMENSION_TYPE.getSupplier(ResourceKey.minecraft("the_nether"));
 
     // SORTFIELDS:OFF
 

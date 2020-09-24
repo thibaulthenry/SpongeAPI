@@ -24,118 +24,115 @@
  */
 package org.spongepowered.api.statistic;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of all available {@link Statistic}s from the vanilla game.
- */
 public final class Statistics {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<Statistic> ANIMALS_BRED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "animals_bred");
+    public static final Supplier<Statistic> ANIMALS_BRED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("animals_bred"));
 
-    public static final Supplier<Statistic> ARMOR_CLEANED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "armor_cleaned");
+    public static final Supplier<Statistic> ARMOR_CLEANED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("armor_cleaned"));
 
-    public static final Supplier<Statistic> AVIATE_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "aviate_one_cm");
+    public static final Supplier<Statistic> AVIATE_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("aviate_one_cm"));
 
-    public static final Supplier<Statistic> BANNER_CLEANED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "banner_cleaned");
+    public static final Supplier<Statistic> BANNER_CLEANED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("banner_cleaned"));
 
-    public static final Supplier<Statistic> BEACON_INTERACTION = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "beacon_interaction");
+    public static final Supplier<Statistic> BEACON_INTERACTION = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("beacon_interaction"));
 
-    public static final Supplier<Statistic> BOAT_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "boat_one_cm");
+    public static final Supplier<Statistic> BOAT_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("boat_one_cm"));
 
-    public static final Supplier<Statistic> BREWINGSTAND_INTERACTION = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "brewingstand_interaction");
+    public static final Supplier<Statistic> BREWINGSTAND_INTERACTION = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("brewingstand_interaction"));
 
-    public static final Supplier<Statistic> CAKE_SLICES_EATEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "cake_slices_eaten");
+    public static final Supplier<Statistic> CAKE_SLICES_EATEN = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("cake_slices_eaten"));
 
-    public static final Supplier<Statistic> CAULDRON_FILLED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "cauldron_filled");
+    public static final Supplier<Statistic> CAULDRON_FILLED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("cauldron_filled"));
 
-    public static final Supplier<Statistic> CAULDRON_USED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "cauldron_used");
+    public static final Supplier<Statistic> CAULDRON_USED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("cauldron_used"));
 
-    public static final Supplier<Statistic> CHEST_OPENED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "chest_opened");
+    public static final Supplier<Statistic> CHEST_OPENED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("chest_opened"));
 
-    public static final Supplier<Statistic> CLIMB_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "climb_one_cm");
+    public static final Supplier<Statistic> CLIMB_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("climb_one_cm"));
 
-    public static final Supplier<Statistic> CRAFTING_TABLE_INTERACTION = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "crafting_table_interaction");
+    public static final Supplier<Statistic> CRAFTING_TABLE_INTERACTION = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("crafting_table_interaction"));
 
-    public static final Supplier<Statistic> CROUCH_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "crouch_one_cm");
+    public static final Supplier<Statistic> CROUCH_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("crouch_one_cm"));
 
-    public static final Supplier<Statistic> DAMAGE_DEALT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "damage_dealt");
+    public static final Supplier<Statistic> DAMAGE_DEALT = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("damage_dealt"));
 
-    public static final Supplier<Statistic> DAMAGE_TAKEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "damage_taken");
+    public static final Supplier<Statistic> DAMAGE_TAKEN = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("damage_taken"));
 
-    public static final Supplier<Statistic> DEATHS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "deaths");
+    public static final Supplier<Statistic> DEATHS = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("deaths"));
 
-    public static final Supplier<Statistic> DISPENSER_INSPECTED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "dispenser_inspected");
+    public static final Supplier<Statistic> DISPENSER_INSPECTED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("dispenser_inspected"));
 
-    public static final Supplier<Statistic> DIVE_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "dive_one_cm");
+    public static final Supplier<Statistic> DIVE_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("dive_one_cm"));
 
-    public static final Supplier<Statistic> DROP = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "drop");
+    public static final Supplier<Statistic> DROP = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("drop"));
 
-    public static final Supplier<Statistic> DROPPER_INSPECTED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "dropper_inspected");
+    public static final Supplier<Statistic> DROPPER_INSPECTED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("dropper_inspected"));
 
-    public static final Supplier<Statistic> ENDERCHEST_OPENED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "enderchest_opened");
+    public static final Supplier<Statistic> ENDERCHEST_OPENED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("enderchest_opened"));
 
-    public static final Supplier<Statistic> FALL_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "fall_one_cm");
+    public static final Supplier<Statistic> FALL_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("fall_one_cm"));
 
-    public static final Supplier<Statistic> FISH_CAUGHT = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "fish_caught");
+    public static final Supplier<Statistic> FISH_CAUGHT = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("fish_caught"));
 
-    public static final Supplier<Statistic> FLOWER_POTTED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "flower_potted");
+    public static final Supplier<Statistic> FLOWER_POTTED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("flower_potted"));
 
-    public static final Supplier<Statistic> FURNACE_INTERACTION = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "furnace_interaction");
+    public static final Supplier<Statistic> FURNACE_INTERACTION = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("furnace_interaction"));
 
-    public static final Supplier<Statistic> HOPPER_INSPECTED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "hopper_inspected");
+    public static final Supplier<Statistic> HOPPER_INSPECTED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("hopper_inspected"));
 
-    public static final Supplier<Statistic> HORSE_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "horse_one_cm");
+    public static final Supplier<Statistic> HORSE_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("horse_one_cm"));
 
-    public static final Supplier<Statistic> ITEM_ENCHANTED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "item_enchanted");
+    public static final Supplier<Statistic> ITEM_ENCHANTED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("item_enchanted"));
 
-    public static final Supplier<Statistic> JUMP = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "jump");
+    public static final Supplier<Statistic> JUMP = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("jump"));
 
-    public static final Supplier<Statistic> LEAVE_GAME = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "leave_game");
+    public static final Supplier<Statistic> LEAVE_GAME = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("leave_game"));
 
-    public static final Supplier<Statistic> MINECART_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "minecart_one_cm");
+    public static final Supplier<Statistic> MINECART_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("minecart_one_cm"));
 
-    public static final Supplier<Statistic> MOB_KILLS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "mob_kills");
+    public static final Supplier<Statistic> MOB_KILLS = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("mob_kills"));
 
-    public static final Supplier<Statistic> NOTEBLOCK_PLAYED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "noteblock_played");
+    public static final Supplier<Statistic> NOTEBLOCK_PLAYED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("noteblock_played"));
 
-    public static final Supplier<Statistic> NOTEBLOCK_TUNED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "noteblock_tuned");
+    public static final Supplier<Statistic> NOTEBLOCK_TUNED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("noteblock_tuned"));
 
-    public static final Supplier<Statistic> OPEN_SHULKER_BOX = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "open_shulker_box");
+    public static final Supplier<Statistic> OPEN_SHULKER_BOX = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("open_shulker_box"));
 
-    public static final Supplier<Statistic> PIG_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "pig_one_cm");
+    public static final Supplier<Statistic> PIG_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("pig_one_cm"));
 
-    public static final Supplier<Statistic> PLAYER_KILLS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "player_kills");
+    public static final Supplier<Statistic> PLAYER_KILLS = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("player_kills"));
 
-    public static final Supplier<Statistic> RECORD_PLAYED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "record_played");
+    public static final Supplier<Statistic> RECORD_PLAYED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("record_played"));
 
-    public static final Supplier<Statistic> SLEEP_IN_BED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "sleep_in_bed");
+    public static final Supplier<Statistic> SLEEP_IN_BED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("sleep_in_bed"));
 
-    public static final Supplier<Statistic> SNEAK_TIME = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "sneak_time");
+    public static final Supplier<Statistic> SNEAK_TIME = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("sneak_time"));
 
-    public static final Supplier<Statistic> SPRINT_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "sprint_one_cm");
+    public static final Supplier<Statistic> SPRINT_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("sprint_one_cm"));
 
-    public static final Supplier<Statistic> SWIM_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "swim_one_cm");
+    public static final Supplier<Statistic> SWIM_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("swim_one_cm"));
 
-    public static final Supplier<Statistic> TALKED_TO_VILLAGER = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "talked_to_villager");
+    public static final Supplier<Statistic> TALKED_TO_VILLAGER = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("talked_to_villager"));
 
-    public static final Supplier<Statistic> TIME_PLAYED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "time_played");
+    public static final Supplier<Statistic> TIME_PLAYED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("time_played"));
 
-    public static final Supplier<Statistic> TIME_SINCE_DEATH = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "time_since_death");
+    public static final Supplier<Statistic> TIME_SINCE_DEATH = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("time_since_death"));
 
-    public static final Supplier<Statistic> TRADED_WITH_VILLAGER = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "traded_with_villager");
+    public static final Supplier<Statistic> TRADED_WITH_VILLAGER = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("traded_with_villager"));
 
-    public static final Supplier<Statistic> TRAPPED_CHEST_TRIGGERED = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "trapped_chest_triggered");
+    public static final Supplier<Statistic> TRAPPED_CHEST_TRIGGERED = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("trapped_chest_triggered"));
 
-    public static final Supplier<Statistic> WALK_ONE_CM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Statistic.class, "walk_one_cm");
+    public static final Supplier<Statistic> WALK_ONE_CM = Registries.STATISTIC.getSupplier(ResourceKey.minecraft("walk_one_cm"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private Statistics() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

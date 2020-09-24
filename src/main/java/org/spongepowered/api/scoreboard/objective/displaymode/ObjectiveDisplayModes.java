@@ -24,17 +24,13 @@
  */
 package org.spongepowered.api.scoreboard.objective.displaymode;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 import org.spongepowered.api.scoreboard.displayslot.DisplaySlots;
 import org.spongepowered.api.scoreboard.objective.Objective;
 
 import java.util.function.Supplier;
 
-/**
- * {@link ObjectiveDisplayMode}s which cause scores for an
- * {@link Objective} to be be
- * displayed differently.
- */
 public final class ObjectiveDisplayModes {
 
     // SORTFIELDS:ON
@@ -46,17 +42,18 @@ public final class ObjectiveDisplayModes {
      * <p>This only has an effect for an {@link Objective}
      * with the display slot {@link DisplaySlots#LIST}.</p>
      */
-    public static final Supplier<ObjectiveDisplayMode> HEARTS = Sponge.getRegistry().getCatalogRegistry().getSupplier(ObjectiveDisplayMode.class, "hearts");
+    public static final Supplier<ObjectiveDisplayMode> HEARTS = Registries.OBJECTIVE_DISPLAY_MODE.getSupplier(ResourceKey.minecraft("hearts"));
 
     /**
      * Causes the scores for an {@link Objective}
      * to be displayed as integers.
      */
-    public static final Supplier<ObjectiveDisplayMode> INTEGER = Sponge.getRegistry().getCatalogRegistry().getSupplier(ObjectiveDisplayMode.class, "integer");
+    public static final Supplier<ObjectiveDisplayMode> INTEGER = Registries.OBJECTIVE_DISPLAY_MODE.getSupplier(ResourceKey.minecraft("integer"));
 
     // SORTFIELDS:OFF
 
     private ObjectiveDisplayModes() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
 
 }

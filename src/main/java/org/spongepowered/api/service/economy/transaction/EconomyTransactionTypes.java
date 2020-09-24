@@ -24,13 +24,25 @@
  */
 package org.spongepowered.api.service.economy.transaction;
 
-import org.spongepowered.api.CatalogType;
-import org.spongepowered.api.util.annotation.CatalogedBy;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
-/**
- * Represents the type of a transaction.
- */
-@CatalogedBy(TransactionTypes.class)
-public interface TransactionType extends CatalogType {
+import java.util.function.Supplier;
+
+public final class EconomyTransactionTypes {
+
+    // SORTFIELDS:ON
+
+    public static final Supplier<EconomyTransactionType> DEPOSIT = Registries.ECONOMY_TRANSACTION_TYPE.getSupplier(ResourceKey.sponge("deposit"));
+
+    public static final Supplier<EconomyTransactionType> TRANSFER = Registries.ECONOMY_TRANSACTION_TYPE.getSupplier(ResourceKey.sponge("transfer"));
+
+    public static final Supplier<EconomyTransactionType> WITHDRAW = Registries.ECONOMY_TRANSACTION_TYPE.getSupplier(ResourceKey.sponge("withdraw"));
+
+    // SORTFIELDS:OFF
+
+    private EconomyTransactionTypes() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
+    }
 
 }

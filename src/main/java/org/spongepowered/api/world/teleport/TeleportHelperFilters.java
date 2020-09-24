@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.world.teleport;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -36,7 +37,7 @@ public final class TeleportHelperFilters {
      * Designed to be combined with other filters, this filter determines if a
      * block is in the config blacklist and returns the appropriate result.
      */
-    public static final Supplier<TeleportHelperFilter> CONFIG = Sponge.getRegistry().getCatalogRegistry().getSupplier(TeleportHelperFilter.class, "config");
+    public static final Supplier<TeleportHelperFilter> CONFIG = Registries.TELEPORT_HELPER_FILTER.getSupplier(ResourceKey.minecraft("config"));
 
     /**
      * The default behavior for safe teleportation.
@@ -53,7 +54,7 @@ public final class TeleportHelperFilters {
      *     floor or body (see {@link #CONFIG}).</li>
      * </ul>
      */
-    public static final Supplier<TeleportHelperFilter> DEFAULT = Sponge.getRegistry().getCatalogRegistry().getSupplier(TeleportHelperFilter.class, "default");
+    public static final Supplier<TeleportHelperFilter> DEFAULT = Registries.TELEPORT_HELPER_FILTER.getSupplier(ResourceKey.minecraft("default"));
 
     /**
      * The flying safe teleportation behavior.
@@ -67,23 +68,22 @@ public final class TeleportHelperFilters {
      *     <li>That floor blocks are not cacti (and thus, hurt).</li>
      * </ul>
      */
-    public static final Supplier<TeleportHelperFilter> FLYING = Sponge.getRegistry().getCatalogRegistry().getSupplier(TeleportHelperFilter.class, "flying");
+    public static final Supplier<TeleportHelperFilter> FLYING = Registries.TELEPORT_HELPER_FILTER.getSupplier(ResourceKey.minecraft("flying"));
 
     /**
      * This filter is the same as the {@link #DEFAULT} kernel, except that
      * portals are not valid targets.
      */
-    public static final Supplier<TeleportHelperFilter> NO_PORTAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(TeleportHelperFilter.class, "no_portal");
+    public static final Supplier<TeleportHelperFilter> NO_PORTAL = Registries.TELEPORT_HELPER_FILTER.getSupplier(ResourceKey.minecraft("no_portal"));
 
     /**
      * This filter is the same as the {@link #DEFAULT} kernel, except that
      * only targets that can see the sky are considered.
      */
-    public static final Supplier<TeleportHelperFilter> SURFACE_ONLY = Sponge.getRegistry().getCatalogRegistry().getSupplier(TeleportHelperFilter.class, "surface_only");
+    public static final Supplier<TeleportHelperFilter> SURFACE_ONLY = Registries.TELEPORT_HELPER_FILTER.getSupplier(ResourceKey.minecraft("surface_only"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private TeleportHelperFilters() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

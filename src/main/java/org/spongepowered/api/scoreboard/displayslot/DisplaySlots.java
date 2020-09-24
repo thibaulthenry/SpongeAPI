@@ -24,13 +24,11 @@
  */
 package org.spongepowered.api.scoreboard.displayslot;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * Display slot names which display an objective in a particular place in-game.
- */
 public final class DisplaySlots {
 
     // SORTFIELDS:ON
@@ -39,54 +37,53 @@ public final class DisplaySlots {
      * Displays a player's score for the objective underneath their nametag
      * in-game, when a player is closer than 10 blocks.
      */
-    public static final Supplier<DisplaySlot> BELOW_NAME = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "below_name");
+    public static final Supplier<DisplaySlot> BELOW_NAME = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("below_name"));
 
     /**
      * Displays scores for the objective next to players' names in the
      * player list (accessed by holding TAB).
      */
-    public static final Supplier<DisplaySlot> LIST = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "list");
+    public static final Supplier<DisplaySlot> LIST = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("list"));
 
     /**
      * Displays scores for the objective on the side of the screen in-game.
      */
-    public static final Supplier<DisplaySlot> SIDEBAR = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team");
+    public static final Supplier<DisplaySlot> SIDEBAR = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_AQUA = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_aqua");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_AQUA = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_aqua"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_BLACK = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_black");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_BLACK = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_black"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_blue");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_BLUE = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_blue"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_AQUA = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_dark_aqua");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_AQUA = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_dark_aqua"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_dark_blue");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_BLUE = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_dark_blue"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_GRAY = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_dark_gray");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_GRAY = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_dark_gray"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_GREEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_dark_green");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_GREEN = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_dark_green"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_PURPLE = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_dark_purple");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_PURPLE = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_dark_purple"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_RED = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_dark_red");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_DARK_RED = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_dark_red"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_GOLD = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_gold");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_GOLD = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_gold"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_GRAY = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_gray");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_GRAY = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_gray"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_GREEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_green");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_GREEN = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_green"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_LIGHT_PURPLE = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_light_purple");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_LIGHT_PURPLE = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_light_purple"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_RED = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_red");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_RED = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_red"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_WHITE = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_white");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_WHITE = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_white"));
 
-    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_YELLOW = Sponge.getRegistry().getCatalogRegistry().getSupplier(DisplaySlot.class, "sidebar_team_yellow");
+    public static final Supplier<DisplaySlot> SIDEBAR_TEAM_YELLOW = Registries.DISPLAY_SLOT.getSupplier(ResourceKey.minecraft("sidebar_team_yellow"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private DisplaySlots() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

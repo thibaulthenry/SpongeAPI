@@ -24,26 +24,25 @@
  */
 package org.spongepowered.api.entity.attribute;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of {@link AttributeOperation}s.
- */
 public final class AttributeOperations {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<AttributeOperation> ADD_NUMBER = Sponge.getRegistry().getCatalogRegistry().getSupplier(AttributeOperation.class, "add_number");
+    public static final Supplier<AttributeOperation> ADD_NUMBER = Registries.ATTRIBUTE_OPERATION.getSupplier(ResourceKey.minecraft("add_number"));
 
-    public static final Supplier<AttributeOperation> ADD_PERCENTAGE = Sponge.getRegistry().getCatalogRegistry().getSupplier(AttributeOperation.class, "add_percentage");
+    public static final Supplier<AttributeOperation> ADD_PERCENTAGE = Registries.ATTRIBUTE_OPERATION.getSupplier(ResourceKey.minecraft("add_percentage"));
 
-    public static final Supplier<AttributeOperation> MULTIPLY_PERCENTAGE = Sponge.getRegistry().getCatalogRegistry().getSupplier(AttributeOperation.class, "multiply_percentage");
+    public static final Supplier<AttributeOperation> MULTIPLY_PERCENTAGE = Registries.ATTRIBUTE_OPERATION.getSupplier(ResourceKey.minecraft("multiply_percentage"));
 
     // SORTFIELDS:OFF
 
     private AttributeOperations() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

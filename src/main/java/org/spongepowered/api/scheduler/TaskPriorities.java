@@ -24,23 +24,33 @@
  */
 package org.spongepowered.api.scheduler;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
 public final class TaskPriorities {
 
-    //sortfields:ON
-    public static final Supplier<TaskPriority> EXTREMELY_HIGH = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "extremely_high");
-    public static final Supplier<TaskPriority> VERY_HIGH = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "very_high");
-    public static final Supplier<TaskPriority> HIGH = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "high");
-    public static final Supplier<TaskPriority> NORMAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "normal");
-    public static final Supplier<TaskPriority> LOW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "low");
-    public static final Supplier<TaskPriority> VERY_LOW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "very_low");
-    public static final Supplier<TaskPriority> EXTREMELY_LOW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TaskPriority.class, "extremely_low");
-    //sortfields:OFF
+    //SORTFIELDS:ON
+
+    public static final Supplier<TaskPriority> EXTREMELY_HIGH = Registries.TASK_PRIORITY.getSupplier(ResourceKey.minecraft("extremely_high"));
+
+    public static final Supplier<TaskPriority> VERY_HIGH = Registries.TASK_PRIORITY.getSupplier(ResourceKey.minecraft("very_high"));
+
+    public static final Supplier<TaskPriority> HIGH = Registries.TASK_PRIORITY.getSupplier(ResourceKey.minecraft("high"));
+
+    public static final Supplier<TaskPriority> NORMAL = Registries.TASK_PRIORITY.getSupplier(ResourceKey.minecraft("normal"));
+
+    public static final Supplier<TaskPriority> LOW = Registries.TASK_PRIORITY.getSupplier(ResourceKey.minecraft("low"));
+
+    public static final Supplier<TaskPriority> VERY_LOW = Registries.TASK_PRIORITY.getSupplier(ResourceKey.minecraft("very_low"));
+
+    public static final Supplier<TaskPriority> EXTREMELY_LOW = Registries.TASK_PRIORITY.getSupplier(ResourceKey.minecraft("extremely_low"));
+
+    //SORTFIELDS:OFF
 
     private TaskPriorities() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
 
 }

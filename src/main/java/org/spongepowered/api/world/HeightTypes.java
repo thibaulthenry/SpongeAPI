@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.world;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,23 +33,24 @@ public final class HeightTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<HeightType> LIGHT_BLOCKING = Sponge.getRegistry().getCatalogRegistry().getSupplier(HeightType.class, "light_blocking");
+    public static final Supplier<HeightType> LIGHT_BLOCKING = Registries.HEIGHT_TYPE.getSupplier(ResourceKey.minecraft("light_blocking"));
 
-    public static final Supplier<HeightType> MOTION_BLOCKING = Sponge.getRegistry().getCatalogRegistry().getSupplier(HeightType.class, "motion_blocking");
+    public static final Supplier<HeightType> MOTION_BLOCKING = Registries.HEIGHT_TYPE.getSupplier(ResourceKey.minecraft("motion_blocking"));
 
-    public static final Supplier<HeightType> MOTION_BLOCKING_NO_LEAVES = Sponge.getRegistry().getCatalogRegistry().getSupplier(HeightType.class, "motion_blocking_no_leaves");
+    public static final Supplier<HeightType> MOTION_BLOCKING_NO_LEAVES = Registries.HEIGHT_TYPE.getSupplier(ResourceKey.minecraft("motion_blocking_no_leaves"));
 
-    public static final Supplier<HeightType> OCEAN_FLOOR = Sponge.getRegistry().getCatalogRegistry().getSupplier(HeightType.class, "ocean_floor");
+    public static final Supplier<HeightType> OCEAN_FLOOR = Registries.HEIGHT_TYPE.getSupplier(ResourceKey.minecraft("ocean_floor"));
 
-    public static final Supplier<HeightType> OCEAN_FLOOR_WG = Sponge.getRegistry().getCatalogRegistry().getSupplier(HeightType.class, "ocean_floor_wg");
+    public static final Supplier<HeightType> OCEAN_FLOOR_WG = Registries.HEIGHT_TYPE.getSupplier(ResourceKey.minecraft("ocean_floor_wg"));
 
-    public static final Supplier<HeightType> WORLD_SURFACE = Sponge.getRegistry().getCatalogRegistry().getSupplier(HeightType.class, "world_surface");
+    public static final Supplier<HeightType> WORLD_SURFACE = Registries.HEIGHT_TYPE.getSupplier(ResourceKey.minecraft("world_surface"));
 
-    public static final Supplier<HeightType> WORLD_SURFACE_WG = Sponge.getRegistry().getCatalogRegistry().getSupplier(HeightType.class, "world_surface_wg");
+    public static final Supplier<HeightType> WORLD_SURFACE_WG = Registries.HEIGHT_TYPE.getSupplier(ResourceKey.minecraft("world_surface_wg"));
 
     // SORTFIELDS:OFF
 
     private HeightTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

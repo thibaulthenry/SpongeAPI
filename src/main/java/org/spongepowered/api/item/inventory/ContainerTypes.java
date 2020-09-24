@@ -24,14 +24,12 @@
  */
 package org.spongepowered.api.item.inventory;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.entity.living.trader.Villager;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of all possible {@link ContainerType}s in vanilla minecraft.
- */
 public final class ContainerTypes {
 
     // Containers backed by an inventory.
@@ -43,54 +41,54 @@ public final class ContainerTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<ContainerType> BLAST_FURNACE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "blast_furnace");
+    public static final Supplier<ContainerType> BLAST_FURNACE = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("blast_furnace"));
 
     /**
      * Size 5.
      */
-    public static final Supplier<ContainerType> BREWING_STAND = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "brewing_stand");
+    public static final Supplier<ContainerType> BREWING_STAND = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("brewing_stand"));
 
     /**
      * Size 3.
      */
-    public static final Supplier<ContainerType> FURNACE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "furnace");
+    public static final Supplier<ContainerType> FURNACE = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("furnace"));
 
     /**
      * Size 9 (3x3 grid). (Dispenser)
      */
-    public static final Supplier<ContainerType> GENERIC_3x3 = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "generic_3x3");
+    public static final Supplier<ContainerType> GENERIC_3x3 = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("generic_3x3"));
 
-    public static final Supplier<ContainerType> GENERIC_9x1 = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "generic_9x1");
+    public static final Supplier<ContainerType> GENERIC_9x1 = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("generic_9x1"));
 
-    public static final Supplier<ContainerType> GENERIC_9x2 = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "generic_9x2");
+    public static final Supplier<ContainerType> GENERIC_9x2 = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("generic_9x2"));
 
     /**
      * Size 27 (3x9 grid)
      */
-    public static final Supplier<ContainerType> GENERIC_9x3 = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "generic_9x3");
+    public static final Supplier<ContainerType> GENERIC_9x3 = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("generic_9x3"));
 
-    public static final Supplier<ContainerType> GENERIC_9x4 = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "generic_9x4");
+    public static final Supplier<ContainerType> GENERIC_9x4 = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("generic_9x4"));
 
-    public static final Supplier<ContainerType> GENERIC_9x5 = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "generic_9x5");
+    public static final Supplier<ContainerType> GENERIC_9x5 = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("generic_9x5"));
 
     /**
      * Size 54 (6x9 grid)
      */
-    public static final Supplier<ContainerType> GENERIC_9x6 = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "generic_9x6");
+    public static final Supplier<ContainerType> GENERIC_9x6 = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("generic_9x6"));
 
     /**
      * Size 5 (1x5 grid).
      */
-    public static final Supplier<ContainerType> HOPPER = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "hopper");
+    public static final Supplier<ContainerType> HOPPER = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("hopper"));
 
-    public static final Supplier<ContainerType> LECTERN = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "lectern");
+    public static final Supplier<ContainerType> LECTERN = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("lectern"));
 
     /**
      * Size 27 (3x9 grid). Shulker boxes are not allowed in shulker boxes.
      */
-    public static final Supplier<ContainerType> SHULKER_BOX = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "shulker_box");
+    public static final Supplier<ContainerType> SHULKER_BOX = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("shulker_box"));
 
-    public static final Supplier<ContainerType> SMOKER = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "smoker");
+    public static final Supplier<ContainerType> SMOKER = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("smoker"));
 
     // SORTFIELDS:OFF
 
@@ -101,30 +99,30 @@ public final class ContainerTypes {
     /**
      * Size 0. All slots present in the container only: 3.
      */
-    public static final Supplier<ContainerType> ANVIL = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "anvil");
+    public static final Supplier<ContainerType> ANVIL = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("anvil"));
 
     /**
      * Size 0. All slots present in the container only: 1.
      */
-    public static final Supplier<ContainerType> BEACON = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "beacon");
+    public static final Supplier<ContainerType> BEACON = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("beacon"));
 
-    public static final Supplier<ContainerType> CARTOGRAPHY_TABLE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "cartography_table");
+    public static final Supplier<ContainerType> CARTOGRAPHY_TABLE = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("cartography_table"));
 
     /**
      * Size 0. All slots present in the container only: 10 (3x3+1).
      */
-    public static final Supplier<ContainerType> CRAFTING = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "crafting");
+    public static final Supplier<ContainerType> CRAFTING = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("crafting"));
 
     /**
      * Size 0. All slots present in the container only 2.
      */
-    public static final Supplier<ContainerType> ENCHANTMENT = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "enchantment");
+    public static final Supplier<ContainerType> ENCHANTMENT = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("enchantment"));
 
-    public static final Supplier<ContainerType> GRINDSTONE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "grindstone");
+    public static final Supplier<ContainerType> GRINDSTONE = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("grindstone"));
 
-    public static final Supplier<ContainerType> LOOM = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "loom");
+    public static final Supplier<ContainerType> LOOM = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("loom"));
 
-    public static final Supplier<ContainerType> STONECUTTER = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "stonecutter");
+    public static final Supplier<ContainerType> STONECUTTER = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("stonecutter"));
 
     // SORTFIELDS:OFF
 
@@ -135,7 +133,7 @@ public final class ContainerTypes {
     /**
      * Create a {@link Villager} Entity instead of using this ContainerType.
      */
-    public static final Supplier<ContainerType> MERCHANT = Sponge.getRegistry().getCatalogRegistry().getSupplier(ContainerType.class, "merchant");
+    public static final Supplier<ContainerType> MERCHANT = Registries.CONTAINER_TYPE.getSupplier(ResourceKey.minecraft("merchant"));
 
     // SORTFIELDS:OFF
 

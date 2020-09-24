@@ -24,15 +24,13 @@
  */
 package org.spongepowered.api.scoreboard.criteria;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.effect.potion.PotionEffectTypes;
+import org.spongepowered.api.registry.Registries;
 import org.spongepowered.api.scoreboard.objective.Objective;
 
 import java.util.function.Supplier;
 
-/**
- * Criteria names which trigger an objective to be modified by actions in-game.
- */
 public final class Criteria {
 
     // SORTFIELDS:ON
@@ -41,13 +39,13 @@ public final class Criteria {
      * Represents a {@link Criteria} which causes an {@link Objective}
      * to have a score for a player incremented when they die.
      */
-    public static final Supplier<Criterion> DEATHS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Criterion.class, "deaths");
+    public static final Supplier<Criterion> DEATHS = Registries.CRITERION.getSupplier(ResourceKey.minecraft("deaths"));
 
     /**
      * Represents a {@link Criterion} which causes an {@link Objective}
      * is only updated manually, through commands or plugins.
      */
-    public static final Supplier<Criterion> DUMMY = Sponge.getRegistry().getCatalogRegistry().getSupplier(Criterion.class, "dummy");
+    public static final Supplier<Criterion> DUMMY = Registries.CRITERION.getSupplier(ResourceKey.minecraft("dummy"));
 
     /**
      * Represents a {@link Criteria} which causes an {@link Objective} to have
@@ -55,31 +53,31 @@ public final class Criteria {
      * (can be greater than 20 due to effects such as
      * {@link PotionEffectTypes#HEALTH_BOOST}).
      */
-    public static final Supplier<Criterion> HEALTH = Sponge.getRegistry().getCatalogRegistry().getSupplier(Criterion.class, "health");
+    public static final Supplier<Criterion> HEALTH = Registries.CRITERION.getSupplier(ResourceKey.minecraft("health"));
 
     /**
      * Represents a {@link Criteria} which causes an {@link Objective}
      * to have a score for a player incremented when they kill a player.
      */
-    public static final Supplier<Criterion> PLAYER_KILLS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Criterion.class, "player_kills");
+    public static final Supplier<Criterion> PLAYER_KILLS = Registries.CRITERION.getSupplier(ResourceKey.minecraft("player_kills"));
 
     /**
      * Represents a {@link Criteria} which causes an {@link Objective}
      * to have a score for a player incremented when they kill an entity.
      */
-    public static final Supplier<Criterion> TOTAL_KILLS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Criterion.class, "total_kills");
+    public static final Supplier<Criterion> TOTAL_KILLS = Registries.CRITERION.getSupplier(ResourceKey.minecraft("total_kills"));
 
     /**
      * Represents a {@link Criterion} which causes an {@link Objective}
      * to have a score for a player updated by the <code>/trigger</code>
      * command.
      */
-    public static final Supplier<Criterion> TRIGGER = Sponge.getRegistry().getCatalogRegistry().getSupplier(Criterion.class, "trigger");
+    public static final Supplier<Criterion> TRIGGER = Registries.CRITERION.getSupplier(ResourceKey.minecraft("trigger"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private Criteria() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+    
 }

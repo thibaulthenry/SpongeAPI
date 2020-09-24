@@ -24,18 +24,23 @@
  */
 package org.spongepowered.api.item.inventory.equipment;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
 public final class EquipmentGroups {
 
-    public static final Supplier<EquipmentGroup> HELD = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentGroup.class, "held");
+    // SORTFIELDS:ON
 
-    public static final Supplier<EquipmentGroup> WORN = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentGroup.class, "worn");
+    public static final Supplier<EquipmentGroup> HELD = Registries.EQUIPMENT_GROUP.getSupplier(ResourceKey.minecraft("held"));
 
-    // Suppress default constructor to ensure non-instantiability.
+    public static final Supplier<EquipmentGroup> WORN = Registries.EQUIPMENT_GROUP.getSupplier(ResourceKey.minecraft("worn"));
+
+    // SORTFIELDS:OFF
+
     private EquipmentGroups() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

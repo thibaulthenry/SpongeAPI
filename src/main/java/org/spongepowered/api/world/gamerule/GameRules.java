@@ -24,10 +24,10 @@
  */
 package org.spongepowered.api.world.gamerule;
 
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.block.BlockTypes;
 import org.spongepowered.api.block.entity.CommandBlock;
-import org.spongepowered.api.effect.potion.PotionEffectTypes;
 import org.spongepowered.api.entity.living.Agent;
 import org.spongepowered.api.entity.living.Bat;
 import org.spongepowered.api.entity.living.animal.Rabbit;
@@ -41,7 +41,6 @@ import org.spongepowered.api.entity.living.monster.Phantom;
 import org.spongepowered.api.entity.living.monster.Silverfish;
 import org.spongepowered.api.entity.living.monster.boss.Wither;
 import org.spongepowered.api.entity.living.monster.boss.dragon.EnderDragon;
-import org.spongepowered.api.entity.living.monster.raider.Raider;
 import org.spongepowered.api.entity.living.monster.skeleton.Skeleton;
 import org.spongepowered.api.entity.living.monster.zombie.Zombie;
 import org.spongepowered.api.entity.living.monster.zombie.ZombiePigman;
@@ -52,12 +51,10 @@ import org.spongepowered.api.entity.living.trader.WanderingTrader;
 import org.spongepowered.api.entity.vehicle.Boat;
 import org.spongepowered.api.entity.vehicle.minecart.MinecartEntity;
 import org.spongepowered.api.raid.Raid;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of all the possible game rules in vanilla minecraft.
- */
 public final class GameRules {
 
     // SORTFIELDS:ON
@@ -67,7 +64,7 @@ public final class GameRules {
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> ANNOUNCE_ADVANCEMENTS = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "announce_advancements");
+    public static final Supplier<GameRule<Boolean>> ANNOUNCE_ADVANCEMENTS = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("announce_advancements"));
 
     /**
      * Whether {@link CommandBlock}s should notify admins when
@@ -75,7 +72,7 @@ public final class GameRules {
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> COMMAND_BLOCK_OUTPUT = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "command_block_output");
+    public static final Supplier<GameRule<Boolean>> COMMAND_BLOCK_OUTPUT = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("command_block_output"));
 
     /**
      * Whether the server should skip checking player speed when
@@ -84,7 +81,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code false}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DISABLE_ELYTRA_MOVEMENT_CHECK = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "disable_elytra_movement_check");
+    public static final Supplier<GameRule<Boolean>> DISABLE_ELYTRA_MOVEMENT_CHECK = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("disable_elytra_movement_check"));
 
     /**
      * Whether {@link Raid}s are disabled.
@@ -94,7 +91,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code false}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DISABLE_RAIDS = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "disable_raids");
+    public static final Supplier<GameRule<Boolean>> DISABLE_RAIDS = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("disable_raids"));
 
     /**
      * Whether the day-night cycle and moon phases progress.
@@ -102,7 +99,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_DAYLIGHT_CYCLE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_daylight_cycle");
+    public static final Supplier<GameRule<Boolean>> DO_DAYLIGHT_CYCLE = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_daylight_cycle"));
 
     /**
      * Whether entities that are not mobs should have drops.
@@ -110,7 +107,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_ENTITY_DROPS = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_entity_drops");
+    public static final Supplier<GameRule<Boolean>> DO_ENTITY_DROPS = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_entity_drops"));
 
     /**
      * Whether fire should spread and naturally extinguish.
@@ -118,7 +115,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_FIRE_TICK = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_fire_tick");
+    public static final Supplier<GameRule<Boolean>> DO_FIRE_TICK = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_fire_tick"));
 
     /**
      * Whether {@link Phantom}s can spawn in the night-time.
@@ -126,7 +123,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_INSOMNIA = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_insomnia");
+    public static final Supplier<GameRule<Boolean>> DO_INSOMNIA = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_insomnia"));
 
     /**
      * Whether {@link Player}s should respawn immediately without showing the death screen.
@@ -134,7 +131,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_IMMEDIATE_RESPAWN = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_immediate_respawn");
+    public static final Supplier<GameRule<Boolean>> DO_IMMEDIATE_RESPAWN = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_immediate_respawn"));
 
     /**
      * Whether {@link Player}s can only craft recipes they have unlocked.
@@ -142,49 +139,49 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code false}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_LIMITED_CRAFTING = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_limited_crafting");
+    public static final Supplier<GameRule<Boolean>> DO_LIMITED_CRAFTING = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_limited_crafting"));
 
     /**
      * Whether {@link Agent}s should drop items.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_MOB_LOOT = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_mob_loot");
+    public static final Supplier<GameRule<Boolean>> DO_MOB_LOOT = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_mob_loot"));
 
     /**
      * Whether {@link Agent}s should naturally spawn.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_MOB_SPAWNING = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_mob_spawning");
+    public static final Supplier<GameRule<Boolean>> DO_MOB_SPAWNING = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_mob_spawning"));
 
     /**
      * Whether {@link Patroller patrollers} will go out on patrol (typically in a {@link Raid}.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_PATROL_SPAWNING = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_patrol_spawning");
+    public static final Supplier<GameRule<Boolean>> DO_PATROL_SPAWNING = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_patrol_spawning"));
 
     /**
      * Whether blocks should have drops.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_TILE_DROPS = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_tile_drops");
+    public static final Supplier<GameRule<Boolean>> DO_TILE_DROPS = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_tile_drops"));
 
     /**
      * Whether {@link WanderingTrader traders} will naturally spawn.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_TRADER_SPAWNING = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_trader_spawning");
+    public static final Supplier<GameRule<Boolean>> DO_TRADER_SPAWNING = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_trader_spawning"));
 
     /**
      * Whether the weather will change.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DO_WEATHER_CYCLE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "do_weather_cycle");
+    public static final Supplier<GameRule<Boolean>> DO_WEATHER_CYCLE = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("do_weather_cycle"));
 
     /**
      * Whether entities should take drowning damage.
@@ -192,7 +189,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> DROWNING_DAMAGE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "drowning_damage");
+    public static final Supplier<GameRule<Boolean>> DROWNING_DAMAGE = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("drowning_damage"));
 
     /**
      * Whether entities should take fall damage.
@@ -200,7 +197,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> FALL_DAMAGE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "fall_damage");
+    public static final Supplier<GameRule<Boolean>> FALL_DAMAGE = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("fall_damage"));
 
     /**
      * Whether entities should take fire damage.
@@ -208,7 +205,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> FIRE_DAMAGE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "fire_damage");
+    public static final Supplier<GameRule<Boolean>> FIRE_DAMAGE = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("fire_damage"));
 
     /**
      * Whether {@link Player}s should keep items in their inventory
@@ -217,7 +214,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code false}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> KEEP_INVENTORY = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "keep_inventory");
+    public static final Supplier<GameRule<Boolean>> KEEP_INVENTORY = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("keep_inventory"));
 
     /**
      * Whether to log admin commands to server log.
@@ -225,7 +222,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> LOG_ADMIN_COMMANDS = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "log_admin_commands");
+    public static final Supplier<GameRule<Boolean>> LOG_ADMIN_COMMANDS = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("log_admin_commands"));
 
     /**
      * The total number of {@link BlockTypes#CHAIN_COMMAND_BLOCK chain command
@@ -234,7 +231,7 @@ public final class GameRules {
      * <p>This is a numerical game rule, with a default value
      * of {@code 65536}.</p>
      */
-    public static final Supplier<GameRule<Integer>> MAX_COMMAND_CHAIN_LENGTH = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "max_command_chain_length");
+    public static final Supplier<GameRule<Integer>> MAX_COMMAND_CHAIN_LENGTH = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("max_command_chain_length"));
 
     /**
      * The maximum number of other pushable entities a mob or player can push,
@@ -250,7 +247,7 @@ public final class GameRules {
      *
      * <p>This is a numerical game rule, with a default value of {@code 24}.</p>
      */
-    public static final Supplier<GameRule<Integer>> MAX_ENTITY_CRAMMING = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "max_entity_cramming");
+    public static final Supplier<GameRule<Integer>> MAX_ENTITY_CRAMMING = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("max_entity_cramming"));
 
     /**
      * Whether {@link Agent}s should be able to change blocks, and whether
@@ -283,7 +280,7 @@ public final class GameRules {
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> MOB_GRIEFING = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "mob_griefing");
+    public static final Supplier<GameRule<Boolean>> MOB_GRIEFING = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("mob_griefing"));
 
     /**
      * Whether {@link Player}s can regenerate health naturally if their
@@ -292,7 +289,7 @@ public final class GameRules {
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> NATURAL_REGENERATION = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "natural_regeneration");
+    public static final Supplier<GameRule<Boolean>> NATURAL_REGENERATION = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("natural_regeneration"));
 
     /**
      * How often a random block tick occurs (such as plant growth,
@@ -303,7 +300,7 @@ public final class GameRules {
      *
      * <p>This is a numerical game rule, with a default value of {@code 3}.</p>
      */
-    public static final Supplier<GameRule<Integer>> RANDOM_TICK_SPEED = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "random_tick_speed");
+    public static final Supplier<GameRule<Integer>> RANDOM_TICK_SPEED = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("random_tick_speed"));
 
     /**
      * Whether the debug screen shows all or reduced information.
@@ -311,7 +308,7 @@ public final class GameRules {
      * <p>This is a boolean game rule, with a default value of
      * {@code false}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> REDUCED_DEBUG_INFO = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "reduced_debug_info");
+    public static final Supplier<GameRule<Boolean>> REDUCED_DEBUG_INFO = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("reduced_debug_info"));
 
     /**
      * Whether the feedback from commands executed by a {@link Player}
@@ -322,14 +319,14 @@ public final class GameRules {
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> SEND_COMMAND_FEEDBACK = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "send_command_feedback");
+    public static final Supplier<GameRule<Boolean>> SEND_COMMAND_FEEDBACK = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("send_command_feedback"));
 
     /**
      * Whether a message appears in chat when a {@link Player} dies.
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> SHOW_DEATH_MESSAGES = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "show_death_messages");
+    public static final Supplier<GameRule<Boolean>> SHOW_DEATH_MESSAGES = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("show_death_messages"));
 
     /**
      * The number of blocks outward from the world spawn coordinates
@@ -338,7 +335,7 @@ public final class GameRules {
      *
      * <p>This is a numerical game rule, with a default value of {@code 10}.</p>
      */
-    public static final Supplier<GameRule<Integer>> SPAWN_RADIUS = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "spawn_radius");
+    public static final Supplier<GameRule<Integer>> SPAWN_RADIUS = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("spawn_radius"));
 
     /**
      * Whether players in {@link GameModes#SPECTATOR spectator mode} can
@@ -346,7 +343,7 @@ public final class GameRules {
      *
      * <p>This is a boolean game rule, with a default value of {@code true}.</p>
      */
-    public static final Supplier<GameRule<Boolean>> SPECTATORS_GENERATE_CHUNKS = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameRule.class, "spectators_generate_chunks");
+    public static final Supplier<GameRule<Boolean>> SPECTATORS_GENERATE_CHUNKS = Registries.GAME_RULE.getSupplier(ResourceKey.minecraft("spectators_generate_chunks"));
 
     // SORTFIELDS:OFF
 

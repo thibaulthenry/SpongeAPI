@@ -24,30 +24,27 @@
  */
 package org.spongepowered.api.item;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * A class containing known {@link FireworkShape}s.
- */
 public final class FireworkShapes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<FireworkShape> SMALL_BALL = Sponge.getRegistry().getCatalogRegistry().getSupplier(FireworkShape.class, "small_ball");
+    public static final Supplier<FireworkShape> SMALL_BALL = Registries.FIREWORK_SHAPE.getSupplier(ResourceKey.minecraft("small_ball"));
 
-    public static final Supplier<FireworkShape> BURST = Sponge.getRegistry().getCatalogRegistry().getSupplier(FireworkShape.class, "burst");
+    public static final Supplier<FireworkShape> BURST = Registries.FIREWORK_SHAPE.getSupplier(ResourceKey.minecraft("burst"));
 
-    public static final Supplier<FireworkShape> CREEPER = Sponge.getRegistry().getCatalogRegistry().getSupplier(FireworkShape.class, "creeper");
+    public static final Supplier<FireworkShape> CREEPER = Registries.FIREWORK_SHAPE.getSupplier(ResourceKey.minecraft("creeper"));
 
-    public static final Supplier<FireworkShape> LARGE_BALL = Sponge.getRegistry().getCatalogRegistry().getSupplier(FireworkShape.class, "large_ball");
+    public static final Supplier<FireworkShape> LARGE_BALL = Registries.FIREWORK_SHAPE.getSupplier(ResourceKey.minecraft("large_ball"));
 
-    public static final Supplier<FireworkShape> STAR = Sponge.getRegistry().getCatalogRegistry().getSupplier(FireworkShape.class, "star");
+    public static final Supplier<FireworkShape> STAR = Registries.FIREWORK_SHAPE.getSupplier(ResourceKey.minecraft("star"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private FireworkShapes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

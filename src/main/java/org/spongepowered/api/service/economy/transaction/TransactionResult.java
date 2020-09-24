@@ -74,9 +74,9 @@ public interface TransactionResult {
     ResultType getResult();
 
     /**
-     * Returns the {@link TransactionType} of this result.
+     * Returns the {@link EconomyTransactionType} of this result.
      *
      * @return type of Transaction
      */
-    TransactionType getType();
+    EconomyTransactionType getType();
 }

@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.world;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -35,26 +36,27 @@ public final class WorldArchetypes {
     /**
      * Represents a typical default {@link World}.
      */
-    public static final Supplier<WorldArchetype> OVERWORLD = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "overworld");
+    public static final Supplier<WorldArchetype> OVERWORLD = Registries.WORLD_ARCHETYPE.getSupplier(ResourceKey.minecraft("overworld"));
 
     /**
      * Represents a typical the end-style {@link World}.
      */
-    public static final Supplier<WorldArchetype> THE_END = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "the_end");
+    public static final Supplier<WorldArchetype> THE_END = Registries.WORLD_ARCHETYPE.getSupplier(ResourceKey.minecraft("the_end"));
 
     /**
      * Represents a typical nether-style {@link World}.
      */
-    public static final Supplier<WorldArchetype> THE_NETHER = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "the_nether");
+    public static final Supplier<WorldArchetype> THE_NETHER = Registries.WORLD_ARCHETYPE.getSupplier(ResourceKey.minecraft("the_nether"));
 
     /**
      * Represents a typical Sponge void-style {@link World}.
      */
-    public static final Supplier<WorldArchetype> THE_VOID = Sponge.getRegistry().getCatalogRegistry().getSupplier(WorldArchetype.class, "the_void");
+    public static final Supplier<WorldArchetype> THE_VOID = Registries.WORLD_ARCHETYPE.getSupplier(ResourceKey.minecraft("the_void"));
 
     // SORTFIELDS:OFF
 
     private WorldArchetypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+    
 }

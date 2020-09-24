@@ -24,30 +24,28 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link PandaGene}s.
- */
 public final class PandaGenes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<PandaGene> AGGRESSIVE = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "aggressive");
+    public static final Supplier<PandaGene> AGGRESSIVE = Registries.PANDA_GENE.getSupplier(ResourceKey.minecraft("aggressive"));
 
-    public static final Supplier<PandaGene> BROWN = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "brown");
+    public static final Supplier<PandaGene> BROWN = Registries.PANDA_GENE.getSupplier(ResourceKey.minecraft("brown"));
 
-    public static final Supplier<PandaGene> LAZY = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "lazy");
+    public static final Supplier<PandaGene> LAZY = Registries.PANDA_GENE.getSupplier(ResourceKey.minecraft("lazy"));
 
-    public static final Supplier<PandaGene> NORMAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "normal");
+    public static final Supplier<PandaGene> NORMAL = Registries.PANDA_GENE.getSupplier(ResourceKey.minecraft("normal"));
 
-    public static final Supplier<PandaGene> PLAYFUL = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "playful");
+    public static final Supplier<PandaGene> PLAYFUL = Registries.PANDA_GENE.getSupplier(ResourceKey.minecraft("playful"));
 
-    public static final Supplier<PandaGene> WEAK = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "weak");
+    public static final Supplier<PandaGene> WEAK = Registries.PANDA_GENE.getSupplier(ResourceKey.minecraft("weak"));
 
-    public static final Supplier<PandaGene> WORRIED = Sponge.getRegistry().getCatalogRegistry().getSupplier(PandaGene.class, "worried");
+    public static final Supplier<PandaGene> WORRIED = Registries.PANDA_GENE.getSupplier(ResourceKey.minecraft("worried"));
 
     // SORTFIELDS:OFF
 

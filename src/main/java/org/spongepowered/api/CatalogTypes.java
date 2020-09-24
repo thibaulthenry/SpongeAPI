@@ -24,7 +24,6 @@
  */
 package org.spongepowered.api;
 
-import net.kyori.adventure.key.Key;
 import org.spongepowered.api.advancement.Advancement;
 import org.spongepowered.api.advancement.AdvancementTree;
 import org.spongepowered.api.advancement.AdvancementType;
@@ -34,7 +33,38 @@ import org.spongepowered.api.block.entity.BlockEntityType;
 import org.spongepowered.api.command.selector.SelectorType;
 import org.spongepowered.api.data.persistence.DataFormat;
 import org.spongepowered.api.data.persistence.DataTranslator;
-import org.spongepowered.api.data.type.*;
+import org.spongepowered.api.data.type.ArtType;
+import org.spongepowered.api.data.type.BannerPatternShape;
+import org.spongepowered.api.data.type.BoatType;
+import org.spongepowered.api.data.type.BodyPart;
+import org.spongepowered.api.data.type.CatType;
+import org.spongepowered.api.data.type.ComparatorMode;
+import org.spongepowered.api.data.type.DoorHinge;
+import org.spongepowered.api.data.type.DyeColor;
+import org.spongepowered.api.data.type.FoxType;
+import org.spongepowered.api.data.type.HandPreference;
+import org.spongepowered.api.data.type.HandType;
+import org.spongepowered.api.data.type.HorseColor;
+import org.spongepowered.api.data.type.HorseStyle;
+import org.spongepowered.api.data.type.InstrumentType;
+import org.spongepowered.api.data.type.LlamaType;
+import org.spongepowered.api.data.type.MooshroomType;
+import org.spongepowered.api.data.type.NotePitch;
+import org.spongepowered.api.data.type.PandaGene;
+import org.spongepowered.api.data.type.ParrotType;
+import org.spongepowered.api.data.type.PickupRule;
+import org.spongepowered.api.data.type.PistonType;
+import org.spongepowered.api.data.type.PortionType;
+import org.spongepowered.api.data.type.ProfessionType;
+import org.spongepowered.api.data.type.RabbitType;
+import org.spongepowered.api.data.type.RailDirection;
+import org.spongepowered.api.data.type.SkinPart;
+import org.spongepowered.api.data.type.SlabPortion;
+import org.spongepowered.api.data.type.StairShape;
+import org.spongepowered.api.data.type.ToolType;
+import org.spongepowered.api.data.type.TropicalFishShape;
+import org.spongepowered.api.data.type.WireAttachmentType;
+import org.spongepowered.api.data.type.WoodType;
 import org.spongepowered.api.effect.particle.ParticleOption;
 import org.spongepowered.api.effect.particle.ParticleType;
 import org.spongepowered.api.effect.potion.PotionEffectType;
@@ -61,14 +91,13 @@ import org.spongepowered.api.item.inventory.equipment.EquipmentType;
 import org.spongepowered.api.item.inventory.equipment.EquipmentGroup;
 import org.spongepowered.api.item.inventory.query.QueryType;
 import org.spongepowered.api.item.recipe.crafting.CraftingRecipe;
-import org.spongepowered.api.registry.GameRegistry;
 import org.spongepowered.api.scoreboard.CollisionRule;
 import org.spongepowered.api.scoreboard.Visibility;
 import org.spongepowered.api.scoreboard.criteria.Criterion;
 import org.spongepowered.api.scoreboard.displayslot.DisplaySlot;
 import org.spongepowered.api.scoreboard.objective.displaymode.ObjectiveDisplayMode;
 import org.spongepowered.api.service.economy.Currency;
-import org.spongepowered.api.service.economy.transaction.TransactionType;
+import org.spongepowered.api.service.economy.transaction.EconomyTransactionType;
 import org.spongepowered.api.placeholder.PlaceholderParser;
 import org.spongepowered.api.statistic.Statistic;
 import org.spongepowered.api.statistic.StatisticCategory;
@@ -86,14 +115,7 @@ import org.spongepowered.api.world.difficulty.Difficulty;
 import org.spongepowered.api.world.teleport.TeleportHelperFilter;
 import org.spongepowered.api.world.weather.Weather;
 
-/**
- * Enumeration of all known {@link CatalogType}s for autocompletion when using
- * the {@link GameRegistry} to retrieve specific types or all of a certain type.
- *
- * <p>These are generally useful for {@link CatalogRegistry#get(Class, Key)}
- * and {@link CatalogRegistry#getAllOf(Class)}.</p>
- */
-@SuppressWarnings({"rawtypes", "unused"})
+@SuppressWarnings("rawtypes")
 public final class CatalogTypes {
 
     // SORTFIELDS:ON
@@ -157,6 +179,8 @@ public final class CatalogTypes {
     public static final Class<DisplaySlot> DISPLAY_SLOT = DisplaySlot.class;
 
     public static final Class<DyeColor> DYE_COLOR = DyeColor.class;
+
+    public static final Class<EconomyTransactionType> ECONOMY_TRANSACTION_TYPE = EconomyTransactionType.class;
 
     public static final Class<EnchantmentType> ENCHANTMENT_TYPE = EnchantmentType.class;
 
@@ -260,8 +284,6 @@ public final class CatalogTypes {
 
     public static final Class<ToolType> TOOL_TYPE = ToolType.class;
 
-    public static final Class<TransactionType> TRANSACTION_TYPE = TransactionType.class;
-
     public static final Class<Trigger> TRIGGER = Trigger.class;
 
     public static final Class<TropicalFishShape> TROPICAL_FISH_SHAPE = TropicalFishShape.class;
@@ -283,4 +305,5 @@ public final class CatalogTypes {
     private CatalogTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

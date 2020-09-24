@@ -24,28 +24,29 @@
  */
 package org.spongepowered.api.item.inventory.equipment;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * All built-in equipment types.
- */
 public final class EquipmentTypes {
 
-    public static final Supplier<EquipmentType> FEET = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentType.class, "feet");
+    // SORTFIELDS:ON
 
-    public static final Supplier<EquipmentType> CHEST = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentType.class, "chest");
+    public static final Supplier<EquipmentType> FEET = Registries.EQUIPMENT_TYPE.getSupplier(ResourceKey.minecraft("feet"));
 
-    public static final Supplier<EquipmentType> HEAD = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentType.class, "head");
+    public static final Supplier<EquipmentType> CHEST = Registries.EQUIPMENT_TYPE.getSupplier(ResourceKey.minecraft("chest"));
 
-    public static final Supplier<EquipmentType> LEGS = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentType.class, "legs");
+    public static final Supplier<EquipmentType> HEAD = Registries.EQUIPMENT_TYPE.getSupplier(ResourceKey.minecraft("head"));
 
-    public static final Supplier<EquipmentType> MAIN_HAND = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentType.class, "main_hand");
+    public static final Supplier<EquipmentType> LEGS = Registries.EQUIPMENT_TYPE.getSupplier(ResourceKey.minecraft("legs"));
 
-    public static final Supplier<EquipmentType> OFF_HAND = Sponge.getRegistry().getCatalogRegistry().getSupplier(EquipmentType.class, "off_hand");
+    public static final Supplier<EquipmentType> MAIN_HAND = Registries.EQUIPMENT_TYPE.getSupplier(ResourceKey.minecraft("main_hand"));
 
-    // Suppress default constructor to ensure non-instantiability.
+    public static final Supplier<EquipmentType> OFF_HAND = Registries.EQUIPMENT_TYPE.getSupplier(ResourceKey.minecraft("off_hand"));
+
+    // SORTFIELDS:OFF
+
     private EquipmentTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

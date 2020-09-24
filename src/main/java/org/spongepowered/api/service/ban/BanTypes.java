@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.service.ban;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,19 +33,12 @@ public class BanTypes {
 
     // SORTFIELDS:ON
 
-    /**
-     * Represents a {@link Ban.Ip}.
-     */
-    public static final Supplier<BanType> IP = Sponge.getRegistry().getCatalogRegistry().getSupplier(BanType.class, "ip");
+    public static final Supplier<BanType> IP = Registries.BAN_TYPE.getSupplier(ResourceKey.minecraft("ip"));
 
-    /**
-     * Represents a {@link Ban.Profile}.
-     */
-    public static final Supplier<BanType> PROFILE = Sponge.getRegistry().getCatalogRegistry().getSupplier(BanType.class, "profile");
+    public static final Supplier<BanType> PROFILE = Registries.BAN_TYPE.getSupplier(ResourceKey.minecraft("profile"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private BanTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

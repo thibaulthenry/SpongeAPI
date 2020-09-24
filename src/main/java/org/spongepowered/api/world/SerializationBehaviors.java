@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.world;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -35,22 +36,22 @@ public final class SerializationBehaviors {
     /**
      * A {@link SerializationBehavior} where data is saved automatically. This is considered the default across the game.
      */
-    public static final Supplier<SerializationBehavior> AUTOMATIC = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "automatic");
+    public static final Supplier<SerializationBehavior> AUTOMATIC = Registries.SERIALIZATION_BEHAVIOR.getSupplier(ResourceKey.minecraft("automatic"));
 
     /**
      * A {@link SerializationBehavior} where data is only saved when requested.
      */
-    public static final Supplier<SerializationBehavior> MANUAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "manual");
+    public static final Supplier<SerializationBehavior> MANUAL = Registries.SERIALIZATION_BEHAVIOR.getSupplier(ResourceKey.minecraft("manual"));
 
     /**
      * A {@link SerializationBehavior} where metadata is saved, but chunks are not saved.
      */
-    public static final Supplier<SerializationBehavior> METADATA_ONLY = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "metadata_only");
+    public static final Supplier<SerializationBehavior> METADATA_ONLY = Registries.SERIALIZATION_BEHAVIOR.getSupplier(ResourceKey.minecraft("metadata_only"));
 
     /**
      * A {@link SerializationBehavior} where data is not saved to disk.
      */
-    public static final Supplier<SerializationBehavior> NONE = Sponge.getRegistry().getCatalogRegistry().getSupplier(SerializationBehavior.class, "none");
+    public static final Supplier<SerializationBehavior> NONE = Registries.SERIALIZATION_BEHAVIOR.getSupplier(ResourceKey.minecraft("none"));
 
     // SORTFIELDS:OFF
 

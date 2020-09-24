@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.effect.sound.music;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
@@ -32,33 +33,34 @@ public final class MusicDiscs {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<MusicDisc> BLOCKS = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "blocks");
+    public static final Supplier<MusicDisc> BLOCKS = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("blocks"));
 
-    public static final Supplier<MusicDisc> CAT = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "cat");
+    public static final Supplier<MusicDisc> CAT = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("cat"));
 
-    public static final Supplier<MusicDisc> CHIRP = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "chirp");
+    public static final Supplier<MusicDisc> CHIRP = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("chirp"));
 
-    public static final Supplier<MusicDisc> ELEVEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "eleven");
+    public static final Supplier<MusicDisc> ELEVEN = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("eleven"));
 
-    public static final Supplier<MusicDisc> FAR = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "far");
+    public static final Supplier<MusicDisc> FAR = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("far"));
 
-    public static final Supplier<MusicDisc> MALL = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "mall");
+    public static final Supplier<MusicDisc> MALL = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("mall"));
 
-    public static final Supplier<MusicDisc> MELLOHI = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "mellohi");
+    public static final Supplier<MusicDisc> MELLOHI = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("mellohi"));
 
-    public static final Supplier<MusicDisc> STAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "stal");
+    public static final Supplier<MusicDisc> STAL = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("stal"));
 
-    public static final Supplier<MusicDisc> STRAD = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "strad");
+    public static final Supplier<MusicDisc> STRAD = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("strad"));
 
-    public static final Supplier<MusicDisc> THIRTEEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "thirteen");
+    public static final Supplier<MusicDisc> THIRTEEN = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("thirteen"));
 
-    public static final Supplier<MusicDisc> WAIT = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "wait");
+    public static final Supplier<MusicDisc> WAIT = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("wait"));
 
-    public static final Supplier<MusicDisc> WARD = Sponge.getRegistry().getCatalogRegistry().getSupplier(MusicDisc.class, "ward");
+    public static final Supplier<MusicDisc> WARD = Registries.MUSIC_DISC.getSupplier(ResourceKey.minecraft("ward"));
 
     // SORTFIELDS:OFF
 
     private MusicDiscs() {
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
 
 }

@@ -24,32 +24,30 @@
  */
 package org.spongepowered.api.placeholder;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * Contains Sponge provided {@link PlaceholderParser}s.
- */
 public final class PlaceholderParsers {
 
-    // SORTFIELDS: ON
+    // SORTFIELDS:ON
 
     /**
      * A parser that returns the associated source's current world, if
      * applicable, else the default world.
      */
-    static Supplier<PlaceholderParser> CURRENT_WORLD = Sponge.getRegistry().getCatalogRegistry().getSupplier(PlaceholderParser.class, "current_world");
+    public static Supplier<PlaceholderParser> CURRENT_WORLD = Registries.PLACEHOLDER_PARSER.getSupplier(ResourceKey.sponge("current_world"));
 
     /**
      * A parser that returns the associated source's name.
      */
-    static Supplier<PlaceholderParser> NAME = Sponge.getRegistry().getCatalogRegistry().getSupplier(PlaceholderParser.class, "name");
+    public static Supplier<PlaceholderParser> NAME = Registries.PLACEHOLDER_PARSER.getSupplier(ResourceKey.sponge("name"));
 
-    // SORTFIELDS: OFF
+    // SORTFIELDS:OFF
 
     private PlaceholderParsers() {
-        throw new AssertionError("This should not be instantiated.");
+        throw new AssertionError("You should not be attempting to instantiate this class.");
     }
 
 }

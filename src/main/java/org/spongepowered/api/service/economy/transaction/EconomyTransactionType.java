@@ -24,35 +24,13 @@
  */
 package org.spongepowered.api.service.economy.transaction;
 
-import org.spongepowered.api.Sponge;
-import org.spongepowered.api.service.economy.Currency;
-import org.spongepowered.api.service.economy.account.Account;
+import org.spongepowered.api.CatalogType;
+import org.spongepowered.api.util.annotation.CatalogedBy;
 
-import java.util.function.Supplier;
-
-public final class TransactionTypes {
-    // SORTFIELDS:ON
-
-    /**
-     * Represents a transaction where an {@link Account} received some amount of a {@link Currency}.
-     */
-    public static final Supplier<TransactionType> DEPOSIT = Sponge.getRegistry().getCatalogRegistry().getSupplier(TransactionType.class, "deposit");
-
-    /**
-     * Represents a transaction where an {@link Account} transferred some amount of a currency to another {@link Account}.
-     */
-    public static final Supplier<TransactionType> TRANSFER = Sponge.getRegistry().getCatalogRegistry().getSupplier(TransactionType.class, "transfer");
-
-    /**
-     * Represents a transaction where an {@link Account} lost some amount of a {@link Currency}.
-     */
-    public static final Supplier<TransactionType> WITHDRAW = Sponge.getRegistry().getCatalogRegistry().getSupplier(TransactionType.class, "withdraw");
-
-    // SORTFIELDS:OFF
-
-    // Suppress default constructor to ensure non-instantiability.
-    private TransactionTypes() {
-        throw new AssertionError("You should not be attempting to instantiate this class.");
-    }
+/**
+ * Represents the type of a transaction.
+ */
+@CatalogedBy(EconomyTransactionTypes.class)
+public interface EconomyTransactionType extends CatalogType {
 
 }

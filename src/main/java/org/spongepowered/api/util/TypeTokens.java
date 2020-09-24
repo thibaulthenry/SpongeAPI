@@ -142,11 +142,12 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-@SuppressWarnings({"unused", "UnstableApiUsage"})
+@SuppressWarnings("UnstableApiUsage")
 public final class TypeTokens {
 
-    // SORTFIELDS:ON
     // @formatter:off
+
+    // SORTFIELDS:ON
 
     public static final TypeToken<Audience> AUDIENCE = new TypeToken<Audience>() {private static final long serialVersionUID = -1;};
 
@@ -610,10 +611,10 @@ public final class TypeTokens {
 
     public static final TypeToken<HandType> HAND_TYPE_TOKEN = new TypeToken<HandType>() {private static final long serialVersionUID = -1;};
 
-    // @formatter:on
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
+    // @formatter:on
+
     private TypeTokens() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

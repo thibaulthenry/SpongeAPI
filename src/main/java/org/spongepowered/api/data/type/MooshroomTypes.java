@@ -24,20 +24,19 @@
  */
 package org.spongepowered.api.data.type;
 
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.Sponge;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link MooshroomType}s.
- */
 public final class MooshroomTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<MooshroomType> BROWN = Sponge.getRegistry().getCatalogRegistry().getSupplier(MooshroomType.class, "brown");
+    public static final Supplier<MooshroomType> BROWN = Registries.MOOSHROOM_TYPE.getSupplier(ResourceKey.minecraft("brown"));
 
-    public static final Supplier<MooshroomType> RED = Sponge.getRegistry().getCatalogRegistry().getSupplier(MooshroomType.class, "red");
+    public static final Supplier<MooshroomType> RED = Registries.MOOSHROOM_TYPE.getSupplier(ResourceKey.minecraft("red"));
 
     // SORTFIELDS:OFF
 

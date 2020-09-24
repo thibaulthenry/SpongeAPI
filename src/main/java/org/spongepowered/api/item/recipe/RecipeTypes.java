@@ -24,31 +24,34 @@
  */
 package org.spongepowered.api.item.recipe;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
 import org.spongepowered.api.item.recipe.crafting.CraftingRecipe;
 import org.spongepowered.api.item.recipe.single.StoneCutterRecipe;
 import org.spongepowered.api.item.recipe.smelting.SmeltingRecipe;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of all {@link RecipeType}s in vanilla minecraft.
- */
-public class RecipeTypes {
+public final class RecipeTypes {
+
     // SORTFIELDS:ON
 
-    // CRAFTING_SHAPED - CRAFTING_SHAPELESS
-    public static final Supplier<RecipeType<CraftingRecipe>> CRAFTING = Sponge.getRegistry().getCatalogRegistry().getSupplier(RecipeType.class, "crafting");
-    public static final Supplier<RecipeType<SmeltingRecipe>> SMELTING = Sponge.getRegistry().getCatalogRegistry().getSupplier(RecipeType.class, "smelting");
-    public static final Supplier<RecipeType<SmeltingRecipe>> BLASTING = Sponge.getRegistry().getCatalogRegistry().getSupplier(RecipeType.class, "blasting");
-    public static final Supplier<RecipeType<SmeltingRecipe>> SMOKING = Sponge.getRegistry().getCatalogRegistry().getSupplier(RecipeType.class, "smoking");
-    public static final Supplier<RecipeType<SmeltingRecipe>> CAMPFIRE_COOKING = Sponge.getRegistry().getCatalogRegistry().getSupplier(RecipeType.class, "campfire_cooking");
-    public static final Supplier<RecipeType<StoneCutterRecipe>> STONECUTTING = Sponge.getRegistry().getCatalogRegistry().getSupplier(RecipeType.class, "stonecutting");
+    public static final Supplier<RecipeType<CraftingRecipe>> CRAFTING = Registries.RECIPE_TYPE.getSupplier(ResourceKey.minecraft("crafting"));
+
+    public static final Supplier<RecipeType<SmeltingRecipe>> SMELTING = Registries.RECIPE_TYPE.getSupplier(ResourceKey.minecraft("smelting"));
+
+    public static final Supplier<RecipeType<SmeltingRecipe>> BLASTING = Registries.RECIPE_TYPE.getSupplier(ResourceKey.minecraft("blasting"));
+
+    public static final Supplier<RecipeType<SmeltingRecipe>> SMOKING = Registries.RECIPE_TYPE.getSupplier(ResourceKey.minecraft("smoking"));
+
+    public static final Supplier<RecipeType<SmeltingRecipe>> CAMPFIRE_COOKING = Registries.RECIPE_TYPE.getSupplier(ResourceKey.minecraft("campfire_cooking"));
+
+    public static final Supplier<RecipeType<StoneCutterRecipe>> STONECUTTING = Registries.RECIPE_TYPE.getSupplier(ResourceKey.minecraft("stonecutting"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private RecipeTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

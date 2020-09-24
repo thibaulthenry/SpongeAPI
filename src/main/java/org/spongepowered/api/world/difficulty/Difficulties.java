@@ -24,24 +24,22 @@
  */
 package org.spongepowered.api.world.difficulty;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * A list of difficulties that Minecraft provides in vanilla.
- */
 public final class Difficulties {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<Difficulty> EASY = Sponge.getRegistry().getCatalogRegistry().getSupplier(Difficulty.class, "easy");
+    public static final Supplier<Difficulty> EASY = Registries.DIFFICULTY.getSupplier(ResourceKey.minecraft("easy"));
 
-    public static final Supplier<Difficulty> HARD = Sponge.getRegistry().getCatalogRegistry().getSupplier(Difficulty.class, "hard");
+    public static final Supplier<Difficulty> HARD = Registries.DIFFICULTY.getSupplier(ResourceKey.minecraft("hard"));
 
-    public static final Supplier<Difficulty> NORMAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(Difficulty.class, "normal");
+    public static final Supplier<Difficulty> NORMAL = Registries.DIFFICULTY.getSupplier(ResourceKey.minecraft("normal"));
 
-    public static final Supplier<Difficulty> PEACEFUL = Sponge.getRegistry().getCatalogRegistry().getSupplier(Difficulty.class, "peaceful");
+    public static final Supplier<Difficulty> PEACEFUL = Registries.DIFFICULTY.getSupplier(ResourceKey.minecraft("peaceful"));
 
     // SORTFIELDS:OFF
 

@@ -24,24 +24,26 @@
  */
 package org.spongepowered.api.fluid;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
 public final class FluidTypes {
 
     // SORTFIELDS:ON
+
     /**
      * Represents the absence of fluid.
      */
-    public static final Supplier<FluidType> EMPTY = Sponge.getRegistry().getCatalogRegistry().getSupplier(FluidType.class, "empty");
+    public static final Supplier<FluidType> EMPTY = Registries.FLUID_TYPE.getSupplier(ResourceKey.minecraft("empty"));
 
-    public static final Supplier<FluidType> WATER = Sponge.getRegistry().getCatalogRegistry().getSupplier(FluidType.class, "water");
+    public static final Supplier<FluidType> WATER = Registries.FLUID_TYPE.getSupplier(ResourceKey.minecraft("water"));
 
-    public static final Supplier<FluidType> LAVA = Sponge.getRegistry().getCatalogRegistry().getSupplier(FluidType.class, "lava");
+    public static final Supplier<FluidType> LAVA = Registries.FLUID_TYPE.getSupplier(ResourceKey.minecraft("lava"));
+
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private FluidTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

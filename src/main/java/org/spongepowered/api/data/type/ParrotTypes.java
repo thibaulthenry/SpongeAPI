@@ -24,30 +24,29 @@
  */
 package org.spongepowered.api.data.type;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * An enumeration of vanilla {@link ParrotType}s.
- */
 public final class ParrotTypes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<ParrotType> BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "blue");
+    public static final Supplier<ParrotType> BLUE = Registries.PARROT_TYPE.getSupplier(ResourceKey.minecraft("blue"));
 
-    public static final Supplier<ParrotType> GREY = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "grey");
+    public static final Supplier<ParrotType> GREY = Registries.PARROT_TYPE.getSupplier(ResourceKey.minecraft("grey"));
 
-    public static final Supplier<ParrotType> GREEN = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "green");
+    public static final Supplier<ParrotType> GREEN = Registries.PARROT_TYPE.getSupplier(ResourceKey.minecraft("green"));
 
-    public static final Supplier<ParrotType> RED_AND_BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "red_and_blue");
+    public static final Supplier<ParrotType> RED_AND_BLUE = Registries.PARROT_TYPE.getSupplier(ResourceKey.minecraft("red_and_blue"));
 
-    public static final Supplier<ParrotType> YELLOW_AND_BLUE = Sponge.getRegistry().getCatalogRegistry().getSupplier(ParrotType.class, "yellow_and_blue");
+    public static final Supplier<ParrotType> YELLOW_AND_BLUE = Registries.PARROT_TYPE.getSupplier(ResourceKey.minecraft("yellow_and_blue"));
 
     // SORTFIELDS:OFF
 
     private ParrotTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }
+
 }

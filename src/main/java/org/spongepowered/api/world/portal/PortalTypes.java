@@ -24,17 +24,21 @@
  */
 package org.spongepowered.api.world.portal;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
 public final class PortalTypes {
 
-    public static final Supplier<PortalType> NETHER = Sponge.getRegistry().getCatalogRegistry().getSupplier(PortalType.class, "nether");
+    // SORTFIELDS:ON
 
-    public static final Supplier<PortalType> END = Sponge.getRegistry().getCatalogRegistry().getSupplier(PortalType.class, "end");
+    public static final Supplier<PortalType> NETHER = Registries.PORTAL_TYPE.getSupplier(ResourceKey.minecraft("nether"));
 
-    // Suppress default constructor to ensure non-instantiability.
+    public static final Supplier<PortalType> END = Registries.PORTAL_TYPE.getSupplier(ResourceKey.minecraft("end"));
+
+    // SORTFIELDS:OFF
+
     private PortalTypes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

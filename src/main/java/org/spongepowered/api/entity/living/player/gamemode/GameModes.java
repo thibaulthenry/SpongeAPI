@@ -24,30 +24,27 @@
  */
 package org.spongepowered.api.entity.living.player.gamemode;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * A list of the game modes that Minecraft provides in vanilla.
- */
 public final class GameModes {
 
     // SORTFIELDS:ON
 
-    public static final Supplier<GameMode> ADVENTURE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "adventure");
+    public static final Supplier<GameMode> ADVENTURE = Registries.GAME_MODE.getSupplier(ResourceKey.minecraft("adventure"));
 
-    public static final Supplier<GameMode> CREATIVE = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "creative");
+    public static final Supplier<GameMode> CREATIVE = Registries.GAME_MODE.getSupplier(ResourceKey.minecraft("creative"));
 
-    public static final Supplier<GameMode> NOT_SET = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "not_set");
+    public static final Supplier<GameMode> NOT_SET = Registries.GAME_MODE.getSupplier(ResourceKey.minecraft("not_set"));
 
-    public static final Supplier<GameMode> SPECTATOR = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "spectator");
+    public static final Supplier<GameMode> SPECTATOR = Registries.GAME_MODE.getSupplier(ResourceKey.minecraft("spectator"));
 
-    public static final Supplier<GameMode> SURVIVAL = Sponge.getRegistry().getCatalogRegistry().getSupplier(GameMode.class, "survival");
+    public static final Supplier<GameMode> SURVIVAL = Registries.GAME_MODE.getSupplier(ResourceKey.minecraft("survival"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private GameModes() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

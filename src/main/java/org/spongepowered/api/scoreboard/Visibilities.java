@@ -24,14 +24,11 @@
  */
 package org.spongepowered.api.scoreboard;
 
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.registry.Registries;
 
 import java.util.function.Supplier;
 
-/**
- * Visibility names which cause nametags or death messages to be displayed
- * differently to players on a team.
- */
 public final class Visibilities {
 
     // SORTFIELDS:ON
@@ -41,30 +38,29 @@ public final class Visibilities {
      *
      * <p>This is the default value.</p>
      */
-    public static final Supplier<Visibility> ALWAYS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Visibility.class, "always");
+    public static final Supplier<Visibility> ALWAYS = Registries.VISIBILITY.getSupplier(ResourceKey.minecraft("always"));
 
     /**
      * Death messages or nametags for members of other teams will not be
      * visible, but death messages or nametags for members of the same team
      * will be visible.
      */
-    public static final Supplier<Visibility> HIDE_FOR_OTHER_TEAMS = Sponge.getRegistry().getCatalogRegistry().getSupplier(Visibility.class, "hide_for_other_teams");
+    public static final Supplier<Visibility> HIDE_FOR_OTHER_TEAMS = Registries.VISIBILITY.getSupplier(ResourceKey.minecraft("hide_for_other_teams"));
 
     /**
      * Death messages or nametags for members of other teams will be
      * visible, but death messages or nametags for members of the same team
      * will not be visible.
      */
-    public static final Supplier<Visibility> HIDE_FOR_OWN_TEAM = Sponge.getRegistry().getCatalogRegistry().getSupplier(Visibility.class, "hide_for_own_team");
+    public static final Supplier<Visibility> HIDE_FOR_OWN_TEAM = Registries.VISIBILITY.getSupplier(ResourceKey.minecraft("hide_for_own_team"));
 
     /**
      * Death messages or nametags are never visible.
      */
-    public static final Supplier<Visibility> NEVER = Sponge.getRegistry().getCatalogRegistry().getSupplier(Visibility.class, "never");
+    public static final Supplier<Visibility> NEVER = Registries.VISIBILITY.getSupplier(ResourceKey.minecraft("never"));
 
     // SORTFIELDS:OFF
 
-    // Suppress default constructor to ensure non-instantiability.
     private Visibilities() {
         throw new AssertionError("You should not be attempting to instantiate this class.");
     }

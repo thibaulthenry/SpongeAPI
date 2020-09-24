@@ -29,7 +29,7 @@ import org.spongepowered.api.service.economy.account.Account;
 
 /**
  * Represents a {@link TransactionResult} specific to a transaction
- * of type {@link TransactionTypes#TRANSFER}.
+ * of type {@link EconomyTransactionTypes#TRANSFER}.
  */
 public interface TransferResult extends TransactionResult {
 
