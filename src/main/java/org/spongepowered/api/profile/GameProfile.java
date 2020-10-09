@@ -24,8 +24,6 @@
  */
 package org.spongepowered.api.profile;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.common.collect.Multimap;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.spongepowered.api.Sponge;
@@ -34,6 +32,7 @@ import org.spongepowered.api.profile.property.ProfileProperty;
 import org.spongepowered.api.user.UserManager;
 import org.spongepowered.api.util.Identifiable;
 
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -94,7 +93,7 @@ public interface GameProfile extends Identifiable, DataSerializable {
      * @return The game profile
      */
     default GameProfile addProperty(ProfileProperty property) {
-        checkNotNull(property, "property");
+        Objects.requireNonNull(property, "property");
         return this.addProperty(property.getName(), property);
     }
 
@@ -106,8 +105,8 @@ public interface GameProfile extends Identifiable, DataSerializable {
      * @return The game profile
      */
     default GameProfile addProperty(String name, ProfileProperty property) {
-        checkNotNull(name, "name");
-        checkNotNull(property, "property");
+        Objects.requireNonNull(name, "name");
+        Objects.requireNonNull(property, "property");
         this.getPropertyMap().put(name, property);
         return this;
     }
@@ -122,7 +121,7 @@ public interface GameProfile extends Identifiable, DataSerializable {
      * @return {@code true} if the property map changed
      */
     default boolean removeProperty(ProfileProperty property) {
-        checkNotNull(property, "property");
+        Objects.requireNonNull(property, "property");
         return this.getPropertyMap().remove(property.getName(), property);
     }
 
@@ -134,8 +133,8 @@ public interface GameProfile extends Identifiable, DataSerializable {
      * @return {@code true} if the property map changed
      */
     default boolean removeProperty(String name, ProfileProperty property) {
-        checkNotNull(name, "name");
-        checkNotNull(property, "property");
+        Objects.requireNonNull(name, "name");
+        Objects.requireNonNull(property, "property");
         return this.getPropertyMap().remove(name, property);
     }
 
