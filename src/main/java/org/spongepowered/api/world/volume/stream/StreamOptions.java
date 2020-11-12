@@ -24,11 +24,25 @@
  */
 package org.spongepowered.api.world.volume.stream;
 
+import org.spongepowered.api.Sponge;
+import org.spongepowered.api.util.ResettableBuilder;
 import org.spongepowered.api.world.World;
 import org.spongepowered.api.world.volume.Volume;
 import org.spongepowered.math.vector.Vector3i;
 
 public interface StreamOptions {
+
+    public static Builder builder() {
+        return Sponge.getRegistry().getBuilderRegistry().provideBuilder(Builder.class);
+    }
+
+    public static StreamOptions lazily() {
+        return StreamOptions.builder().setCarbonCopy(false).setLoadingStyle(LoadingStyle.LAZILY_UNGENERATED).build();
+    }
+
+    public static StreamOptions forceLoadedAndCopied() {
+        return StreamOptions.builder().setCarbonCopy(true).setLoadingStyle(LoadingStyle.FORCED_GENERATED).build();
+    }
 
     enum LoadingStyle {
         /**
@@ -161,4 +175,14 @@ public interface StreamOptions {
      * @return
      */
     LoadingStyle loadingStyle();
+
+    interface Builder extends ResettableBuilder<StreamOptions, Builder> {
+
+        Builder setCarbonCopy(boolean copies);
+
+        Builder setLoadingStyle(LoadingStyle style);
+
+        StreamOptions build();
+
+    }
 }

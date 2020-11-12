@@ -67,5 +67,12 @@ public final class VolumePositionTranslators {
         };
     }
 
+    public static <W extends Volume, E> VolumePositionTranslator<W, E> offsetPosition(final Vector3i origin,
+        Vector3i originalOrigin
+    ) {
+        final Vector3i diff = origin.sub(originalOrigin);
+        return element -> VolumeElement.of(element.getVolume(), element.getType(), element.getPosition().add(diff));
+    }
+
     private VolumePositionTranslators() {}
 }
