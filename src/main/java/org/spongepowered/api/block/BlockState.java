@@ -31,6 +31,7 @@ import org.spongepowered.api.data.DirectionRelativeDataHolder;
 import org.spongepowered.api.data.value.Value;
 import org.spongepowered.api.fluid.FluidState;
 import org.spongepowered.api.state.State;
+import org.spongepowered.api.state.StateMatcher;
 import org.spongepowered.api.world.ServerLocation;
 
 import java.util.Objects;
@@ -60,23 +61,23 @@ public interface BlockState extends State<BlockState>, DirectionRelativeDataHold
     }
 
     /**
-     * Constructs a new builder to construct a {@link BlockStateMatcher}.
+     * Constructs a new builder to construct a {@link StateMatcher}.
      *
      * @param type The block type
      * @return The builder
      */
-    static BlockStateMatcher.Builder matcher(Supplier<? extends BlockType> type) {
+    static StateMatcher.Builder<BlockState, BlockType> matcher(final Supplier<? extends BlockType> type) {
         return BlockState.matcher(type.get());
     }
 
     /**
-     * Constructs a new builder to construct a {@link BlockStateMatcher}.
+     * Constructs a new builder to construct a {@link StateMatcher}.
      *
      * @param type The block type
      * @return The builder
      */
-    static BlockStateMatcher.Builder matcher(BlockType type) {
-        return BlockStateMatcher.builder().type(type);
+    static StateMatcher.Builder<BlockState, BlockType> matcher(final BlockType type) {
+        return StateMatcher.blockStateMatcherBuilder().type(type);
     }
 
     /**
@@ -131,7 +132,7 @@ public interface BlockState extends State<BlockState>, DirectionRelativeDataHold
          * @param blockType The block type
          * @return This builder, for chaining
          */
-        default Builder blockType(Supplier<? extends BlockType> blockType) {
+        default Builder blockType(final Supplier<? extends BlockType> blockType) {
             return this.blockType(blockType.get());
         }
 
